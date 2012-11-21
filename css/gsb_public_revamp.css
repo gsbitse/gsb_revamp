@@ -192,6 +192,16 @@ body {background-color: #fff; background-position: center top; background-repeat
 .menu-name-menu-audience-navigation ul li { width: 268px; height: 49px; background-color: #990000; color: #fff; margin-bottom: 5px; list-style-type: none; }
 .menu-name-menu-audience-navigation ul li a { color: #fff; size: 16px; }
 
+/* All Pages ----------------------------- */
+
+body { border-top: 10px solid #8a0000; }
+p { font-family: NewsGothicBT-Roman, sans-serif; font-size: 18px; }
+h1 { font-family: NewsGothicBT-Roman, sans-serif; font-size: 48px; }
+h2 { font-family: NewsGothicBT-Roman, sans-serif; font-size: 38px; }
+h3 { font-family: NewsGothicBT-Roman, sans-serif; font-size: 28px; }
+h4 { font-family: NewsGothicBT-Roman, sans-serif; font-size: 20px; }
+h5 { font-family: NewsGothicBT-Bold, sans-serif; font-size: 18px; }
+h6 { font-family: NewsGothicBT-Demi, sans-serif; font-size: 18px; }
 
 
 
