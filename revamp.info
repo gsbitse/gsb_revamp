@@ -1,10 +1,10 @@
-name = GSB Public Revamp
-description = Public Revamp Specific Sub-theme of GSB Framework
+name = Revamp
+description = Revamp Specific Sub-theme of GSB Framework
 core = 7.x
 version = 1.0
 base theme = gsb_framework
 
-stylesheets[all][] = css/gsb_public_revamp.css
+stylesheets[all][] = css/revamp.css
 stylesheets[all][] = css/MyFontsWebfontsKit.css
 regions[page_top] = Page: Top
 regions[header] = Header
