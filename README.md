@@ -1,2 +1,2 @@
-gsb-public-revamp-theme
+gsb_revamp theme
 =======================
