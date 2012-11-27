@@ -110,72 +110,7 @@
           <div id="content-upper" class="row-fluid"> <?php print render($page['content_upper']); ?> </div>
           <?php endif; ?>
           <div id="content-body" class="row-fluid"> <?php print render($page['content']); ?> <?php print $feed_icons; ?> </div>
-          <?php if ($page['content_row2']): ?>
-          <div id="content-row2" class="row-fluid"> <?php print render($page['content_row2']); ?> </div>
-          <?php endif; ?>
-          <?php if (($page['content_col2-1']) || ($page['content_col2-2'])): ?>
-          <div id="content-col2" class="row-fluid">
-            <?php if ($page['content_col2-1']): ?>
-            <div class="span6">
-              <div id="content-col2-1" class="span12 clearfix clear-row"> <?php print render($page['content_col2-1']); ?> </div>
-            </div>
-            <?php endif; ?>
-            <?php if ($page['content_col2-2']): ?>
-            <div class="span6">
-              <div id="content-col2-2" class="span12 clearfix clear-row"> <?php print render($page['content_col2-2']); ?> </div>
-            </div>
-            <?php endif; ?>
-          </div>
-          <?php endif; ?>
-          <?php if ($page['content_row3']): ?>
-          <div id="content-row3" class="row-fluid"> <?php print render($page['content_row3']); ?> </div>
-          <?php endif; ?>
-          <?php if (($page['content_col3-1']) || ($page['content_col3-2']) || ($page['content_col3-3'])): ?>
-          <div id="content-col3" class="row-fluid">
-            <?php if ($page['content_col3-1']): ?>
-            <div class="span4">
-              <div id="content-col3-1" class="span12 clearfix clear-row"> <?php print render($page['content_col3-1']); ?> </div>
-            </div>
-            <?php endif; ?>
-            <?php if ($page['content_col3-2']): ?>
-            <div class="span4">
-              <div id="content-col3-2" class="span12 clearfix clear-row"> <?php print render($page['content_col3-2']); ?> </div>
-            </div>
-            <?php endif; ?>
-            <?php if ($page['content_col3-3']): ?>
-            <div class="span4">
-              <div id="content-col3-3" class="span12 clearfix clear-row"> <?php print render($page['content_col3-3']); ?> </div>
-            </div>
-            <?php endif; ?>
-          </div>
-          <?php endif; ?>
-          <?php if ($page['content_row4']): ?>
-          <div id="content-row4" class="row-fluid"> <?php print render($page['content_row4']); ?> </div>
-          <?php endif; ?>
-          <?php if (($page['content_col4-1']) || ($page['content_col4-2']) || ($page['content_col4-3']) || ($page['content_col4-4'])): ?>
-          <div id="content-col4" class="row-fluid">
-            <?php if ($page['content_col4-1']): ?>
-            <div class="span3">
-              <div id="content-col4-1" class="span12 clearfix clear-row"> <?php print render($page['content_col4-1']); ?> </div>
-            </div>
-            <?php endif; ?>
-            <?php if ($page['content_col4-2']): ?>
-            <div class="span3">
-              <div id="content-col4-2" class="span12 clearfix clear-row"> <?php print render($page['content_col4-2']); ?> </div>
-            </div>
-            <?php endif; ?>
-            <?php if ($page['content_col4-3']): ?>
-            <div class="span3">
-              <div id="content-col4-3" class="span12 clearfix clear-row"> <?php print render($page['content_col4-3']); ?> </div>
-            </div>
-            <?php endif; ?>
-            <?php if ($page['content_col4-4']): ?>
-            <div class="span3">
-              <div id="content-col4-4" class="span12 clearfix clear-row"> <?php print render($page['content_col4-4']); ?> </div>
-            </div>
-            <?php endif; ?>
-          </div>
-          <?php endif; ?>
+          
           <?php if ($page['content_lower']): ?>
           <div id="content-lower" class="row-fluid"> <?php print render($page['content_lower']); ?> </div>
           <?php endif; ?>
@@ -202,23 +137,8 @@
   </div>
 </div>
 <!-- /#main, /#main-wrapper -->
-<?php if ($secondary_menu): ?>
-<div id="secondary-menu" class="navigation">
-  <div class="container"> <?php print theme('links__system_secondary_menu', array(
-          'links' => $secondary_menu,
-          'attributes' => array(
-            'id' => 'secondary-menu-links',
-            'class' => array('links', 'inline', 'clearfix'),
-          ),
-          'heading' => array(
-            'text' => t('Secondary menu'),
-            'level' => 'h2',
-            'class' => array('element-invisible'),
-          ),
-        )); ?> </div>
-</div>
-<!-- /#secondary-menu -->
-<?php endif; ?>
+
+
 <?php if ($page['footer']): ?>
 <div id="footer" class="clearfix">
   <div class="container">
