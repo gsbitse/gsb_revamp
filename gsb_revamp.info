@@ -17,8 +17,5 @@ regions[footer] = Footer
 regions[main_top] = Main: Top
 regions[main_upper] = Main: Upper
 
-
-
-
 regions[page_bottom] = Page: Bottom
 
