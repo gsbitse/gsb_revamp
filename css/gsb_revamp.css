@@ -1,6 +1,6 @@
-/* GENERAL LAYOUT ------------------------------------------------------------*/
-#site-name  { text-indent: -9999px; background-image:  url("../images/logo.png"); background-repeat: no-repeat; height: 80px; }
 
+/* GENERAL LAYOUT ------------------------------------------------------------*/
+#site-name  { display: none;}
 .navbar-inner { background: none; border: none; -webkit-box-shadow: none; box-shadow: none;  }
 
 #main-menu {}
@@ -19,7 +19,7 @@
 
 /* All Pages ----------------------------- */
 
-body { border-top: 10px solid #8a0000;  }
+body { margin:0; padding:0;}
 p { font-family: NewsGothicBT-Roman, sans-serif; font-size: 18px; }
 h1 { font-family: NewsGothicBT-Roman, sans-serif; font-size: 48px; }
 h2 { font-family: NewsGothicBT-Roman, sans-serif; font-size: 38px; }
@@ -27,6 +27,27 @@ h3 { font-family: NewsGothicBT-Roman, sans-serif; font-size: 28px; }
 h4 { font-family: NewsGothicBT-Roman, sans-serif; font-size: 20px; }
 h5 { font-family: NewsGothicBT-Bold, sans-serif; font-size: 18px; }
 h6 { font-family: NewsGothicBT-Demi, sans-serif; font-size: 18px; }
+
+
+/* Header --------------------------------*/
+#header { background-image: url(../images/revamp-header-bg.png); height: 160px; margin:0; padding:0; }
+#header #logo { display: block; margin-top: 45px; }
+
+#site-slogan { font-size: 1.4em}
+
+
+/* Footer --------------------------------*/
+
+#footer { background-image: url(../images/footer-background.png); }
+#footer-content { }
+#footer h2 { text-indent: -10000px; display: none;}
+#footer #block-menu-menu-footer-menu ul { text-decoration: none; list-style-type: none; list-style-image: none;}
+#footer #block-menu-menu-footer-menu ul li { text-decoration: none; list-style-type: none; list-style-image: none;}
+
+#footer #block-menu-menu-footer-menu a { color: #8a0000;}
+
+/* e-News Signup ----------------------------- */
+
 
 
 
