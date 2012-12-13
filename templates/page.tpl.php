@@ -67,7 +67,7 @@
 <!-- /#header -->
 
 
-<div id="main" class="clearfix">
+<div id="main" class="clearfix row">
   <div class="container">
     <?php if ($breadcrumb): ?>
     <div id="breadcrumb"><?php print $breadcrumb; ?></div>
@@ -78,9 +78,9 @@
     <?php if ($page['main_upper']): ?>
     <div id="main-upper" class="row-fluid"> <?php print render($page['main_upper']); ?> </div>
     <?php endif; ?>
-    <div id="main-content" class="row">
+    <div id="main-content" class="span12 row clear-row">
       <?php if ($page['sidebar_first']): ?>
-      <div id="sidebar-first" class="sidebar span3">
+      <div id="sidebar-first" class="sidebar span3 clear-row">
         <div class="row-fluid"><?php print render($page['sidebar_first']); ?></div>
       </div>
       <!-- /#sidebar-first -->

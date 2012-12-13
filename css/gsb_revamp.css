@@ -1,4 +1,4 @@
-/* All Pages ----------------------------- */
+/* All Pages ------------------------------------------------------------- */
 
 body { margin:0; padding:0;}
 p { font-family: NewsGothicBT-Roman, sans-serif; font-size: 18px; }
@@ -8,13 +8,17 @@ h3 { font-family: NewsGothicBT-Roman, sans-serif; font-size: 28px; }
 h4 { font-family: NewsGothicBT-Roman, sans-serif; font-size: 20px; }
 h5 { font-family: NewsGothicBT-Bold, sans-serif; font-size: 18px; }
 h6 { font-family: NewsGothicBT-Demi, sans-serif; font-size: 18px; }
+ul { font-family: NewsGothicBT-Roman, sans-serif; }
+li { font-family: NewsGothicBT-Roman, sans-serif; }
 
-/* Main Content  --------------------------------*/
+/* Main Content  ------------------------------------------------------------*/
 
 #main-content { margin-top: 30px;}
 #main-content a { color: #7d8401; border-bottom: 1px dashed #7d8401; font-weight: bold;}
 #main-content a:hover { color: #2d6280; border-bottom: 1px solid #2d6280;}
 #main-content h2 { color: #2d6280; font-weight: 100; }
+
+#main-content p.intro { font-size: 30px;}
 
 /* GENERAL LAYOUT ------------------------------------------------------------*/
 
@@ -28,7 +32,7 @@ h6 { font-family: NewsGothicBT-Demi, sans-serif; font-size: 18px; }
 
 #site-slogan { font-size: 1.4em}
 
-/* Primary Navigation ------------------------------------------------------*/
+/* Primary Navigation --------------------------------------------------------------------*/
 
 #main-menu {}
 #main-menu  ul li { width: 122px; height: 77px; background-color: #8a0000; color: #fff; float: left; display: block; margin: 0px; padding: 0px; list-style-image: none; list-style-type: none;}
@@ -55,7 +59,6 @@ background-image: -webkit-gradient(
 /* Audience Navigation ------------------------------------------------------------*/
 
 .menu-name-menu-audience-navigation { }
-
 .menu-name-menu-audience-navigation ul { }
 .menu-name-menu-audience-navigation ul li { width: 268px; height: 49px; background-color: #990000; color: #fff; margin-bottom: 5px; list-style-type: none; }
 .menu-name-menu-audience-navigation ul li a { color: #fff; size: 16px; }
@@ -64,7 +67,7 @@ background-image: -webkit-gradient(
 
 /* Secondary Navigation --------------------------------*/
 
-#block-menu-menu-secondary-navigation { border-top: 10px solid #231f20;
+#block-menu-menu-secondary-navigation { padding-right: 5px; padding-left: 5px; border-top: 10px solid #231f20;
 
 background-image: linear-gradient(bottom, #FFFFFF 25%, #E7E7E7 63%);
 background-image: -o-linear-gradient(bottom, #FFFFFF 25%, #E7E7E7 63%);
@@ -81,21 +84,18 @@ background-image: -webkit-gradient(
 );}
 }
 
-#block-menu-menu-secondary-navigation ul { text-decoration: none; list-style-type: none; }
-#block-menu-menu-secondary-navigation ul li { text-decoration: none; list-style-type: none; list-style-image: none; padding: 10px; }
+#block-menu-menu-secondary-navigation ul { text-decoration: none; list-style-type: none; margin: 0; margin: 0; font-size: 18px;}
+#block-menu-menu-secondary-navigation ul li { text-decoration: none; list-style-type: none; list-style-image: none; margin: 0; margin-top: 25px; padding:0px; font-family: NewsGothicBT-Bold;}
 #block-menu-menu-secondary-navigation ul li a { color: #990000; text-decoration: none; border-bottom: none; text-transform: uppercase; }
-#block-menu-menu-secondary-navigation ul li ul { }
-#block-menu-menu-secondary-navigation ul li ul li { }
+#block-menu-menu-secondary-navigation ul li a.active { }
+#block-menu-menu-secondary-navigation ul li ul {  }
+#block-menu-menu-secondary-navigation ul li ul li { margin-top: 19px;}
+#block-menu-menu-secondary-navigation ul li ul li a { color: #000; text-transform: none; font-size: 14px; }
+#block-menu-menu-secondary-navigation ul li ul li a.active { color: #2d6280; text-transform: none; }
 #block-menu-menu-secondary-navigation ul li ul li ul { }
-#block-menu-menu-secondary-navigation ul li ul li ul li { }
-
-
-
-
-
-
-
-
+#block-menu-menu-secondary-navigation ul li ul li ul li { margin-top: 19px; }
+#block-menu-menu-secondary-navigation ul li ul li ul li a { font-family: NewsGothicBT-Roman; font-weight: 100; line-height: 20px;}
+#block-menu-menu-secondary-navigation ul li ul li ul li a.active { }
 
 
 /* Footer --------------------------------*/
