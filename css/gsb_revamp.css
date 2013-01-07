@@ -1,3 +1,16 @@
+/* Bootstrap override */
+
+
+	.no-space [class*="span"] {
+    margin: 0px !important;
+    padding: 0px !important;
+     }
+	}
+
+
+
+
+
 /* All Pages ------------------------------------------------------------- */
 
 body { margin:0; padding:0;}
@@ -11,19 +24,18 @@ h6 { font-family: NewsGothicBT-Demi, sans-serif; font-size: 18px; }
 ul { font-family: NewsGothicBT-Roman, sans-serif; }
 li { font-family: NewsGothicBT-Roman, sans-serif; }
 
+/* GENERAL LAYOUT ------------------------------------------------------------*/
+
+#site-name  { display: none;}
+.navbar-inner { background: none; border: none; -webkit-box-shadow: none; box-shadow: none;  }
+
 /* Main Content  ------------------------------------------------------------*/
 
 #main-content { margin-top: 30px;}
 #main-content a { color: #7d8401; border-bottom: 1px dashed #7d8401; font-weight: bold;}
 #main-content a:hover { color: #2d6280; border-bottom: 1px solid #2d6280;}
 #main-content h2 { color: #2d6280; font-weight: 100; }
-
 #main-content p.intro { font-size: 30px;}
-
-/* GENERAL LAYOUT ------------------------------------------------------------*/
-
-#site-name  { display: none;}
-.navbar-inner { background: none; border: none; -webkit-box-shadow: none; box-shadow: none;  }
 
 /* Header --------------------------------*/
 
@@ -34,27 +46,24 @@ li { font-family: NewsGothicBT-Roman, sans-serif; }
 
 /* Primary Navigation --------------------------------------------------------------------*/
 
-#main-menu {}
-#main-menu  ul li { width: 122px; height: 77px; background-color: #8a0000; color: #fff; float: left; display: block; margin: 0px; padding: 0px; list-style-image: none; list-style-type: none;}
-#main-menu  ul li { background-image: linear-gradient(bottom, #C50000 21%, #860000 60%);
+#main-menu  ul li { width: 122px; height: 77px; background-color: #8a0000;border-right: 1px solid red; padding-right: 1px; color: #fff; float: left; display: block; margin: 0px; padding: 0px; list-style-image: none; list-style-type: none;}
+#main-menu  ul li { 
+background-image: linear-gradient(bottom, #C50000 21%, #860000 60%);
 background-image: -o-linear-gradient(bottom, #C50000 21%, #860000 60%);
 background-image: -moz-linear-gradient(bottom, #C50000 21%, #860000 60%);
 background-image: -webkit-linear-gradient(bottom, #C50000 21%, #860000 60%);
 background-image: -ms-linear-gradient(bottom, #C50000 21%, #860000 60%);
-
-background-image: -webkit-gradient(
-	linear,
-	left bottom,
-	left top,
-	color-stop(0.21, #C50000),
-	color-stop(0.6, #860000)
-);}
-
+background-image: -webkit-gradient(linear,left bottom,left top,color-stop(0.21, #C50000),color-stop(0.6, #860000));
+}
 #main-menu  ul li a {color: #fff;  text-transform: uppercase; border-radius: 0px; margin: 0px 25px 0 0; padding: 6px 0px; border-top: 1px solid transparent;}
 #main-menu  ul li a:hover {background: transparent; border-top: 1px solid #827252; text-decoration:none;}
 #main-menu  ul li a.active {background: transparent; border-top: 1px solid #827252;}
-#main-menu  ul li ul li {display: block;}
+#main-menu  ul li ul li {display: block; }
 #main-menu  ul li ul li a {text-transform: none;}
+
+#event-calendar-cta {  background-color: red; height: 40px;}
+#event-calendar-cta a { color: #fff; font-size: 14px;}
+
 
 /* Audience Navigation ------------------------------------------------------------*/
 
@@ -63,25 +72,16 @@ background-image: -webkit-gradient(
 .menu-name-menu-audience-navigation ul li { width: 268px; height: 49px; background-color: #990000; color: #fff; margin-bottom: 5px; list-style-type: none; }
 .menu-name-menu-audience-navigation ul li a { color: #fff; size: 16px; }
 
-
-
 /* Secondary Navigation --------------------------------*/
 
-#block-menu-menu-secondary-navigation { padding-right: 5px; padding-left: 5px; border-top: 10px solid #231f20;
-
+#block-menu-menu-secondary-navigation { 
+padding-right: 5px; padding-left: 5px; border-top: 10px solid #231f20;
 background-image: linear-gradient(bottom, #FFFFFF 25%, #E7E7E7 63%);
 background-image: -o-linear-gradient(bottom, #FFFFFF 25%, #E7E7E7 63%);
 background-image: -moz-linear-gradient(bottom, #FFFFFF 25%, #E7E7E7 63%);
 background-image: -webkit-linear-gradient(bottom, #FFFFFF 25%, #E7E7E7 63%);
 background-image: -ms-linear-gradient(bottom, #FFFFFF 25%, #E7E7E7 63%);
-
-background-image: -webkit-gradient(
-	linear,
-	left bottom,
-	left top,
-	color-stop(0.25, #FFFFFF),
-	color-stop(0.63, #E7E7E7)
-);}
+background-image: -webkit-gradient(linear,left bottom,left top,color-stop(0.25, #FFFFFF),color-stop(0.63, #E7E7E7));}
 }
 
 #block-menu-menu-secondary-navigation ul { text-decoration: none; list-style-type: none; margin: 0; margin: 0; font-size: 18px;}
@@ -105,8 +105,8 @@ background-image: -webkit-gradient(
 #footer h2 { text-indent: -10000px; display: none;}
 #footer #block-menu-menu-footer-menu ul { text-decoration: none; list-style-type: none; list-style-image: none;}
 #footer #block-menu-menu-footer-menu ul li { text-decoration: none; list-style-type: none; list-style-image: none;}
-
 #footer #block-menu-menu-footer-menu a { color: #8a0000;}
+
 
 /* e-News Signup ----------------------------- */
 

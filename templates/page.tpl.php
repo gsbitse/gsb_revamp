@@ -20,13 +20,13 @@
         <!-- /#logo -->
         <?php endif; ?>
         <?php if ($site_name || $site_slogan): ?>
-        <div id="name-and-slogan" class="offset2 span6">
+        <div id="name-and-slogan" class="span8 row no-space">
           <?php if ($site_name): ?>
           <div id="site-name" class=""><a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home"><?php print $site_name; ?></a></div>
           <?php endif; ?>
 
          <!-- #main-menu -->
-                <?php if ($main_menu): ?>
+         <?php if ($main_menu): ?>
           <div id="main-menu" class="clearfix span6">
           
             <div class="navbar">
@@ -35,18 +35,24 @@
                 <div class="nav-collapse"><?php print render($main_menu_expanded); ?></div>
               </div>
             </div>
-          
-          </div><?php endif; ?>
+         
+          </div>
+           <div id="event-calendar-cta" class="clearfix span2" style="margin-left: -60px !important">
+            <a href="#">Event Calendar</a>
+          </div>  
+        <?php endif; ?>
         <!-- /#main-menu -->
 
 
-          <?php if ($site_slogan): ?>
-          <div id="site-slogan"><?php print $site_slogan; ?></div>
+         <?php if ($site_slogan): ?>
+          <div id="site-slogan" class="span4"><?php print $site_slogan; ?></div>
           <?php endif; ?>
 
 
 
         </div>
+
+
 
         <!-- /#name-and-slogan -->
         <?php endif; ?>
