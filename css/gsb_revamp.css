@@ -8,9 +8,6 @@
 	}
 
 
-
-
-
 /* All Pages ------------------------------------------------------------- */
 
 body { margin:0; padding:0;}
@@ -32,7 +29,7 @@ li { font-family: NewsGothicBT-Roman, sans-serif; }
 /* Main Content  ------------------------------------------------------------*/
 
 #main-content { margin-top: 30px;}
-#main-content a { color: #7d8401; border-bottom: 1px dashed #7d8401; font-weight: bold;}
+#main-content a { color: #7d8401; border-bottom: 1px dashed #7d8401; }
 #main-content a:hover { color: #2d6280; border-bottom: 1px solid #2d6280;}
 #main-content h2 { color: #2d6280; font-weight: 100; }
 #main-content p.intro { font-size: 30px;}
@@ -44,9 +41,12 @@ li { font-family: NewsGothicBT-Roman, sans-serif; }
 
 #site-slogan { font-size: 1.4em}
 
+/* Name and Slogan ------------------------------*/
+#name-and-slogan { padding-top: 0px;}
+
 /* Primary Navigation --------------------------------------------------------------------*/
 
-#main-menu  ul li { width: 122px; height: 77px; background-color: #8a0000;border-right: 1px solid red; padding-right: 1px; color: #fff; float: left; display: block; margin: 0px; padding: 0px; list-style-image: none; list-style-type: none;}
+#main-menu  ul li { font-size: 17px; width: 112px; height: 64px; background-color: #8a0000;border-right: 1px solid red; padding-right: 1px; color: #fff; float: left; display: block; margin: 0px; padding-top: 14px; padding-left: 10px;list-style-image: none; list-style-type: none;}
 #main-menu  ul li { 
 background-image: linear-gradient(bottom, #C50000 21%, #860000 60%);
 background-image: -o-linear-gradient(bottom, #C50000 21%, #860000 60%);
@@ -55,14 +55,15 @@ background-image: -webkit-linear-gradient(bottom, #C50000 21%, #860000 60%);
 background-image: -ms-linear-gradient(bottom, #C50000 21%, #860000 60%);
 background-image: -webkit-gradient(linear,left bottom,left top,color-stop(0.21, #C50000),color-stop(0.6, #860000));
 }
-#main-menu  ul li a {color: #fff;  text-transform: uppercase; border-radius: 0px; margin: 0px 25px 0 0; padding: 6px 0px; border-top: 1px solid transparent;}
-#main-menu  ul li a:hover {background: transparent; border-top: 1px solid #827252; text-decoration:none;}
-#main-menu  ul li a.active {background: transparent; border-top: 1px solid #827252;}
+#main-menu  ul li a {color: #fff;  border-radius: 0px; margin: 0px 25px 0 0; padding: 0px 0px; border-top: 1px solid transparent; text-shadow: none !important;}
+#main-menu  ul li a:hover {background: transparent; text-decoration:none;}
+#main-menu  ul li a.active {background: transparent; box-shadow: none !important; } 
 #main-menu  ul li ul li {display: block; }
-#main-menu  ul li ul li a {text-transform: none;}
+#main-menu  ul li ul li a {text-transform: none; text-shadow: none !important; letter-spacing: 2px;}
 
-#event-calendar-cta {  background-color: red; height: 40px;}
-#event-calendar-cta a { color: #fff; font-size: 14px;}
+#event-calendar-cta {  background-color: #5b0000;  width: 200px; margin-left: -54px !important; padding: 15px; padding-top: 10px !important;
+padding-bottom: 10px !important;}
+#event-calendar-cta a { color: #fff; font-size: 17px; padding-top: 5px !important; margin-left: 20px; }
 
 
 /* Audience Navigation ------------------------------------------------------------*/
@@ -96,6 +97,10 @@ background-image: -webkit-gradient(linear,left bottom,left top,color-stop(0.25, 
 #block-menu-menu-secondary-navigation ul li ul li ul li { margin-top: 19px; }
 #block-menu-menu-secondary-navigation ul li ul li ul li a { font-family: NewsGothicBT-Roman; font-weight: 100; line-height: 20px;}
 #block-menu-menu-secondary-navigation ul li ul li ul li a.active { }
+#block-menu-menu-secondary-navigation a.hover { text-decoration: none; border-bottom: none;}
+
+#block-menu-menu-secondary-navigation .active:before { content: "\00BB"; }
+
 
 
 /* Footer --------------------------------*/

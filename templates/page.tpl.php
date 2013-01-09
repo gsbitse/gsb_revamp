@@ -14,7 +14,7 @@
 <div id="header" class="clearfix">
   <div class="container">
     <div class="row">
-      <div class="span12">
+      <div class="span12 clear-row">
         <?php if ($logo): ?>
         <div id="logo" class="span3"> <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home"> <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" role="presentation" /> </a></div>
         <!-- /#logo -->
@@ -37,15 +37,20 @@
             </div>
          
           </div>
-           <div id="event-calendar-cta" class="clearfix span2" style="margin-left: -60px !important">
+           <div id="event-calendar-cta" class="clearfix span2" style="">
             <a href="#">Event Calendar</a>
           </div>  
+            <?php if ($search): ?>
+              <div id="nav-search">
+                 <?php if ($search): print render($search); endif; ?>
+               </div>
+            <?php endif; ?>
         <?php endif; ?>
         <!-- /#main-menu -->
 
 
          <?php if ($site_slogan): ?>
-          <div id="site-slogan" class="span4"><?php print $site_slogan; ?></div>
+          <div id="site-slogan" class="span6 offset2 float-right"><?php print $site_slogan; ?></div>
           <?php endif; ?>
 
 
