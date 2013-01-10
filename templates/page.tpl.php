@@ -25,7 +25,7 @@
           <div id="site-name" class=""><a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home"><?php print $site_name; ?></a></div>
           <?php endif; ?>
 
-         <!-- #main-menu -->
+
          <?php if ($main_menu): ?>
           <div id="main-menu" class="clearfix span6">
           
@@ -37,21 +37,34 @@
             </div>
          
           </div>
-           <div id="event-calendar-cta" class="clearfix span2" style="">
-            <a href="#">Event Calendar</a>
-          </div>  
-            <?php if ($search): ?>
-              <div id="nav-search">
-                 <?php if ($search): print render($search); endif; ?>
-               </div>
-            <?php endif; ?>
+
         <?php endif; ?>
         <!-- /#main-menu -->
 
+         <div id="event-and-search" class="span2">
+           <div id="event-calendar-cta" class="clearfix span2" style="">
+            <a href="#">Event Calendar</a>
+          </div>  
+           
 
-         <?php if ($site_slogan): ?>
+           <!-- <?php if ($search): ?>
+              <div id="nav-search">
+                 <?php if ($search): print render($search); endif; ?>
+               </div>
+            <?php endif; ?> -->
+       
+
+        <?php if ($page['header']): ?>
+           <div id="header-content" class="row-fluid"><?php print render($page['header']); ?></div>
+        <!-- /#header-content -->
+        <?php endif; ?>
+
+      </div>
+
+
+        <?php if ($site_slogan): ?>
           <div id="site-slogan" class="span6 offset2 float-right"><?php print $site_slogan; ?></div>
-          <?php endif; ?>
+        <?php endif; ?>
 
 
 
@@ -61,12 +74,7 @@
 
         <!-- /#name-and-slogan -->
         <?php endif; ?>
-        <?php if ($page['header']): ?>
-        <div id="header-content" class="row-fluid"><?php print render($page['header']); ?></div>
-        <!-- /#header-content -->
-        <?php endif; ?>
-
-
+        
       <?php endif; ?>
       </div>
       <?php if ($page['navigation']): ?>
