@@ -13,14 +13,14 @@
 <?php if ($logo || $site_name || $main_menu || $site_slogan || ($page['header']) || ($page['navigation']) || ($search)): ?>
 <div id="header" class="clearfix">
   <div class="container">
-    <div class="row">
+    <div class="">
       <div class="span12 clear-row">
         <?php if ($logo): ?>
         <div id="logo" class="span3"> <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home"> <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" role="presentation" /> </a></div>
         <!-- /#logo -->
         <?php endif; ?>
         <?php if ($site_name || $site_slogan): ?>
-        <div id="name-and-slogan" class="span8 row no-space">
+        <div id="name-and-slogan" class="span8 row no-space float-right">
           <?php if ($site_name): ?>
           <div id="site-name" class=""><a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home"><?php print $site_name; ?></a></div>
           <?php endif; ?>
@@ -86,7 +86,7 @@
 <!-- /#header -->
 
 
-<div id="main" class="clearfix row">
+<div id="main" class="clearfix row span12">
   <div class="container">
     <?php if ($breadcrumb): ?>
     <div id="breadcrumb"><?php print $breadcrumb; ?></div>
