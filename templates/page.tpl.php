@@ -12,9 +12,8 @@
 <!-- /#skipnav -->
 <?php if ($logo || $site_name || $main_menu || $site_slogan || ($page['header']) || ($page['navigation']) || ($search)): ?>
 <div id="header" class="clearfix">
-  <div class="container">
-    <div class="">
-      <div class="span12 clear-row">
+  
+      <div class="span12">
         <?php if ($logo): ?>
         <div id="logo" class="span3"> <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home"> <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" role="presentation" /> </a></div>
         <!-- /#logo -->
@@ -63,7 +62,7 @@
 
 
         <?php if ($site_slogan): ?>
-          <div id="site-slogan" class="span6 offset2 float-right"><?php print $site_slogan; ?></div>
+          <div id="site-slogan" class="span6 offset2 float-right"><p style="float: right;"><?php print $site_slogan; ?></p></div>
         <?php endif; ?>
 
 
@@ -80,17 +79,14 @@
       <?php if ($page['navigation']): ?>
       <div id="navigation" class="span4"> <?php print render($page['navigation']); ?> </div>
       <?php endif; ?>
-    </div>
-  </div>
+ 
 </div>
 <!-- /#header -->
 
 
 <div id="main" class="clearfix row span12">
   <div class="container">
-    <?php if ($breadcrumb): ?>
-    <div id="breadcrumb"><?php print $breadcrumb; ?></div>
-    <?php endif; ?>
+   
     <?php if ($page['main_top']): ?>
     <div id="main-top" class="row-fluid"> <?php print render($page['main_top']); ?> </div>
     <?php endif; ?>
@@ -107,6 +103,11 @@
       <div id="content">
         <div id="content-wrapper">
           <div id="content-head" class="row-fluid">
+
+                <?php if ($breadcrumb): ?>
+                  <div id="breadcrumb"><?php print $breadcrumb; ?></div>
+                <?php endif; ?>
+
             <div id="highlighted" class="clearfix"><?php print render($page['highlighted']); ?></div>
             <?php print render($title_prefix); ?>
             <?php if ($title): ?>
