@@ -1,3 +1,4 @@
+<div id="background-container">
 <div id="skipnav" class="element-invisible">
   <div class="container">
     <p>Skip to:</p>
@@ -84,7 +85,7 @@
 <!-- /#header -->
 
 
-<div id="main" class="clearfix row span12">
+<div id="main" class="clearfix row">
   <div class="container">
    
     <?php if ($page['main_top']): ?>
@@ -143,12 +144,14 @@
   </div>
 </div>
 <!-- /#main, /#main-wrapper -->
-
+</div>
 
 <?php if ($page['footer']): ?>
 <div id="footer" class="clearfix">
   <div class="container">
-    <div id="footer-content" class="row-fluid"> <?php print render($page['footer']); ?> </div>
+    <div id="footer-content" class="row span12 clear-row"> <?php print render($page['footer']); ?> 
+     
+    </div>
   </div>
 </div>
 <!-- /#footer -->

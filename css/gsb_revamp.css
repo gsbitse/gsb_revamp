@@ -8,9 +8,37 @@
 	}
 
 
-/* All Pages ------------------------------------------------------------- */
 
-body { margin:0; padding:0;}
+
+/* All Pages ------------------------------------------------------------- */
+body { margin:0; padding:0; }
+
+
+#page-container { margin: 0; padding: 0; background-image: linear-gradient(bottom, #f5f5f5 14%, #FFFFFF 79%);
+background-image: -o-linear-gradient(bottom, #f5f5f5 14%, #FFFFFF 79%);
+background-image: -moz-linear-gradient(bottom, #f5f5f5 14%, #FFFFFF 79%);
+background-image: -webkit-linear-gradient(bottom, #f5f5f5 14%, #FFFFFF 79%);
+background-image: -ms-linear-gradient(bottom, #f5f5f5 14%, #FFFFFF 79%);
+
+background-image: -webkit-gradient(
+	linear,
+	left bottom,
+	left top,
+	color-stop(0.50, #f5f5f5),
+	color-stop(0.80, #FFFFFF)
+);
+}
+
+#header-container { 
+background-image: url(../images/revamp-header-bg.png) !important; background-repeat: repeat-x; margin:0; padding:0;
+}
+
+
+#background-container {  background-image: url(/sites/all/themes/gsb_revamp/images/body-background-transparent-not-front.png); background-position: bottom; background-repeat: no-repeat; 
+}
+#background-container { opacity: 1.0}
+
+
 p { font-family: NewsGothicBT-Roman, sans-serif; font-size: 18px; }
 h1 { font-family: NewsGothicBT-Roman, sans-serif; font-size: 48px; }
 h2 { font-family: NewsGothicBT-Roman, sans-serif; font-size: 38px; }
@@ -26,7 +54,9 @@ li { font-family: NewsGothicBT-Roman, sans-serif; }
 #site-name  { display: none;}
 .navbar-inner { background: none; border: none; -webkit-box-shadow: none; box-shadow: none;  }
 
+
 /* Main Content  ------------------------------------------------------------*/
+#main { margin-bottom: 0px !important}
 
 #main-content { margin-top: 15px;}
 #main-content a { color: #7d8401; border-bottom: 1px dashed #7d8401; }
@@ -36,7 +66,7 @@ li { font-family: NewsGothicBT-Roman, sans-serif; }
 
 /* Header --------------------------------*/
 
-#header { background-image: url(../images/revamp-header-bg.png); background-repeat: repeat-x; margin:0; padding:0; }
+#header { padding: 0 !important; margin: 0 !important; }
 #header #logo { display: block; margin-top: 45px; }
 
 
@@ -125,13 +155,14 @@ background-image: -webkit-gradient(linear,left bottom,left top,color-stop(0.25, 
 
 /* Footer --------------------------------*/
 
-#footer { background-image: url(../images/footer-background.png); clear: both; }
+#footer { background-image: url(../images/footer-background.png); clear: both; margin-top: 0px !important;} 
 #footer-content { }
 #footer h2 { text-indent: -10000px; display: none;}
 #footer #block-menu-menu-footer-menu ul { text-decoration: none; list-style-type: none; list-style-image: none;}
 #footer #block-menu-menu-footer-menu ul li { text-decoration: none; list-style-type: none; list-style-image: none;}
-#footer #block-menu-menu-footer-menu a { color: #8a0000;}
-
+#footer #block-menu-menu-footer-menu a { color: #8a0000; }
+#footer #block-menu-menu-footer-menu { text-transform: uppercase; }
+#footer .block { width: 380px; float: left; display: inline;}
 
 /* e-News Signup ----------------------------- */
 
