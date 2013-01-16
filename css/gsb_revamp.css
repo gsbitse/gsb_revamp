@@ -42,11 +42,11 @@ background-image: -webkit-gradient(linear,left bottom,left top,color-stop(0.50, 
 #main-content p.intro { font-size: 30px;}
 
 /* Header ---------------==================================-----------------*/
-#header { padding: 0 !important; margin: 0 !important; }
+#header { margin-top: 0px; margin-bottom: 0px; margin:0px 30px 30px 0px }
 #header #logo { display: block; margin-top: 45px; }
 
 /* Name and Slogan ----------------------------------------------------------*/
-#name-and-slogan { padding-top: 0px; width: 770px; }
+#name-and-slogan { padding-top: 0px; width: 770px; margin-bottom: 0px; padding-bottom: 0px; }
 #site-slogan { font-size: 1.4em; margin-top: 5px !important;}
 
 /* Primary Navigation --------------------------------------------------------------------*/

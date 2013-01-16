@@ -12,9 +12,9 @@
 </div>
 <!-- /#skipnav -->
 <?php if ($logo || $site_name || $main_menu || $site_slogan || ($page['header']) || ($page['navigation']) || ($search)): ?>
-<div id="header" class="clearfix">
-  
-      <div class="span12">
+<div id="header" class="clearfix row">
+  <div class="container">
+      <div class="row span12 clear-row">
         <?php if ($logo): ?>
         <div id="logo" class="span3"> <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home"> <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" role="presentation" /> </a></div>
         <!-- /#logo -->
@@ -80,7 +80,7 @@
       <?php if ($page['navigation']): ?>
       <div id="navigation" class="span4"> <?php print render($page['navigation']); ?> </div>
       <?php endif; ?>
- 
+ </div>
 </div>
 <!-- /#header -->
 
