@@ -155,15 +155,22 @@ background-image: -webkit-gradient(linear,left bottom,left top,color-stop(0.25, 
 
 /* Footer --------------------------------*/
 
-#footer { background-image: url(../images/footer-background.png); clear: both; margin-top: 0px !important;} 
+#footer { background-image: url(../images/footer-background.png); clear: both; margin-top: 0px !important; padding-top: 45px !important;} 
 #footer-content { }
 #footer h2 { text-indent: -10000px; display: none;}
-#footer #block-menu-menu-footer-menu ul { text-decoration: none; list-style-type: none; list-style-image: none;}
-#footer #block-menu-menu-footer-menu ul li { text-decoration: none; list-style-type: none; list-style-image: none;}
-#footer #block-menu-menu-footer-menu a { color: #8a0000; }
-#footer #block-menu-menu-footer-menu { text-transform: uppercase; }
-#footer .block { width: 380px; float: left; display: inline;}
+#footer #block-menu-menu-footer-menu ul { margin-left: 0px; text-decoration: none; list-style-type: none; list-style-image: none; width:565px; overflow:hidden; }
+#footer #block-menu-menu-footer-menu ul li { text-decoration: none; list-style-type: none; list-style-image: none; line-height:1.5em;
+  
+  display:inline;}
 
+#footer #block-menu-menu-footer-menu li { width: 195px; float: left; margin-right: 73px;}
+#footer #block-menu-menu-footer-menu a { color: #8a0000; font-family: NewsGothicBT-Bold, sans-serif; font-size: 15px; }
+#footer #block-menu-menu-footer-menu { text-transform: uppercase; }
+#footer .block { float: left; display: inline;}
+
+#block-block-1 { width: 300px;}
+#block-block-2 { width: 270px; margin-right: 35px; }
+#block-block-2 h3 { margin: 0; font-family: NewsGothicBT-Bold, sans-serif; font-size: 18px; color: #8a0000; padding-bottom: 5px; border-bottom: 1px solid grey;  }
 /* e-News Signup ----------------------------- */
 
 
