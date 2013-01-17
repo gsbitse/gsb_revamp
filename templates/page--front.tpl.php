@@ -46,11 +46,6 @@
           </div>  
            
 
-           <!-- <?php if ($search): ?>
-              <div id="nav-search">
-                 <?php if ($search): print render($search); endif; ?>
-               </div>
-            <?php endif; ?> -->
        
 
         <?php if ($page['header']): ?>
@@ -128,7 +123,34 @@
                   <div id="breadcrumb"><?php print $breadcrumb; ?></div>
                 <?php endif; ?>
 
-           <?php print render($page['content']); ?> <?php print $feed_icons; ?> </div>
+           <?php print render($page['content']); ?>
+
+            <div id="homepage-feature">
+
+            </div>
+          
+          
+            <div id="homepage-evergreen">
+              <div id="homepage-evergreen-audience">
+                <h3>MBA</h3>
+              </div>
+              <div id="homepage-evergreen-content">
+                <p>Continued innovation in the Leadership Labs allows students more opportunity to practice skill and learn from professional coaches</p>
+              </div>
+            </div>
+
+            <div id="twitter-block">
+
+            </div>
+
+            <div id="homepage-events">
+
+            </div>
+
+            <div id="homepage-footer-upper">
+
+            </div>
+           <?php print $feed_icons; ?> </div>
           
        
         </div>

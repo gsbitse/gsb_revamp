@@ -47,11 +47,7 @@
           </div>  
            
 
-           <!-- <?php if ($search): ?>
-              <div id="nav-search">
-                 <?php if ($search): print render($search); endif; ?>
-               </div>
-            <?php endif; ?> -->
+          
        
 
         <?php if ($page['header']): ?>
