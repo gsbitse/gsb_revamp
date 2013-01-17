@@ -123,7 +123,7 @@ background-image: -webkit-gradient(linear,left bottom,left top,color-stop(0.25, 
 
 
 /* Footer General --------------------------------*/
-#footer { background-image: url(../images/footer-background.png); clear: both; margin-top: 0px !important; padding-top: 35px !important;} 
+#footer { background-image: url(../images/footer-background.png); background-color: white;background-repeat: repeat-x !important; clear: both; margin-top: 0px !important; padding-top: 35px !important;} 
 #footer h2 { text-indent: -10000px; display: none;}
 #footer .block { float: left; display: inline;}
 
@@ -139,13 +139,25 @@ background-image: -webkit-gradient(linear,left bottom,left top,color-stop(0.25, 
 
 /* Footer menu block ----------------------------------------- */
 #footer #block-menu-menu-footer-menu ul { margin-left: 0px; text-decoration: none; list-style-type: none; list-style-image: none; width:565px; overflow:hidden; }
-#footer #block-menu-menu-footer-menu ul li { text-decoration: none; list-style-type: none; list-style-image: none; line-height:1.5em; display:inline;}
+#footer #block-menu-menu-footer-menu ul li {margin-bottom: 10px;	 text-decoration: none; list-style-type: none; list-style-image: none; line-height:1.5em; display:inline;}
 #footer #block-menu-menu-footer-menu li { width: 195px; float: left; margin-right: 73px;}
 #footer #block-menu-menu-footer-menu a { color: #8a0000; font-family: NewsGothicBT-Bold, sans-serif; font-size: 15px; }
 #footer #block-menu-menu-footer-menu { text-transform: uppercase; }
 
 /* Footer e-News Signup block----------------------------- */
 #block-block-1 { width: 300px;}
+#block-block-1 h3 { font-weight: normal; margin: 0; font-family: NewsGothicBT-Bold, sans-serif; font-size: 18px !important; color: #8a0000;}
+#block-block-1 p { font-size: 17px;}
+
+/* Footer Copyright Area -------------------------*/
+#block-block-3 { display: block; width: 100%; border-top: 1px solid #cdcdcd;  margin-bottom: 20px;}
+#copyright-area { margin-bottom: 20px; }
+#copyright-content { float: left; margin-right: 60px }
+#copyright-content p { margin-bottom: 0px; font-size: 14px}
+
+#copyright-links { float: left; }
+#copyright-links ul { list-style-type: none;}
+#copyright-links ul li { color: #8a0000; float: left; margin-right: 30px;}
 
 
 
