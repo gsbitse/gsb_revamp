@@ -50,9 +50,9 @@ background-image: -webkit-gradient(linear,left bottom,left top,color-stop(0.50, 
 #site-slogan { font-size: 1.4em; margin-top: 5px !important;}
 
 /* Primary Navigation --------------------------------------------------------------------*/
-#main-menu { margin-left: 70px !important; margin-right: -75px !important;}
+#main-menu { margin-left: 75px !important; margin-right: -78px !important;}
 #main-menu  ul li { font-size: 17px; width: 112px; height: 64px; background-color: #8a0000;border-right: 1px solid red; padding-right: 1px; color: #fff; float: left; display: block; margin: 0px; padding-top: 14px; padding-left: 10px;list-style-image: none; list-style-type: none;}
-#main-menu  ul li { 
+#main-menu  ul li {  padding-top: 14px !important; padding-left: 10px !important;
 background-image: linear-gradient(bottom, #C50000 50%, #860000 50%);
 background-image: -o-linear-gradient(bottom, #C50000 50%, #860000 50%);
 background-image: -moz-linear-gradient(bottom, #C50000 21%, #860000 60%);
@@ -63,7 +63,7 @@ background-image: -webkit-gradient(linear,left bottom,left top,color-stop(0.21, 
 #main-menu  ul li a {color: #fff;  border-radius: 0px; margin: 0px 25px 0 0; padding: 0px 0px; border-top: 1px solid transparent; text-shadow: none !important;}
 #main-menu  ul li a:hover {background: transparent; text-decoration:none;}
 #main-menu  ul li a.active {background: transparent; box-shadow: none !important; } 
-#main-menu  ul li ul li {display: block; }
+#main-menu  ul li ul li {display: block;}
 #main-menu  ul li ul li a {text-transform: none; text-shadow: none !important; letter-spacing: 2px;}
 #main-menu .navbar-inner { padding-left: 0px !important;}
 
@@ -81,6 +81,7 @@ background-image: -webkit-gradient(linear,left bottom,left top,color-stop(0.21, 
 
 /* Search Form --------------------------------------------------------------------*/
 #header-content { width: 200px;}
+#block-search-form { display: block;}
 #search-block-form { background-color: #e4e4e4; height: 35px; border: 1px solid #d3d3d3 }
 #search-block-form input.btn-search { margin-top: 7px; background-color: transparent; background-image: url(/sites/all/themes/gsb_revamp/images/search-magnifying-glass.png); background-position: left top; text-shadow: none; background-repeat: no-repeat; border: medium none;  box-shadow: none; color: transparent; height: 24px; width:20px; outline: none;}
 #search-block-form input.search-query { background-color: transparent; border: none; width: auto !important; float: left !important; padding: 0;  padding-left: 20px; padding-top: 10px;padding-right: 25px; border-radius: 0px !important; -webkit-border-radius: 0px !important; box-shadow: none; -webkit-box-shadow: none !important;}
