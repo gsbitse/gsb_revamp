@@ -4,6 +4,8 @@ core = 7.x
 version = 1.0
 base theme = gsb_framework
 
+scripts[] = js/revamp-override.js
+
 stylesheets[all][] = css/gsb_revamp.css
 stylesheets[all][] = css/MyFontsWebfontsKit.css
 regions[page_top] = Page: Top
@@ -11,7 +13,7 @@ regions[header] = Header
 regions[help] = Help
 regions[navigation] = Navigation
 regions[highlighted] = Highlighted
-regions[sidebar_first] = First sidebar
+regions[sidebar_primary] = Primary sidebar
 regions[content] = Content: Body
 regions[footer] = Footer
 regions[main_top] = Main: Top

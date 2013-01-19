@@ -91,13 +91,13 @@
     <div id="main-upper" class="row-fluid"> <?php print render($page['main_upper']); ?> </div>
     <?php endif; ?>
     <div id="main-content" class="span12 row clear-row">
-      <?php if ($page['sidebar_first']): ?>
+      <?php if ($page['sidebar_primary']): ?>
       <div id="sidebar-first" class="sidebar span3 clear-row">
-        <div class="row-fluid"><?php print render($page['sidebar_first']); ?></div>
+        <div class="row-fluid"><?php print render($page['sidebar_primary']); ?></div>
       </div>
       <!-- /#sidebar-first -->
       <?php endif; ?>
-      <div id="content">
+      <div id="content" class="span9">
         <div id="content-wrapper">
           <div id="content-head" class="row-fluid">
 
