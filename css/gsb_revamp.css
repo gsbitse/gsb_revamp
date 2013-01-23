@@ -24,7 +24,7 @@ background-image: -ms-linear-gradient(bottom, #f5f5f5 14%, #FFFFFF 79%);
 background-image: -webkit-gradient(linear,left bottom,left top,color-stop(0.50, #f5f5f5),color-stop(0.80, #FFFFFF));}
 
 #header-container { background-image: url(../images/revamp-header-bg.png) !important; background-repeat: repeat-x; margin:0; padding:0; }
-#background-container {  background-image: url(/sites/all/themes/gsb_revamp/images/body-background-transparent-not-front.png); background-position: bottom; background-repeat: no-repeat; }
+#background-container {  background-image: url(../images/body-background-transparent-not-front.png); background-position: bottom; background-repeat: no-repeat; }
 #background-container { opacity: 1.0 }
 
 /* GENERAL LAYOUT ------------------------------------------------------------*/
@@ -83,7 +83,7 @@ background-image: -webkit-gradient(linear,left bottom,left top,color-stop(0.50, 
 #header-content { width: 200px;}
 #block-search-form { display: block;}
 #search-block-form { background-color: #e4e4e4; height: 35px; border: 1px solid #d3d3d3 }
-#search-block-form input.btn-search { margin-top: 7px; background-color: transparent; background-image: url(/sites/all/themes/gsb_revamp/images/search-magnifying-glass.png); background-position: left top; text-shadow: none; background-repeat: no-repeat; border: medium none;  box-shadow: none; color: transparent; height: 24px; width:20px; outline: none;}
+#search-block-form input.btn-search { margin-top: 7px; background-color: transparent; background-image: url(../images/search-magnifying-glass.png); background-position: left top; text-shadow: none; background-repeat: no-repeat; border: medium none;  box-shadow: none; color: transparent; height: 24px; width:20px; outline: none;}
 #search-block-form input.search-query { background-color: transparent; border: none; width: auto !important; float: left !important; padding: 0;  padding-left: 20px; padding-top: 10px;padding-right: 25px; border-radius: 0px !important; -webkit-border-radius: 0px !important; box-shadow: none; -webkit-box-shadow: none !important;}
 #search-block-form input:-moz-placeholder, textarea:-moz-placeholder { color: #414141;}
 #search-block-form input::-webkit-input-placeholder { color: #414141;} 
