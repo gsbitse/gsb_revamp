@@ -129,7 +129,11 @@
          
           <div id="content-body" class="row-fluid"> <?php print render($page['content']); ?> <?php print $feed_icons; ?> </div>
           
-       
+         
+
+  
+
+
         </div>
         <!-- /#content-wrap --> 
       </div>
