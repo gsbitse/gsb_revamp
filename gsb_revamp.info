@@ -8,6 +8,7 @@ scripts[] = js/revamp-override.js
 
 stylesheets[all][] = css/gsb_revamp.css
 stylesheets[all][] = css/MyFontsWebfontsKit.css
+
 regions[page_top] = Page: Top
 regions[header] = Header
 regions[help] = Help
@@ -15,7 +16,14 @@ regions[navigation] = Navigation
 regions[highlighted] = Highlighted
 regions[sidebar_primary] = Primary sidebar
 regions[content] = Content: Body
+regions[upper_footer_firstcolumn] = Upper Footer first column
+regions[upper_footer_secondcolumn] = Upper Footer second column
+regions[upper_footer_thirdcolumn] = Upper Footer third column
 regions[footer] = Footer
+regions[footer_firstcolumn] = Footer first column
+regions[footer_secondcolumn] = Footer second column
+regions[footer_thirdcolumn] = Footer third colum
+regions[footer_copyrights] = Footer copyrights
 regions[main_top] = Main: Top
 regions[main_upper] = Main: Upper
 
