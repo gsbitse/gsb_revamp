@@ -11,7 +11,7 @@
 </div>
 <!-- /#skipnav -->
 <?php if ($logo || $site_name || $main_menu || $site_slogan || ($page['header']) || ($page['navigation']) || ($search)): ?>
-<div id="header" class="clearfix">
+<div id="header" class="clearfix header-region">
   
       <div class="container">
         <?php if ($logo): ?>
@@ -26,15 +26,16 @@
 
 
          <?php if ($main_menu): ?>
-          <div id="main-menu" class="clearfix span6">
+          <div id="main-menu" class="clearfix main-menu">
           
-            <div class="navbar">
-              <div class="navbar-inner">
-                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </a>
+              <div class="site-navigation-content">
+                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> 
+                  <span class="icon-bar"></span> 
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </a>
                 <div class="nav-collapse"><?php print render($main_menu_expanded); ?></div>
               </div>
-            </div>
-         
           </div>
 
         <?php endif; ?>
