@@ -12,7 +12,7 @@
 </div>
 <!-- /#skipnav -->
 <?php if ($logo || $site_name || $main_menu || $site_slogan || ($page['header']) || ($page['navigation']) || ($search)): ?>
-<div id="header" class="clearfix row">
+<div id="header" class="clearfix row header-region">
   <div class="container">
       <div class="row span12 clear-row">
         <?php if ($logo): ?>
@@ -27,15 +27,16 @@
 
 
          <?php if ($main_menu): ?>
-          <div id="main-menu" class="clearfix span6">
+          <div id="main-menu" class="clearfix main-menu">
           
-            <div class="navbar">
-              <div class="navbar-inner">
-                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </a>
+              <div class="site-navigation-content">
+                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> 
+                  <span class="icon-bar"></span> 
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </a>
                 <div class="nav-collapse"><?php print render($main_menu_expanded); ?></div>
               </div>
-            </div>
-         
           </div>
 
         <?php endif; ?>
@@ -45,17 +46,13 @@
            <div id="event-calendar-cta" class="clearfix span2" style="">
             <a href="#">Event Calendar</a>
           </div>  
-           
 
-          
-       
+          <?php if ($page['header']): ?>
+             <div id="header-content" class="row-fluid"><?php print render($page['header']); ?></div>
+          <!-- /#header-content -->
+          <?php endif; ?>
 
-        <?php if ($page['header']): ?>
-           <div id="header-content" class="row-fluid"><?php print render($page['header']); ?></div>
-        <!-- /#header-content -->
-        <?php endif; ?>
-
-      </div>
+         </div>
 
 
         <?php if ($site_slogan): ?>
@@ -81,7 +78,7 @@
 <!-- /#header -->
 
 
-<div id="main" class="clearfix row">
+<div id="main" class="clearfix">
   <div class="container">
    
     <?php if ($page['main_top']): ?>
@@ -90,7 +87,7 @@
     <?php if ($page['main_upper']): ?>
     <div id="main-upper" class="row-fluid"> <?php print render($page['main_upper']); ?> </div>
     <?php endif; ?>
-    <div id="main-content" class="span12 row clear-row">
+    <div id="main-content" class="span12 row clear-row main-content">
       <?php if ($page['sidebar_primary']): ?>
       <div id="sidebar-first" class="sidebar span3 clear-row">
         <div class="row-fluid"><?php print render($page['sidebar_primary']); ?></div>
@@ -130,9 +127,7 @@
           <div id="content-body" class="row-fluid"> <?php print render($page['content']); ?> <?php print $feed_icons; ?> </div>
           
          
-
-  
-
+      
 
         </div>
         <!-- /#content-wrap --> 
@@ -148,9 +143,17 @@
 
 <?php if ($page['footer']): ?>
 <div id="footer" class="clearfix">
-  <div class="container">
-    <div id="footer-content" class="row span12 clear-row"> <?php print render($page['footer']); ?> 
-     
+  <div class="footer-container">
+    <div id="upper-footer-content" class="row span12 clear-row upper-footer">
+      <div class="footer-social span3 clear-row"><?php print render($page['upper_footer_firstcolumn']); ?></div>
+      <div class="footer-links span6"><?php print render($page['upper_footer_secondcolumn']); ?></div>
+      <div class="footer-newsletter span3"><?php print render($page['upper_footer_thirdcolumn']); ?></div>
+    </div>
+    <div id="footer-content" class="row span12 clear-row main-footer">
+      <div class="footer-social span3 clear-row"><?php print render($page['footer_firstcolumn']); ?></div>
+      <div class="footer-links span6"><?php print render($page['footer_secondcolumn']); ?></div>
+      <div class="footer-newsletter span3"><?php print render($page['footer_thirdcolumn']); ?></div>
+      <div class="footer-copyrights span12 clear-row"><?php print render($page['footer_copyrights']); ?></div> 
     </div>
   </div>
 </div>
