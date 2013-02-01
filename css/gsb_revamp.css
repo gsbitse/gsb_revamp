@@ -391,3 +391,78 @@ ul.menu {
 	.upcoming-events-action { margin:26px; background-color: #739d95; padding: 10px; padding-left: 15px;}
 	.upcoming-events-action a { border-bottom: 0px !important; color: #fff !important; font-size: 15px; }
 
+/* Spotlights */
+
+.page-node #content-body .spotlight .field {
+ margin-bottom:10px;
+}
+
+.spotlight {
+ position:relative;
+}
+
+.spotlight .spotlight-border {
+ position:absolute;
+ display:block;
+ height:10px;
+ width:95px;
+ background:#990000;
+ top:3px;
+ left:25px;
+}
+
+.spotlight .spotlight-type {
+ font-size:13px;
+ line-height:1em;
+ font-family: NewsGothicBT-Roman, sans-serif;
+ color:#666;
+ display:block;
+ margin-bottom:12px;
+}
+
+.spotlight h4 {
+ color:#900;
+ margin:0 0 2px 0;
+}
+
+.spotlight h5 {
+ font-family: NewsGothicBT-Light, sans-serif;
+ font-size:20px;
+ line-height:1.2em;
+ margin:0 0 4px 0;
+}
+
+.spotlight p {
+ color:#555;
+ font-size:14px;
+ line-height:18px;
+ margin:0;
+}
+
+.spotlight .spotlight-story {
+ max-height:90px;
+ overflow:hidden;
+}
+
+.spotlight a.show-more {
+ border:0;
+ font-family:NewsGothicBT-Bold, sans-serif;
+}
+
+.spotlight a.show-more span {
+ width:12px;
+ height:10px;
+ display: block;
+ float:left;
+ margin:4px 4px 0 0;
+ background:url('../images/spotlight-arrow.png') no-repeat top left;
+}
+
+.span8 .spotlight {
+ overflow:hidden;
+}
+
+.span8 .spotlight img {
+ float:left;
+ margin-right:15px;
+}
