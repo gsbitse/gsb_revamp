@@ -10,10 +10,10 @@
 			
 			// Update CSS classes based on window load
 			$(window).load(function() {
-				var width = $(window).width();
+				var width = $(window).width(),
+						documentBody = $('body');
 
 				if ((width >= 751) && (width < 963)) {
-					var documentBody = $('body');
 				documentBody.addClass('tablet-vew');
 				documentBody.find('.two-sidebars #sidebar-first').removeClass('span3').addClass('span4').
 				end().find('.two-sidebars #sidebar-second').removeClass('span3').addClass('span12').
