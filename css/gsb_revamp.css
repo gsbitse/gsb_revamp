@@ -466,3 +466,59 @@ ul.menu {
  float:left;
  margin-right:15px;
 }
+
+/* gsb person teaser */
+.page-node #content-body .gsb-person-teaser .field,
+.page-node #content-body .field-name-field-person-entity-ref {
+ margin-bottom:0;
+}
+
+.view-gsb-person-fpp-view.view-display-id-block_unformatted .views-row {
+ float:left;
+ clear:none;
+}
+
+.gsb-person-feature-row {
+ padding-top:17px;
+ margin-bottom:0px;
+border-top: 1px #e4e4e4 solid;
+}
+
+.gsb-person-teaser {
+font-family: 'NewsGothicBT-Roman';
+}
+
+.view-display-id-block_unformatted .gsb-person-teaser {
+float:left;
+margin:0 29px 20px 0;
+}
+
+.gsb-person-teaser .field-item img {
+ width:168px;
+ max-width: 168px;
+ height:auto;
+ margin:0;
+ float:none;
+ margin-bottom:14px;
+}
+
+.gsb-person-teaser a {
+ border:0;
+ color:#800;
+ display:block;
+}
+
+.gsb-person-teaser a:hover{
+ border:0;
+}
+
+.gsb-person-teaser a.person-teaser-name {
+ margin-bottom:3px;
+ font-family: 'NewsGothicBT-Bold';
+ font-size:16px;
+}
+.gsb-person-teaser .associate-dean {
+ display:block;
+ margin-bottom:-2px;
+ color:#444;
+}
