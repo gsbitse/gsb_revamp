@@ -37,8 +37,10 @@
       }
     ?>
   </div>
+  <?php if (!empty($field_gsb_spotlight_body)) { ?>
   <div class="spotlight-story">
-  	<p><?php print $field_gsb_spotlght_desc_quote[0]['safe_value']; ?></p>
+  	<p><?php print $field_gsb_spotlight_body[0]['safe_value']; ?></p>
 	</div>
-	<a href="javascript:void(0)" class="show-more"><span></span>Show More</a>
+	<a href="javascript:void(0)" class="show-more"><span>Show More</span></a>
+  <?php } ?>
 </div>

@@ -440,7 +440,7 @@ ul.menu {
 }
 
 .spotlight .spotlight-story {
- max-height:90px;
+ max-height:88px;
  overflow:hidden;
 }
 
@@ -450,12 +450,8 @@ ul.menu {
 }
 
 .spotlight a.show-more span {
- width:12px;
- height:10px;
- display: block;
- float:left;
- margin:4px 4px 0 0;
- background:url('../images/spotlight-arrow.png') no-repeat top left;
+ padding-left: 16px;
+ background:url('../images/spotlight-arrow.png') no-repeat center left;
 }
 
 .span8 .spotlight {
@@ -521,4 +517,44 @@ margin:0 29px 20px 0;
  display:block;
  margin-bottom:-2px;
  color:#444;
+}
+
+/* ctools */
+.modal-content .field-widget-options-buttons input {
+ float:left;
+}
+
+.modal-content .field-widget-options-buttons .form-type-radio label {
+ clear:none;
+ padding-left:20px;
+}
+
+#modal-content .form-actions input {
+ margin:10px 0 0 10px;
+}
+
+#modal-content .fieldset-wrapper {
+ padding-top:3px;
+}
+
+#modal-content fieldset legend {
+   height:1.5em;
+   line-height:1.1em;
+}
+
+#modal-content .fieldset-wrapper {
+ margin-top:1.2em;
+}
+
+.modal-content .field-multiple-table {
+ width:100%;
+}
+
+.modal-content .field-multiple-table  th label {
+ padding-left:8px;
+ margin-bottom:0;
+}
+
+.modal-content .field-multiple-table .form-submit {
+ margin-top:5px;
 }
