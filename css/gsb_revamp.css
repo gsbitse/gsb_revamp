@@ -399,6 +399,7 @@ ul.menu {
 
 .spotlight {
  position:relative;
+ clear: both;
 }
 
 .spotlight .spotlight-border {
@@ -454,11 +455,13 @@ ul.menu {
  background:url('../images/spotlight-arrow.png') no-repeat center left;
 }
 
-.span8 .spotlight {
+.span8 .spotlight,
+.span12 .spotlight {
  overflow:hidden;
 }
 
-.span8 .spotlight img {
+.span8 .spotlight img,
+.span12 .spotlight img {
  float:left;
  margin-right:15px;
 }
