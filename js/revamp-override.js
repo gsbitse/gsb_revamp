@@ -103,10 +103,10 @@
 				    $this.click(function() { 
 					    var $this = $(this);
 					    if (!$this.hasClass('active')) {
-					      $this.html('<span></span>Show Less');
+					      $this.html('<span>Show Less</span>');
 					      spotlightStory.animate({'max-height': storyContent}, 350);
 					    } else {
-					      $this.html('<span></span>Show More');
+					      $this.html('<span>Show More</span>');
 					      spotlightStory.animate({'max-height': visibleHeight}, 350);
 					    }
 					    $this.toggleClass('active');
