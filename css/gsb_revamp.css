@@ -641,7 +641,7 @@ margin:0 29px 20px 0;
  -moz-border-radius: 10px;
  -ms-border-radius: 10px;
  border-radius: 10px;
- text-shadow: 0 1px 1px #fff;
+ box-shadow: 0 2px 1px rgba(255,255,255,0.75);
 }
 
 .slider-navigation li a:hover,
@@ -716,5 +716,5 @@ background: #739d95;
 }
 
 .panopoly-spotlight-info h2 a:hover i {
-background-position: bottom; right;
+background-position: bottom right;
 }
