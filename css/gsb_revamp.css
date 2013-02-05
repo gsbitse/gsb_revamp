@@ -607,12 +607,18 @@ margin:0 29px 20px 0;
  margin-left:-71px;
  background:#cce0dc;
  background:rgba(177,209,202,0.5);
+ background: url('../images/slider_style1.png') repeat-y top right;
+}
+
+.span12 .field-type-gsb-slideshow .panopoly-spotlight-wrapper.style-2 {
+ background: url('../images/slider_style2.png') repeat-y top right;
 }
 
 .slider-navigation {
  position:absolute;
  bottom:14px;
  right:25px;
+ z-index: 105;
  margin-bottom:0;
 }
 
@@ -627,7 +633,7 @@ margin:0 29px 20px 0;
  width:17px;
  margin-left:16px;
  overflow:hidden;
- line-height:50px;
+ line-height:60px;
  text-decoration:none;
  border:0 none;
  background:#c2b7a1;
@@ -638,7 +644,8 @@ margin:0 29px 20px 0;
  text-shadow: 0 1px 1px #fff;
 }
 
-.slider-navigation li a:hover {
+.slider-navigation li a:hover,
+.slider-navigation li.active a {
  border:none;
  background:#887e6e;
 }
@@ -670,6 +677,7 @@ margin:0 29px 20px 0;
 
 .panopoly-spotlight-info h2 a:hover {
  border:none;
+ text-decoration: underline;
 }
 
 .panopoly-spotlight-info p {
@@ -689,6 +697,24 @@ margin:0 29px 20px 0;
  color:#fff;
 }
 
-.panopoly-spotlight-info a.slider-btn.style-1 {
+.panopoly-spotlight-info a.slider-btn.style-1,
+.panopoly-spotlight-info a.slider-btn.style-2:hover {
 background: #754760;
+}
+
+.panopoly-spotlight-info a.slider-btn.style-1:hover,
+.panopoly-spotlight-info a.slider-btn.style-2 {
+background: #739d95;
+}
+
+.panopoly-spotlight-info h2 a i {
+ width:10px;
+ height:10px;
+ padding:1px 9px;
+ margin-left:5px;
+ background:url('../images/slider-title-icon.png') no-repeat top right;
+}
+
+.panopoly-spotlight-info h2 a:hover i {
+background-position: bottom; right;
 }
