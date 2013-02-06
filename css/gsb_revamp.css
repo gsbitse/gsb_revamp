@@ -268,8 +268,8 @@ ul.menu {
 	#copyright-links ul li { color: #8a0000; float: left; margin-right: 30px;}
 
 /* Front Specific ---------------------------------------------------- */
-	.front #block-system-main { display: none;}
-	.front #content-head { display: none;}
+	 /*.front #block-system-main { display: none;}
+	.front #content-head { display: none;} */
 	.front a { color: #8a0000;}
 
 	.front #main { padding-top: 15px; }
@@ -397,6 +397,10 @@ ul.menu {
  margin-bottom:10px;
 }
 
+.page-node #content-body .span8 .spotlight .field {
+ float:left;
+}
+
 .spotlight {
  position:relative;
  clear: both;
@@ -443,6 +447,11 @@ ul.menu {
 .spotlight .spotlight-story {
  max-height:88px;
  overflow:hidden;
+ clear: both;
+}
+
+.span8 .spotlight .spotlight-story {
+ clear:none;
 }
 
 .spotlight a.show-more {
@@ -452,7 +461,24 @@ ul.menu {
 
 .spotlight a.show-more span {
  padding-left: 16px;
- background:url('../images/spotlight-arrow.png') no-repeat center left;
+ background:url('../images/spotlight-arrow.png') no-repeat 0 2px;
+}
+
+.spotlight a.show-more:hover span {
+	background-position: 0 -13px;
+}
+
+.spotlight a.show-more.active span {
+background-image: url('../images/spotlight-arrow-reversed.png');
+background-position: -1px -13px;
+}
+
+.spotlight a.show-more.active:hover span {
+background-position: 0 2px;
+}
+
+.spotlight .field-name-field-gsb-spotlight-image-video {
+ overflow: hidden;
 }
 
 .span8 .spotlight,
@@ -596,7 +622,7 @@ margin:0 29px 20px 0;
 .span12 .field-type-gsb-slideshow .field-item img {
  float:left;
  width:570px;
- height:365px;
+ height:auto;
 }
 
 .span12 .field-type-gsb-slideshow .panopoly-spotlight-wrapper {
@@ -612,6 +638,62 @@ margin:0 29px 20px 0;
 
 .span12 .field-type-gsb-slideshow .panopoly-spotlight-wrapper.style-2 {
  background: url('../images/slider_style2.png') repeat-y top right;
+}
+
+.span12 .field-type-gsb-slideshow {
+height: 365px;
+}
+
+.span8 .field-type-gsb-slideshow .panopoly-spotlight-wrapper {
+ width:515px;
+ height:170px;
+ padding: 0 25px 57px;
+ margin-left:-565px;
+ margin-top:138px;
+ background:rgba(177,209,202,0.5);
+}
+
+.span8 .panopoly-spotlight-info {
+ width:91%;
+ bottom:47px;
+}
+
+.span8 .panopoly-spotlight-info a.slider-btn {
+ width:50%;
+}
+
+.span8 .field-type-gsb-slideshow {
+ height:350px;
+ overflow:hidden;
+}
+
+.span8 .field-type-gsb-slideshow .panopoly-spotlight-wrapper.style-2 {
+ background:rgba(177,209,202,0.7);
+}
+
+.span8 .field-type-gsb-slideshow .field-item img {
+ width:100%;
+ height:auto;
+}
+
+.span4 .field-type-gsb-slideshow .field-item img {
+ width:auto;
+ height:auto;
+}
+
+.span4 .field-type-gsb-slideshow .panopoly-spotlight-wrapper {
+ display:none;
+}
+
+.span4 .slider-navigation li a {
+ -webkit-box-shadow: none;
+ -moz-box-shadow: none;
+ -ms-box-shadow: none;
+ box-shadow: none;
+}
+
+.span4 .field-type-gsb-slideshow {
+height: 216px;
 }
 
 .slider-navigation {
@@ -677,7 +759,6 @@ margin:0 29px 20px 0;
 
 .panopoly-spotlight-info h2 a:hover {
  border:none;
- text-decoration: underline;
 }
 
 .panopoly-spotlight-info p {
@@ -717,4 +798,45 @@ background: #739d95;
 
 .panopoly-spotlight-info h2 a:hover i {
 background-position: bottom right;
+}
+
+/* front slider */
+
+.front-slider-pane .field-type-gsb-slideshow {
+ height:261px;
+}
+
+ .front-slider-pane .field-type-gsb-slideshow .field-item img {
+ width:542px;
+}
+
+.front-slider-pane .field-type-gsb-slideshow .panopoly-spotlight-wrapper,
+.front-slider-pane .field-type-gsb-slideshow .panopoly-spotlight-wrapper.style-2 {
+ width:443px;
+ height:198px;
+ padding:0 25px 64px 130px;
+ margin-left: -277px;
+ background: url('../images/front-slider-bg.png') repeat-y top right;
+}
+
+.front-slider-pane .panopoly-spotlight-info {
+ position:static;
+ width:100%;
+ padding-top:68px;
+}
+
+.front-slider-pane .panopoly-spotlight-info  a.slider-btn {
+ background:none;
+ color:#900;
+ font-weight:normal;
+ position:absolute;
+ left:130px;
+ top:28px;
+ height:1em;
+ line-height:1.4em;
+ padding-left:0;
+}
+
+.ui-sortable .field-name-field-gsb-slideshow .panopoly-spotlight-wrapper {
+ margin-left:-77px; /* less width for panel editing*/
 }
