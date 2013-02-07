@@ -12,3 +12,17 @@ function gsb_revamp_form_alter(&$form, &$form_state, $form_id) {
   }
 }
 
+function gsb_revamp_preprocess_panels_pane(&$vars) {
+if (!empty($vars['content']['#entity_type'])) {
+	$varscontent = $vars['content'];
+ if ($varscontent['#entity_type'] == 'fieldable_panels_pane') {
+ 	if (!empty($varscontent['field_display_style'])) {
+ 		$vars['classes_array'][] = $varscontent['field_display_style']['#items'][0]['value'];
+ 	}
+ }
+}
+ /* 
+ == 'fieldable_panels_pane
+ dpm($vars['content']);
+ $vars['classes_array'][] = $vars['content']['field_my_field']['#items'][0]['value']; */ 
+}

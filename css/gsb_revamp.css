@@ -27,11 +27,12 @@
 		background-image: -webkit-gradient(linear,left bottom,left top,color-stop(0.4, #C50000),color-stop(0.9, #860000));  }
 
 
-	.designed-box {
+	.designed-box,
+	.person-list-view {
 		margin-bottom: 30px; 
 		padding: 26px;
 		border: 2px solid white; 
-		border-top: 0px;  
+		border-top: 1px #eee solid;  
 		background-color: #ccc; 
 		-webkit-box-shadow: 0px 1px 4px #e4e4e4;
 		-moz-box-shadow: 0px 1px 4px #e4e4e4;
@@ -268,8 +269,8 @@ ul.menu {
 	#copyright-links ul li { color: #8a0000; float: left; margin-right: 30px;}
 
 /* Front Specific ---------------------------------------------------- */
-	.front #block-system-main { display: none;}
-	.front #content-head { display: none;} 
+	 /*.front #block-system-main { display: none;}
+	.front #content-head { display: none;} */
 	.front a { color: #8a0000;}
 
 	.front #main { padding-top: 15px; }
@@ -492,100 +493,126 @@ background-position: 0 2px;
  margin-right:15px;
 }
 
-/* gsb person teaser */
-.page-node #content-body .gsb-person-teaser .field,
-.page-node #content-body .field-name-field-person-entity-ref {
- margin-bottom:0;
+/* gsb person list */
+
+.pane-bundle-gsb-person-fpp .pane-title {
+ color:#222;
+ font-size:25px;
+ font-family: 'NewsGothicBT-Demi';
+ margin: 10px 0 30px 0;
 }
 
-.view-gsb-person-fpp-view.view-display-id-block_unformatted .views-row {
+.person-list-view {
+ position: relative;
+}
+
+.person-list-view .pane-title {
+ margin:0 0 18px 0;
+ font-size:20px;
+ font-family: 'NewsGothicBT-Bold', sans-serif;
+}
+
+.view-id-gsb_person_fpp_view.view-display-id-block_unformatted .views-row {
  float:left;
  clear:none;
 }
 
-.gsb-person-feature-row {
- padding-top:17px;
- margin-bottom:0px;
-border-top: 1px #e4e4e4 solid;
+.view-id-gsb_person_fpp_view.view-display-id-block_unformatted .views-row:nth-child(3n+1) {
+ clear: both;
+}
+
+.view-id-gsb_person_fpp_view.view-display-id-block_table .views-row {
+ margin-bottom: 0;
+}
+
+.views-row:nth-child(3n) .gsb-person-teaser {
+ margin-right: 0;
 }
 
 .gsb-person-teaser {
-font-family: 'NewsGothicBT-Roman';
+ width:168px;
+ float:left;
+ margin:0 29px 20px 0;
+ font-family: 'NewsGothicBT-Roman', sans-serif;
 }
 
-.view-display-id-block_unformatted .gsb-person-teaser {
-float:left;
-margin:0 29px 20px 0;
+.gsb-person-featured {
+ padding-top:17px;
+ margin-bottom:0px;
+ border-top: 1px #e4e4e4 solid;
+ margin-bottom: 20px;
+ font-size: 17px;
+ font-family: 'NewsGothicBT-Demi', sans-serif;
+ overflow: hidden;
 }
 
-.gsb-person-teaser .field-item img {
+.gsb-person-teaser img,
+.gsb-person-featured  img{
  width:168px;
  max-width: 168px;
  height:auto;
- margin:0;
- float:none;
- margin-bottom:14px;
 }
 
-.gsb-person-teaser a {
+.gsb-person-featured .person-image {
+float: left;
+margin-right: 21px;
+}
+
+.gsb-person-teaser a,
+.gsb-person-featured a {
  border:0;
  color:#800;
  display:block;
 }
 
-.gsb-person-teaser a:hover{
+.gsb-person-teaser a:hover,
+.gsb-person-featured a:hover{
  border:0;
 }
 
-.gsb-person-teaser a.person-teaser-name {
+.gsb-person-teaser a.person-teaser-name,
+.gsb-person-featured a.person-teaser-name {
  margin-bottom:3px;
- font-family: 'NewsGothicBT-Bold';
+ font-family: 'NewsGothicBT-Demi', sans-serif;
  font-size:16px;
+ display: block;
+ margin-top: 13px;
 }
-.gsb-person-teaser .associate-dean {
+
+.gsb-person-featured a.person-teaser-name {
+ margin-top: 0;
+ font-size: 18px;
+ font-family: 'NewsGothicBT-Bold', sans-serif;
+}
+
+.gsb-person-teaser .person-title {
  display:block;
  margin-bottom:-2px;
  color:#444;
 }
 
-/* ctools */
-.modal-content .field-widget-options-buttons input {
- float:left;
+.gsb-person-featured .person-title {
+ font-size: 18px;
+ margin: 1px 0 15px 0;
+ display: block;
 }
 
-.modal-content .field-widget-options-buttons .form-type-radio label {
- clear:none;
- padding-left:20px;
+.gsb-person-featured .person-quote {
+ font-family: 'NewsGothicBT-Roman', sans-serif;
+ font-size: 16px;
+ line-height: 22px;
+ color: #333;
+ padding-left: 190px;
 }
 
-#modal-content .form-actions input {
- margin:10px 0 0 10px;
-}
-
-#modal-content .fieldset-wrapper {
- padding-top:3px;
-}
-
-#modal-content fieldset legend {
-   height:1.5em;
-   line-height:1.1em;
-}
-
-#modal-content .fieldset-wrapper {
- margin-top:1.2em;
-}
-
-.modal-content .field-multiple-table {
- width:100%;
-}
-
-.modal-content .field-multiple-table  th label {
- padding-left:8px;
- margin-bottom:0;
-}
-
-.modal-content .field-multiple-table .form-submit {
- margin-top:5px;
+.top-blue-long-border {
+ display:block;
+ height:9px;
+ width:90.5%;
+ background:#aac4bf;
+ position:absolute;
+ top:0px;
+ left:26px; 
 }
 
 /* slideshow block */

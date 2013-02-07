@@ -1,0 +1,7 @@
+.views-row:nth-child(3n) .gsb-person-teaser {
+	margin-right: 0;
+}
+
+.view-id-gsb_person_fpp_view.view-display-id-block_unformatted .views-row:nth-child(3n+1) {
+	clear: both;
+}

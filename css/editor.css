@@ -1,0 +1,60 @@
+/* ctools */
+.modal-content .field-widget-options-buttons input {
+ float:left;
+}
+
+.modal-content .field-widget-options-buttons .form-type-radio label {
+ clear:none;
+ padding-left:20px;
+}
+
+#modal-content .form-actions input {
+ margin:10px 0 0 10px;
+}
+
+#modal-content .fieldset-wrapper {
+ padding-top:3px;
+}
+
+#modal-content fieldset legend {
+ height:1.5em;
+ line-height:1.1em;
+}
+
+#modal-content .fieldset-wrapper {
+ margin-top:1.2em;
+}
+
+.modal-content .field-multiple-table {
+ width:100%;
+}
+
+.modal-content .field-multiple-table  th label {
+ padding-left:8px;
+ margin-bottom:0;
+}
+
+.modal-content .field-multiple-table .form-submit {
+ margin-top:5px;
+}
+
+/* node add */
+.page-node-add .form-type-radio input {
+ float:left;
+ margin-right:5px;
+ margin-top:3px;
+}
+
+.page-node-add-gsb-person .field-name-field-first-name,
+.page-node-add-gsb-person .field-name-field-url {
+ float:left;
+ margin-right:20px;
+}
+
+.page-node-add-gsb-person .field-name-field-company {
+ clear:both;
+}
+
+.page-node-add-gsb-person .field-name-field-sunetid {
+ float:left;
+}

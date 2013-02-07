@@ -43,24 +43,24 @@ $headshotstyle = array(
 	);
 ?>
 
-<div class="gsb-person-teaser">
-	<?php if(!empty($headshot)) { ?>
-	<div class="person-image"><?php print theme_image_style($headshotstyle); ?></div>
-	<?php } ?>
-	<div class="person-description">
+<div class="gsb-person-featured">
 <a class="person-teaser-name" href="/node/<?php print $personnid ?>"><?php print $first_name . ' ' . $last_name ?></a>
 <span class="person-title"><?php print $persontitle ?></span>
-<a href="/taxonomy/term/<?php print $persondep ?>"><?php print taxonomy_term_load($persondep)->name ?></a>
+  <div class="person-description">
+  <?php if(!empty($headshot)) { ?>
+    <div class="person-image"><?php print theme_image_style($headshotstyle); ?></div>
+  <?php } ?>
+  <p class="person-quote"><?php print $description ?></p>
 </div>
 </div>
-<?php /*  foreach ($fields as $id => $field):
+
+<?php /* foreach ($fields as $id => $field):
    if (!empty($field->separator)):
-     print $field->separator; 
+     print $field->separator;
    endif;
 
    print $field->wrapper_prefix;
      print $field->label_html;
-      print $field->content;
+    print $field->content;
    print $field->wrapper_suffix;
- endforeach; 
-*/ ?>
+ endforeach; */ ?>

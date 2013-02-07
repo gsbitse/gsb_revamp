@@ -7,6 +7,7 @@ base theme = gsb_framework
 scripts[] = js/revamp-override.js
 
 stylesheets[all][] = css/gsb_revamp.css
+stylesheets[all][] = css/editor.css
 stylesheets[all][] = css/MyFontsWebfontsKit.css
 
 regions[page_top] = Page: Top
@@ -28,4 +29,11 @@ regions[main_top] = Main: Top
 regions[main_upper] = Main: Upper
 
 regions[page_bottom] = Page: Bottom
+
+
+
+; Information added by drush on 2013-02-07
+version = "master-dev"
+project = "gsb_revamp"
+datestamp = "1360258168"
 
