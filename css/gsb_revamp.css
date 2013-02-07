@@ -268,8 +268,8 @@ ul.menu {
 	#copyright-links ul li { color: #8a0000; float: left; margin-right: 30px;}
 
 /* Front Specific ---------------------------------------------------- */
-	 /*.front #block-system-main { display: none;}
-	.front #content-head { display: none;} */
+	.front #block-system-main { display: none;}
+	.front #content-head { display: none;} 
 	.front a { color: #8a0000;}
 
 	.front #main { padding-top: 15px; }
