@@ -594,6 +594,10 @@ margin:0 29px 20px 0;
  margin-bottom:0;
 }
 
+.field-type-gsb-slideshow .field-items {
+	position: relative;
+}
+
 .field-type-gsb-slideshow .field-items>.field-item {
  float:left;
 }
@@ -700,7 +704,7 @@ height: 216px;
  position:absolute;
  bottom:14px;
  right:25px;
- z-index: 105;
+ z-index: 120;
  margin-bottom:0;
 }
 
@@ -806,8 +810,12 @@ background-position: bottom right;
  height:261px;
 }
 
- .front-slider-pane .field-type-gsb-slideshow .field-item img {
+.front-slider-pane .field-type-gsb-slideshow .field-item img {
  width:542px;
+}
+
+.front-slider-pane .field-type-gsb-slideshow .field-item.active {
+	top: 0;
 }
 
 .front-slider-pane .field-type-gsb-slideshow .panopoly-spotlight-wrapper,
