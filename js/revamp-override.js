@@ -117,6 +117,16 @@
     }
   }
 
+  Drupal.behaviors.button_behavior = {
+    attach: function (context, settings) {
+    	$('.video-play-icon').click(function () {
+    		$(this).prev().click();
+    	})
+    }
+  }
+
+  
+
 }(jQuery));
 
 
