@@ -413,7 +413,7 @@ ul.menu {
  height:10px;
  width:95px;
  background:#990000;
- top:3px;
+ top:0px;
  left:25px;
 }
 
@@ -512,16 +512,16 @@ background-position: 0 2px;
  font-family: 'NewsGothicBT-Bold', sans-serif;
 }
 
-.view-id-gsb_person_fpp_view.view-display-id-block_unformatted .views-row {
+.view-id-gsb_person_fpp_view.view-display-id-grid .views-row {
  float:left;
  clear:none;
 }
 
-.view-id-gsb_person_fpp_view.view-display-id-block_unformatted .views-row:nth-child(3n+1) {
+.view-id-gsb_person_fpp_view.view-display-id-grid .views-row:nth-child(3n+1) {
  clear: both;
 }
 
-.view-id-gsb_person_fpp_view.view-display-id-block_table .views-row {
+.view-id-gsb_person_fpp_view.view-display-id-block_list .views-row {
  margin-bottom: 0;
 }
 
@@ -532,7 +532,7 @@ background-position: 0 2px;
 .gsb-person-teaser {
  width:168px;
  float:left;
- margin:0 29px 20px 0;
+ margin:0 34px 20px 0;
  font-family: 'NewsGothicBT-Roman', sans-serif;
 }
 
@@ -603,6 +603,7 @@ margin-right: 21px;
  line-height: 22px;
  color: #333;
  padding-left: 190px;
+ margin-bottom: 0;
 }
 
 .top-blue-long-border {
@@ -615,9 +616,14 @@ margin-right: 21px;
  left:26px; 
 }
 
+.views-row-last .gsb-person-featured {
+ margin-bottom: 0;
+}
+
 /* slideshow block */
 
-.page-node #content-body .field.field-type-gsb-slideshow {
+.page-node #content-body .field.field-type-gsb-slideshow,
+.page-node #content-body .field.field-name-field-gsb-video-media {
  margin-bottom:0;
 }
 
@@ -727,12 +733,17 @@ height: 365px;
 height: 216px;
 }
 
-.slider-navigation {
+.nav-circles {
  position:absolute;
  bottom:14px;
  right:25px;
  z-index: 120;
  margin-bottom:0;
+}
+
+.slider-navigation {
+float: left;
+margin: 0 16px 0 0;
 }
 
 .slider-navigation li {
@@ -762,6 +773,55 @@ height: 216px;
  border:none;
  background:#887e6e;
 }
+
+.slide-arrow {
+ float:left;
+ width:11px;
+ height:14px;
+ background: url('../images/slider_arrows_small.png') no-repeat top left;
+ cursor: pointer;
+ margin-top: 2px;
+}
+
+.slide-arrow.slider-right {
+	background-position: top right;
+}
+
+.slide-arrow.slider-left:hover {
+	background-position: bottom left;
+}
+
+.slide-arrow.slider-right:hover {
+	background-position: bottom right;
+}
+
+.large-slide-left,
+.large-slide-right {
+	width: 60px;
+	height: 60px;
+	display: none;
+	position: absolute;
+	top: 50%;
+	margin-top: -30px;
+	background: url('../images/slider_arrow_left.png') no-repeat top left;
+	z-index: 120;
+	cursor: pointer;
+}
+
+.large-slide-left {
+	left: 20px;
+}
+
+.large-slide-right {
+	background: url('../images/slider_arrow_right.png') no-repeat top left;
+ right: 20px;
+}
+
+.pane-bundle-gsb-slideshow-fpp:hover .large-slide-left,
+.pane-bundle-gsb-slideshow-fpp:hover .large-slide-right {
+	display: block;
+}
+/* spotlight */
 
 .panopoly-spotlight-wrapper {
  position:relative;
@@ -824,11 +884,11 @@ background: #739d95;
  height:10px;
  padding:1px 9px;
  margin-left:5px;
- background:url('../images/slider-title-icon.png') no-repeat top right;
+ background:url('../images/slider_double_red.png') no-repeat 0 4px;
 }
 
 .panopoly-spotlight-info h2 a:hover i {
-background-position: bottom right;
+ background:url('../images/slider_double_blue.png') no-repeat 0 4px;
 }
 
 /* front slider */
@@ -874,4 +934,53 @@ background-position: bottom right;
 
 .ui-sortable .field-name-field-gsb-slideshow .panopoly-spotlight-wrapper {
  margin-left:-77px; /* less width for panel editing*/
+}
+
+/* video block */
+.span4 .gsb-video .gsb-video-image img {
+ width:276px;
+ display:block;
+}
+
+.span8 .media-youtube-outer-wrapper {
+ width:568px !important;
+ height:auto !important;
+ margin:-26px 0 15px -26px;
+}
+
+.span4 .media-youtube-outer-wrapper,
+.span8 .gsb-video .gsb-video-image {
+ display:none;
+}
+
+.span4 a.video-title,
+.span4 a.video-title:hover {
+ border: none;
+}
+
+.gsb-video h4 {
+ margin: 0 0 6px 0;
+ font-family: 'NewsGothicBT-Bold', sans-serif;
+ font-weight:normal;
+}
+
+.gsb-video p {
+ font-size: 14px;
+ color: #444;
+}
+
+.span4 a.video-btn {
+ background:#739d95;
+ display:block;
+ padding-left:14px;
+ color:#fff;
+ line-height:33px;
+ height:29px;
+ border:0;
+ font-family: 'NewsGothicBT-Bold', sans-serif;
+}
+
+.span4 a.video-btn:hover {
+ border:none;
+ color: #fff;
 }

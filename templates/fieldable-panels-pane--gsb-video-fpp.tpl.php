@@ -1,4 +1,5 @@
-<div class="designed-box gsb-video">
+<?php $videolink = '/video'; ?>
+<div class="gsb-video">
   <span class="gsb-video-border"></span>
   <div class="gsb-video-image">
 
@@ -38,23 +39,25 @@
 
     ?>
   </div>
-</div>
 
-<div>
-  <?php
+<div class="designed-box">
+<div class="rendered-video"><?php
 
     // Print the video player
-
     if ($field_gsb_video_video != null) {
       $video_player = file_view($file, "default");
       print render($video_player);
-    }
-
-    // Print the video description
-
+    } ?>
+</div>
+<h4><a class="video-title" href="<?php print $videolink ?>"><?php 
+  if (isset($variables['field_video_title'][0]['safe_value'])) {
+    print $variables['field_video_title'][0]['safe_value'];
+  } ?></a></h4>
+<p><?php 
     if (isset($variables['field_video_description'][0]['safe_value'])) {
       print $variables['field_video_description'][0]['safe_value'];
     }
-
-  ?>
+ ?></p>
+<a href="<?php print $videolink ?>" class="video-btn">View all video content</a>
+</div>
 </div>
