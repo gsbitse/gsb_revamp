@@ -28,7 +28,8 @@
 
 
 	.designed-box,
-	.person-list-view {
+	.person-list-view,
+	.pane-gsb-event-sidebar {
 		margin-bottom: 30px; 
 		padding: 26px;
 		border: 2px solid white; 
@@ -1015,4 +1016,62 @@ margin-top:-30px;
 margin-left:-30px;
 background:url('../images/video_play.png') no-repeat top left;
 cursor: pointer;
+}
+
+/* events */
+
+.pane-gsb-event-sidebar .blue-small-border {
+ display:block;
+ height:9px;
+ width:26px;
+ background:#aac4bf;
+ margin-bottom:5px;
+ margin-left:-27px;
+}
+
+.pane-gsb-event-sidebar p {
+ font-size: 14px;
+ line-height: 18px;
+ color: #333;
+ font-family: 'NewsGothicBT-Roman', sans-serif;
+}
+
+.pane-gsb-event-sidebar .views-field-title a {
+ font-family: 'NewsGothicBT-Bold', sans-serif;
+ border: 0 none;
+ font-size: 19px;
+}
+
+.pane-gsb-event-sidebar .views-field-field-event-date {
+	color: #666;
+	margin-bottom: 11px;
+}
+
+.pane-gsb-event-sidebar .date-display-single {
+	text-transform: uppercase;
+}
+
+.pane-gsb-event-sidebar .date-display-single span {
+	text-transform: lowercase;
+}
+
+.pane-gsb-event-sidebar .views-field-field-location {
+	 font-family: 'NewsGothicBT-Demi', sans-serif;
+	color: #666;
+	font-size: 13px;
+	margin-bottom: 5px;
+}
+
+.pane-gsb-event-sidebar h2 {
+	margin: 0;
+	font-family: 'NewsGothicBT-Roman', sans-serif;
+	font-size: 14px;
+	font-weight: normal;
+	line-height: 1em;
+	margin-bottom: 18px;
+	color: #800;
+}
+
+.pane-gsb-event-sidebar .views-row-last p {
+	margin-bottom: 0;
 }
