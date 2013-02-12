@@ -29,6 +29,7 @@
 
 	.designed-box,
 	.person-list-view,
+	.pane-gsb-event-frontpage,
 	.pane-gsb-event-sidebar {
 		margin-bottom: 30px; 
 		padding: 26px;
@@ -492,6 +493,11 @@ background-position: 0 2px;
 .span12 .spotlight img {
  float:left;
  margin-right:15px;
+}
+
+.person-thumb {
+ margin-bottom:10px;
+ display:block;
 }
 
 /* gsb person list */
@@ -1047,14 +1053,6 @@ cursor: pointer;
 	margin-bottom: 11px;
 }
 
-.pane-gsb-event-sidebar .date-display-single {
-	text-transform: uppercase;
-}
-
-.pane-gsb-event-sidebar .date-display-single span {
-	text-transform: lowercase;
-}
-
 .pane-gsb-event-sidebar .views-field-field-location {
 	 font-family: 'NewsGothicBT-Demi', sans-serif;
 	color: #666;
@@ -1062,7 +1060,8 @@ cursor: pointer;
 	margin-bottom: 5px;
 }
 
-.pane-gsb-event-sidebar h2 {
+.pane-gsb-event-sidebar h2,
+.pane-gsb-event-frontpage h2 {
 	margin: 0;
 	font-family: 'NewsGothicBT-Roman', sans-serif;
 	font-size: 14px;
@@ -1072,6 +1071,62 @@ cursor: pointer;
 	color: #800;
 }
 
+.pane-gsb-event-frontpage h2 {
+	font-family: 'NewsGothicBT-Demi', sans-serif;
+	font-weight: bold;
+	font-size: 15px;
+}
+
 .pane-gsb-event-sidebar .views-row-last p {
 	margin-bottom: 0;
+}
+
+.span4 .pane-gsb-event-sidebar .views-field-field-event-date span,
+.span4 .pane-gsb-event-sidebar img {
+ display:none;
+}
+
+.pane-gsb-event-sidebar .views-row {
+ position:relative;
+ }
+ 
+.pane-gsb-event-sidebar .views-row>div { 
+ max-width:580px;
+ }
+
+ .span8 .pane-gsb-event-sidebar .views-row>div { 
+ max-width:320px;
+ }
+ 
+.pane-gsb-event-sidebar img {
+ position:absolute;
+ right:0;
+ top:12px;
+}
+
+.span8 .pane-gsb-event-sidebar img {
+ top:16px;
+}
+
+.pane-gsb-event-frontpage .views-field-field-event-date,
+.pane-gsb-event-frontpage .views-field-field-event-date div,
+.pane-gsb-event-frontpage .views-field-title {
+	display: inline;
+	font-family: NewsGothicBT-Roman, sans-serif;
+	font-size: 16px;
+	color: #3D3738;
+
+}
+.pane-gsb-event-frontpage .views-field-title a{
+font-family: NewsGothicBT-Bold;
+color: #231f20;
+border: 0;
+}
+
+.pane-gsb-event-frontpage .views-field-title a:hover {
+	border: 0;
+} 
+
+.pane-gsb-event-frontpage {
+background: url(../images/homepage-events-background-full.jpg) no-repeat top left;
 }
