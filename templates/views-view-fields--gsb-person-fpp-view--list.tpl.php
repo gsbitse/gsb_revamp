@@ -25,22 +25,57 @@
  */
 ?>
 <?php
-$description = $row->field_field_description[0]['raw']['safe_value'];
-$entityref = $first_name = $row->field_field_person_entity_ref[0]['raw']['entity'];
-$first_name = $entityref->field_first_name['und'][0]['safe_value'];
-$last_name = $entityref->field_last_name['und'][0]['safe_value'];
-$headshot = $entityref->field_headshot['und'][0];
+
+$entityref = null;
+
+if (isset($row->field_field_person_entity_ref[0]['raw']['entity'])) {
+  $entityref = $row->field_field_person_entity_ref[0]['raw']['entity'];
+}
+
 $personnid = $entityref->nid;
-$persontitle = $entityref->field_person_title['und'][0]['safe_value'];
-$persondep = $entityref->field_department['und'][0]['tid'];
-$headshotstyle = array(
-	'style_name' => 'medium', 
-	'path' => $headshot['uri'], 
-	'alt' => $headshot['alt'],
-	'title' => $headshot['title'],
-	'width' => '168',
-	'height' => '168'
-	);
+
+$description = '';
+$first_name = '';
+$last_name = '';
+$headshot = '';
+$persontitle = '';
+$persondep = '';
+
+if (isset($row->field_field_description[0]['raw']['safe_value'])) {
+ $description = $row->field_field_description[0]['raw']['safe_value'];
+}
+
+if ($entityref && isset($entityref->field_first_name['und'][0]['safe_value'])) {
+  $first_name = $entityref->field_first_name['und'][0]['safe_value'];
+}
+
+if ($entityref && isset($entityref->field_last_name['und'])) {
+  $last_name = $entityref->field_last_name['und'][0]['safe_value'];
+}
+
+if ($entityref && isset($entityref->field_headshot['und'][0])) {
+  $headshot = $entityref->field_headshot['und'][0];
+}
+
+if ($entityref && isset($entityref->field_person_title['und'][0]['safe_value'])) {
+  $persontitle = $entityref->field_person_title['und'][0]['safe_value'];
+}
+
+if ($entityref && isset($entityref->field_department['und'][0]['tid'])) {
+  $persondep = $entityref->field_department['und'][0]['tid'];
+}
+
+if(!empty($headshot)) {
+  $headshotstyle = array(
+    'style_name' => 'medium',
+    'path' => $headshot['uri'],
+    'alt' => $headshot['alt'],
+    'title' => $headshot['title'],
+    'width' => '168',
+    'height' => '168'
+  );
+}
+
 ?>
 
 <div class="gsb-person-featured">
