@@ -125,6 +125,12 @@
     }
   }
 
+  Drupal.behaviors.theme_checkboxes = {
+    attach: function (context, settings) {
+    	$(".clubs-filter-exposed .bef-checkboxes .form-item input").uniform();
+
+    }
+  }
   
 
 }(jQuery));
