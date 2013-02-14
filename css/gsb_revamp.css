@@ -1139,7 +1139,7 @@ background: url(../images/homepage-events-background-full.jpg) no-repeat top lef
 	margin-bottom: 19px;
 }
 
-.view-club-filters .views-row-1 {
+.view-club-filters .views-row-1:first-child {
 	margin-top: -26px;
 }
 
@@ -1163,7 +1163,7 @@ font-family: NewsGothicBT-Roman;
 font-size: 17px;
 line-height: 24px;
 margin-bottom: 0;
-color: #454545;
+color: #383838;
 }
 
 .clib-link i{	
@@ -1174,7 +1174,7 @@ color: #454545;
 
 .clubs-filter-exposed {
 	overflow: hidden;
-	padding: 6px 22px 10px;
+	padding: 6px 22px 10px 25px;
 	margin-bottom: 2px;
 }
 
@@ -1290,14 +1290,18 @@ width:147px;
 font-family: NewsGothicBT-Roman, sans-serif;
 }
 
+#views-exposed-form-search-clubs-club-search {
+ position:relative;
+} 
+
 #views-exposed-form-search-clubs-club-search .form-submit {
 background: url('../images/search-magnifying-glass.png') no-repeat center center;
 width: 38px
 }
 
-#views-exposed-form-search-clubs-club-search {
- position:relative;
-} 
+#views-exposed-form-search-clubs-club-search .ajax-progress {
+display: none;
+}
 
 #views-exposed-form-search-clubs-club-search .form-submit {
  width:38px;
@@ -1308,6 +1312,17 @@ width: 38px
  border:0;
  margin:0 0 0 -38px;
 }
+
+#views-exposed-form-search-clubs-club-search .form-submit.progress-disabled {
+background: url('/misc/throbber.gif') no-repeat center -18px;
+width: 15px;
+height: 15px;
+margin-top: 9px;
+margin-left: -24px;
+margin-bottom: 14px;
+cursor: default;
+}
+
 #views-exposed-form-search-clubs-club-search label {
  color: #444;
  position:absolute;
@@ -1323,19 +1338,69 @@ width: 38px
  padding:0;
 }
 
+/* pager */
+
+.view-club-filters {
+ position:relative;
+}
+ 
+.view-club-filters .pager {
+ position:absolute;
+ margin:0;
+ bottom:0px;
+ right:22px;
+ width:94.5%;
+}
+
+.view-club-filters .pager-next  {
+ float:left;
+}
+
+.view-club-filters .pager-next a,
+.view-club-filters .pager-next a:hover {
+ height:29px;
+ line-height:36px;
+ padding:0 16px 0 33px;
+ -webkit-border-radius: 0;
+ -moz-border-radius: 0;
+ -ms-border-radius: 0;
+ border-radius: 0;
+ border:0;
+ background:#7D8401 url('../images/navigation-arrow.png') no-repeat 10px 11px;
+ color:#fff;
+ font-size:13px;
+ font-family: NewsGothicBT-Bold, sans-serif;
+ text-transform: uppercase;
+}
+
+a.go-to-top-link,
+a.go-to-top-link:hover {
+font-family: NewsGothicBT-Bold, sans-serif;
+background: #000;
+color:#fff;
+display: block;
+height:29px;
+line-height:36px;
+position: absolute;
+right: 24px;
+bottom: 0;
+padding: 0 16px;
+border: 0;
+}
+
 /* checkboxer */
 
 div.checker,
 div.checker span,
 div.checker input {
-  width: 16px;
-  height: 16px; }
+  width: 13px;
+  height: 13px; }
 
 div.checker {
   position: relative;
   float: left;
   margin-right:10px;
-  margin-top:-1px; }
+  margin-top:0px; }
 
 div.checker span {
   display: -moz-inline-box;
@@ -1345,7 +1410,7 @@ div.checker span {
   text-align: center;
   background-position: 0 0;
   background-repeat: no-repeat;
-  background-image: url('../images/checkbox_large.png');  }
+  background-image: url('../images/checkbox_icon.png');  }
 
 div.checker input {
   opacity: 0;
@@ -1365,7 +1430,7 @@ div.checker.focus:active span,
 div.checker:active:hover span,
 div.checker.active:hover span,
 div.checker.focus.active span {
-  background-position:  0-16px; }
+  background-position:  0-13px; }
 
 div.checker span.checked {
-  background-position: 0 -16px; }
+  background-position: 0 -13px; }

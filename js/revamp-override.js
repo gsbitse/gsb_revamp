@@ -132,8 +132,36 @@
     	}
     }
   }
-  
 
+  Drupal.behaviors.search_autocomplete = {
+    attach: function (context, settings) {
+    	if ($('.views-widget-filter-search_api_views_fulltext').length > 0) {
+    		var searhBox = $('.views-widget-filter-search_api_views_fulltext input'),
+    				searchLabel = searhBox.closest('.views-widget-filter-search_api_views_fulltext').children('label');
+   			if (searhBox.val() != '') {
+   				searchLabel.hide();
+   			}
+   			searhBox.focus(function () {
+   				searchLabel.hide();
+   			});
+   			searhBox.blur(function() {
+   				toggleLabel ($(this));
+    			});
+   			searhBox.change(function() {
+   				toggleLabel ($(this));
+   			});
+   			function toggleLabel (e) {
+   				var $this = e;
+   				if ($this.val() == '') {
+   					searchLabel.show();
+   				} else {
+   					searchLabel.hide();
+   				}
+   			}
+    	}
+    }
+  }
+  
 }(jQuery));
 
 
