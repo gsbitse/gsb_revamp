@@ -127,8 +127,9 @@
 
   Drupal.behaviors.theme_checkboxes = {
     attach: function (context, settings) {
-    	$(".clubs-filter-exposed .bef-checkboxes .form-item input").uniform();
-
+    	if ($('.clubs-filter-exposed').length > 0) {
+    		$(".clubs-filter-exposed .bef-checkboxes .form-item input").uniform();
+    	}
     }
   }
   
