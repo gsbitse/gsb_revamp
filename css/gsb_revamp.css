@@ -197,12 +197,12 @@ ul.menu {
 /* Secondary Navigation (non-homepage) ------------------------------------------------*/
 	.region-sidebar-primary .block-menu { width: 236px;
 	padding-right: 5px; padding-left: 5px; border-top: 10px solid #231f20;
-		background-image: linear-gradient(bottom, #FFFFFF 25%, #E7E7E7 63%);
-		background-image: -o-linear-gradient(bottom, #FFFFFF 25%, #E7E7E7 63%);
-		background-image: -moz-linear-gradient(bottom, #FFFFFF 25%, #E7E7E7 63%);
-		background-image: -webkit-linear-gradient(bottom, #FFFFFF 25%, #E7E7E7 63%);
-		background-image: -ms-linear-gradient(bottom, #FFFFFF 25%, #E7E7E7 63%);
-		background-image: -webkit-gradient(linear,left bottom,left top,color-stop(0.25, #FFFFFF),color-stop(0.63, #E7E7E7));
+		background-image: linear-gradient(bottom, #FFFFFF 25%, #f0f0f0 63%);
+		background-image: -o-linear-gradient(bottom, #FFFFFF 25%, #f0f0f0 63%);
+		background-image: -moz-linear-gradient(bottom, #FFFFFF 25%, #f0f0f0 63%);
+		background-image: -webkit-linear-gradient(bottom, #FFFFFF 25%, #f0f0f0 63%);
+		background-image: -ms-linear-gradient(bottom, #FFFFFF 25%, #f0f0f0 63%);
+		background-image: -webkit-gradient(linear,left bottom,left top,color-stop(0.25, #FFFFFF),color-stop(0.63, #f0f0f0));
 	}
 
 	.region-sidebar-primary .block-menu>h2{
@@ -212,15 +212,15 @@ ul.menu {
 	}
 
 	.region-sidebar-primary .block-menu ul { text-decoration: none; list-style-type: none; margin: 0; margin: 0; font-size: 18px; }
-	.region-sidebar-primary .block-menu ul li { text-decoration: none; list-style-type: none; list-style-image: none; margin: 0; margin-top: 25px; padding:0px; font-family: NewsGothicBT-Bold;}
-	.region-sidebar-primary .block-menu ul li a { color: #990000; text-decoration: none; border-bottom: none; text-transform: uppercase; }
+	.region-sidebar-primary .block-menu ul li { text-decoration: none; list-style-type: none; list-style-image: none; margin: 0; margin-top: 17px; margin-left: 21px; padding:0px; font-family: NewsGothicBT-Roman; font-weight: bold}
+	.region-sidebar-primary .block-menu ul li a { font-size:15px; color: #990000; text-decoration: none; border-bottom: none; text-transform: uppercase; }
 	.region-sidebar-primary .block-menu ul li a.active { }
 	.region-sidebar-primary .block-menu ul li ul {  }
-	.region-sidebar-primary .block-menu ul li ul li { margin-top: 19px;}
+	.region-sidebar-primary .block-menu ul li ul li { margin-top: 9px; margin-left: 14px;}
 	.region-sidebar-primary .block-menu ul li ul li a { color: #000; text-transform: none; font-size: 14px; }
-	.region-sidebar-primary .block-menu ul li ul li a.active { color: #2d6280; text-transform: none; }
+	.region-sidebar-primary .block-menu ul li ul li a.active { color: #2d6280; text-transform: none; padding-left: 14px; margin-left: -14px; background: url('../images/menu-icon-blue.png') no-repeat 0px 0px; }
 	.region-sidebar-primary .block-menu ul li ul li ul { }
-	.region-sidebar-primary .block-menu ul li ul li ul li { margin-top: 19px; }
+	.region-sidebar-primary .block-menu ul li ul li ul li { margin-top: 9px; margin-left: 14px; }
 	.region-sidebar-primary .block-menu ul li ul li ul li a { font-family: NewsGothicBT-Roman; font-weight: 100; line-height: 20px;}
 	.region-sidebar-primary .block-menu ul li ul li ul li a.active { }
 	.region-sidebar-primary .block-menu a.hover { text-decoration: none; border-bottom: none;}
