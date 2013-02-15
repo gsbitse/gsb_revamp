@@ -25,31 +25,46 @@
 <?php 
 $dates = explode(" to ", $field->original_value);
 $date1 = strtotime($dates['0']);
-$date2 = strtotime($dates['1']);
 $output = '';
+if (!empty($dates['1'])) {
+	$date2 = strtotime($dates['1']);
 
-if (date('o M j', $date1) != date('o M j', $date2)) {
-	$output .= '<span>'
-	. date('l, ', $date1)
-	. '</span>'
-	. strtoupper(date('M j', $date1)) 
-	. ' – ' 
-	. '<span>'
-	. date('l, ', $date2)
-	. '</span>'
-	. strtoupper(date('M j', $date2));
+	if (date('o M j', $date1) != date('o M j', $date2)) {
+		$output .= '<span>'
+		. date('l, ', $date1)
+		. '</span>'
+		. strtoupper(date('M j', $date1)) 
+		. ' – ' 
+		. '<span>'
+		. date('l, ', $date2)
+		. '</span>'
+		. strtoupper(date('M j', $date2));
+	} else {
+		if ($row->field_field_all_day_event['0']['raw']['value'] == 1) {
+			$output .= date('l, ', $date1)
+			. strtoupper(date('M j', $date1));
+		} else {
+			$output .= '<span>'
+			. date('l, ', $date1)
+			. '</span>'
+			. strtoupper(date('M j', $date1)) 
+			. date(', ga', $date1) 
+			. ' – ' 
+			. date('ga', $date2);
+		}
+	}
 } else {
 	if ($row->field_field_all_day_event['0']['raw']['value'] == 1) {
-		$output .= date('l, ', $date1)
+		$output .= '<span>'
+		. date('l, ', $date1)
+		. '</span>'
 		. strtoupper(date('M j', $date1));
 	} else {
 		$output .= '<span>'
 		. date('l, ', $date1)
 		. '</span>'
-		. strtoupper(date('M j', $date1)) 
-		. date(', ga', $date1) 
-		. ' – ' 
-		. date('ga', $date2);
+		. strtoupper(date('M j,', $date1))
+		. date(' ga', $date1);
 	}
 }
 ?>
