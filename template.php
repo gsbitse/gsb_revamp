@@ -47,7 +47,7 @@ function gsb_revamp_fieldset($variables) {
 }
 
 function gsb_revamp_menu_tree(&$vars) {
-  return '<ul class="gsb-nav">' . $vars['tree'] . '</ul>';
+  return '<ul class="gsb-nav menu">' . $vars['tree'] . '</ul>';
 }
 
 function gsb_revamp_menu_link(array $vars) {

@@ -99,6 +99,10 @@ ul.menu {
 	#site-slogan { font-size: 1.4em; margin-top: 30px;}
 
 /* Primary Navigation --------------------------------------------------------------------*/
+	
+	.main-menu {
+		float: left;
+	}
 	.main-menu ul li { 
 		font-size: 17px; 
 		width: 119px; 
