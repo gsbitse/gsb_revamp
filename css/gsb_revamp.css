@@ -496,6 +496,7 @@ clear: both;
 }
 
 .spotlight a.show-more {
+	margin-top: 4px;
  border:0;
  font-family:NewsGothicBT-Bold, sans-serif;
 }
@@ -900,7 +901,7 @@ margin-left: -84px;
  color:#000;
  border:none;
  font-size:26px;
- line-height:32px;
+ line-height:37px;
  display:block;
 }
 
