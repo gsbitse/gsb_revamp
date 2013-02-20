@@ -94,7 +94,7 @@ ul.menu {
 	#header #logo {margin-top: 36px; }
 
 /* Name and Slogan ----------------------------------------------------------*/
-	#name-and-slogan { padding-top: 0px; width: 710px; margin-bottom: 0px; padding-bottom: 0px; }
+	#name-and-slogan { padding-top: 0px; width: 690px; margin-bottom: 0px; padding-bottom: 0px; }
 	#site-slogan { font-size: 1.4em; margin-top: 30px;}
 
 /* Primary Navigation --------------------------------------------------------------------*/
@@ -104,7 +104,7 @@ ul.menu {
 	}
 	.main-menu ul li { 
 		font-size: 17px; 
-		width: 119px; 
+		width: 121px; 
 		padding: 0; 
 		background-color: #8a0000;
 		border-right: 1px solid red; 
@@ -180,7 +180,7 @@ a.green-rounded-button:hover {
 /* Event Calendar --------------------------------------------------------------------*/
 	#event-calendar-cta {  
 		background-color: #5b0000;  
-		width: 200px; 
+		width: 170px; 
 		padding: 10px 15px 9px; 
 		margin-top: -10px;
 		background-image: linear-gradient(bottom, #8d0000 50%, ##570000  50%);
