@@ -88,3 +88,12 @@ function gsb_revamp_menu_local_tasks(&$vars) {
 
   return $output;
 }
+
+/**
+ * Implementation of hook_preprocess_page()
+ **/
+function gsb_revamp_preprocess_page(&$vars) {
+  // Get the first main menu tree
+  // Add the rendered output to the $main_menu_expanded variables
+  $vars['main_menu_collapsed'] = menu_tree_output(menu_tree_all_data('main-menu', NULL, 1));    
+}

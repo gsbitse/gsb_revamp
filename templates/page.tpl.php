@@ -35,7 +35,7 @@
                   <span class="icon-bar"></span>
                   <span class="icon-bar"></span>
                 </a>
-                <div class="nav-collapse"><?php print render($main_menu_expanded); ?></div>
+                <div class="nav-collapse"><?php print render($main_menu_collapsed); ?></div>
               </div>
           </div>
 
