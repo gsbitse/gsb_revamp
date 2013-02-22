@@ -180,8 +180,10 @@ a.green-rounded-button:hover {
 /* Event Calendar --------------------------------------------------------------------*/
 	#event-calendar-cta {  
 		background-color: #5b0000;  
-		width: 170px; 
-		padding: 10px 15px 9px; 
+		width: 200px;
+		line-height: 39px;
+		height: 39px; 
+		padding: 0; 
 		margin-top: -10px;
 		background-image: linear-gradient(bottom, #8d0000 50%, ##570000  50%);
 		background-image: -o-linear-gradient(bottom, #8d0000  50%, #570000 50%);
@@ -190,7 +192,15 @@ a.green-rounded-button:hover {
 		background-image: -ms-linear-gradient(bottom, #8d0000 50%, #570000  50%);
 		background-image: -webkit-gradient(linear,left bottom,left top,color-stop(0.21, #8d0000),color-stop(0.6, #570000 ));
 	}
-	#event-calendar-cta a { color: #fff; font-size: 17px; padding-top: 5px !important; margin-left: 20px; }
+	#event-calendar-cta a { 
+   color: #fff; 
+	 display:block;
+	 padding:0 0 0 13px;
+	 margin:0;
+	 font-size:17px;
+	 font-family: NewsGothicBT-Bold, sans-serif; 
+	}
+
 
 /* Search Form --------------------------------------------------------------------*/
 	#header-content { width: 200px;}
@@ -1584,4 +1594,32 @@ margin-bottom:15px;
 
 .event-taxonomy a:hover {
  border:none;
+}
+
+/* mega menu */
+
+.qtip-wrapper ul.menu,
+.qtip-wrapper ul.menu li {
+ list-style: none;
+ padding:0;
+ margin:0;
+}
+
+.qtip-wrapper ul.menu li a {
+ color:#fff;
+ text-transform:uppercase;
+ font-family: NewsGothicBT-Bold,sans-serif;
+ font-size:17px;
+ line-height:24px;
+ margin-top:11px;
+ display:block;
+}
+
+.qtip-wrapper ul.menu li.first a {
+ margin-top:0;
+}
+
+.qtip-wrapper a:hover,
+.qtip-wrapper ul.menu li a:hover {
+ color:#63acd5;
 }
