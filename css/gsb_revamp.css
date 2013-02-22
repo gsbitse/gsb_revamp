@@ -501,12 +501,20 @@ a.green-rounded-button:hover {
  clear:none;
 }
 
+.span8 .spotlight .spotlight-image {
+	float: left;
+}
+
 .span8 .span6 .spotlight .spotlight-story {
-clear: both;
+ clear: both;
+}
+
+.span8 .span6 .spotlight .spotlight-image {
+	float: none;
 }
 
 .spotlight a.show-more {
-	margin-top: 4px;
+ margin-top: 4px;
  border:0;
  font-family:NewsGothicBT-Bold, sans-serif;
 }

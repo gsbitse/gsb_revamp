@@ -8,8 +8,7 @@
 *   on page load run:
 *     with comments: 
 *     gsb_tweetfeed.init({
-*       user: 'username',       // for user tweets or
-*       hastag: 'hashtag'       // for hashtag
+*       search: '@username',       // for user tweets or hashtag
 *       numTweets: 5,           // number of tweets, default equeals to 3
 *       appendTo: '#jstwitter', // wrapper id
 *       format: 'M j | a'       // date format. check http://php.net/manual/en/function.date.php
@@ -18,7 +17,7 @@
 *  Clean version:
 *
   gsb_tweetfeed.init({
-    user: 'username',
+    search: '@username',
     numTweets: 3,
     appendTo: '#jstwitter',
     format: 'l, M j | a'
@@ -30,10 +29,9 @@ gsb_tweetfeed = {
 
     // initialization of twitterfeed
 		init: function( config ) {
-			this.user = config.user;
+			this.search = config.search;
 			this.numTweets = config.numTweets == null ? 3 : config.numTweets;
 			this.appendTo = config.appendTo;
-			this.hashtag = config.hashtag;
       this.format = config.format == null ? 'l, M j | a' : config.format;
 
       this.months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'June', 'July', 'Aug', 'Sep', 'Oct', 'Nov', 'Dev'],
@@ -41,11 +39,15 @@ gsb_tweetfeed = {
 			this.checkTweets();
 		},
 
-    // checking for user of hastag
+    // checking for user or hastag
 		checkTweets: function () {
-			if (this.user != null) { 
+			if (this.search[0] == '@') { 
+        this.search = this.search.split('@')[1];
 				this.loadTweets();
-			} else if (this.user != null) {
+			} else if (this.search[0] != '#' && this.search.length > 0){
+        this.loadTweets();
+      } else if (this.search.length > 1) {
+        this.search = this.search.split('#')[1];
 				this.loadHashtagTweets();
 			} else {
 				$(gsb_tweetfeed.appendTo).append('You have not specified any user or hashtag.');
@@ -59,7 +61,7 @@ gsb_tweetfeed = {
             type: 'GET',
             dataType: 'jsonp',
             data: {
-                screen_name: gsb_tweetfeed.user,
+                screen_name: gsb_tweetfeed.search,
                 include_rts: true,
                 count: gsb_tweetfeed.numTweets,
                 include_entities: true
@@ -84,7 +86,7 @@ gsb_tweetfeed = {
     }, 
 
     loadHashtagTweets: function() {
-    	var hashtagurl = 'http://search.twitter.com/search.json?q=' + gsb_tweetfeed.hashtag + '&callback=?';
+    	var hashtagurl = 'http://search.twitter.com/search.json?q=' + gsb_tweetfeed.search + '&callback=?';
 			$.getJSON( hashtagurl, function( data ) {
 				 var html = '<div class="tweet"><span class="tweet-from-user">FROM-USER: </span>TWEET_TEXT<div class="time">tweetime</div>',
 				 data = data['results'];

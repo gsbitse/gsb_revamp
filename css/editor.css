@@ -38,6 +38,10 @@
  margin-top:5px;
 }
 
+#modal-content .widget-preview .fieldset-wrapper {
+	margin-top: 2.4em;
+}
+
 /* node add */
 .page-node-add .form-type-radio input {
  float:left;
@@ -57,4 +61,43 @@
 
 .page-node-add-gsb-person .field-name-field-sunetid {
  float:left;
+}
+
+/* video */
+
+#modal-content .widget-preview .fieldset-wrapper .gsb-video-image a,
+#modal-content .widget-preview .fieldset-wrapper .video-play-icon {
+ display:none;
+}
+
+
+#modal-content .widget-preview .media-youtube-preview-wrapper,
+#modal-content .widget-preview .media-youtube-outer-wrapper {
+ width:100% !important;
+ height: auto !important;
+ margin:0;
+}
+
+#modal-content .widget-preview .rendered-video iframe {
+ width:100% !important;
+ margin:0;
+}
+
+/* spotlight */
+
+#modal-content .widget-preview .spotlight-story {
+ margin-left:288px;
+ clear:none;
+}
+
+#modal-content .widget-preview .spotlight {
+ overflow:hidden;
+}
+
+#modal-content .widget-preview .spotlight a.show-more {
+ margin-left:18px;
+}
+
+#modal-content .widget-preview .spotlight-image {
+	float: left;
 }
