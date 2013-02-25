@@ -4,8 +4,8 @@
 *
 */ ?>
 <div class="designed-box spotlight spotlight-<?php print strtolower($field_gsb_spotlight_person_type[0]['value']) ?>">
-  <span class="spotlight-border"></span>
   <?php if (!empty($field_first_name)) { ?>
+    <span class="spotlight-border"></span>
     <span class="spotlight-type"><?php print $field_gsb_spotlight_person_type[0]['value'] ?> Spotlight</span>
     <h4 class="spotlight-name"><?php print $field_first_name[0]['safe_value'] . " " . $field_last_name[0]['safe_value']; ?></h4>
       <?php if ($field_gsb_spotlight_person_type[0]['value'] !== 'Student') { ?>
