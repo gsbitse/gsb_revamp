@@ -896,6 +896,10 @@ margin: 0 16px 0 0;
 margin-left: -84px;
 }
 
+.slider-sharpy {
+	display: none;
+}
+
 /* spotlight */
 
 .panopoly-spotlight-wrapper {

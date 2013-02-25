@@ -19,7 +19,6 @@
   </div>
 
   <?php 
-
   $toutput = 'gsb_tweetfeed.init({';
   if ($name) $toutput .= 'search: "'. $name .'",';
   $toutput .= 'numTweets: ' . $count . ',';

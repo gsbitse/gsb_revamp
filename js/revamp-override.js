@@ -94,24 +94,34 @@
 			      visibleLines = 5,
 			      visibleHeight = visibleLines*parseInt(spotlightShowMore.siblings('.spotlight-story').children('p').css('line-height'));
 			  spotlightShowMore.each(function() {
-			    var $this = $(this),
-			      spotlightStory = $this.siblings('.spotlight-story'),
-			      storyContent = spotlightStory.children('p').height();
-			    if (storyContent<=visibleHeight) {
-			    	$this.remove();
-			    } else {
-				    $this.click(function() { 
-					    var $this = $(this);
-					    if (!$this.hasClass('active')) {
-					      $this.html('<span>Show Less</span>');
-					      spotlightStory.animate({'max-height': storyContent}, 350);
-					    } else {
-					      $this.html('<span>Show More</span>');
-					      spotlightStory.animate({'max-height': visibleHeight}, 350);
-					    }
-					    $this.toggleClass('active');
-				  	});
-				  }
+			    var $this = $(this);
+			    if (!$this.hasClass('showmore-processed')) {
+			    	$this.addClass('showmore-processed');
+				    var spotlightStory = $this.siblings('.spotlight-story'),
+				      	storyContent = spotlightStory.children('p').height();
+				    if (storyContent<=visibleHeight) {
+				    	$this.remove();
+				    } else {
+					    $this.click(function() { 
+						    var $this = $(this);
+						    if (!$this.hasClass('active')) {
+						      $this.html('<span>Show Less</span>');
+						      spotlightStory.animate({'max-height': storyContent}, 350);
+						      if (!$this.parents('.span4').length>0) {
+						      	spotlightStory.siblings('.spotlight-image').animate({'height': storyContent + 20}, 350);
+						      }
+						    } else {
+						      $this.html('<span>Show More</span>');
+						      spotlightStory.animate({'max-height': visibleHeight}, 300);
+						      if (!$this.parents('.span4').length>0) {
+						      	spotlightStory.siblings('.spotlight-image').animate({'height': 158}, 350);
+						      }
+						 
+						    }
+						    $this.toggleClass('active');
+					  	});
+					  }
+					}
 			  });
 			}
     }

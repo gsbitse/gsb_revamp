@@ -26,7 +26,6 @@
 */
 
 gsb_tweetfeed = {
-
     // initialization of twitterfeed
 		init: function( config ) {
 			this.search = config.search;
@@ -125,48 +124,47 @@ gsb_tweetfeed = {
             second = 1000,
             minute = second * 60,
             hour = minute * 60,
-            day = hour * 24,
-            week = day * 7;
+            day = hour * 24;
  
         if (isNaN(diff) || diff < 0) {
-            ago = ""; // return blank string if unknown
+          ago = ""; // return blank string if unknown
         } 
  
         else if (diff < second * 2) {
-            // within 2 seconds
-            ago = "right now";
+          // within 2 seconds
+          ago = "right now";
         }
  
         else if (diff < minute) {
-            ago = Math.floor(diff / second) + " seconds ago";
+          ago = Math.floor(diff / second) + " seconds ago";
         }
  
         else if (diff < minute * 2) {
-            ago = "about 1 minute ago";
+          ago = "about 1 minute ago";
         }
  
         else if (diff < hour) {
-            ago = Math.floor(diff / minute) + " minutes ago";
+          ago = Math.floor(diff / minute) + " minutes ago";
         }
  
         else if (diff < hour * 2) {
-            ago = "about 1 hour ago";
+          ago = "about 1 hour ago";
         }
  
         else if (diff < day) {
-            ago =  Math.floor(diff / hour) + " hours ago";
+          ago =  Math.floor(diff / hour) + " hours ago";
         }
  
         else if (diff > day && diff < day * 2) {
-            ago = "yesterday";
+          ago = "yesterday";
         }
  
         else if (diff < day * 365) {
-            ago = Math.floor(diff / day) + " days ago";
+          ago = Math.floor(diff / day) + " days ago";
         }
  
         else {
-            output += "over a year ago";
+          ago = "over a year ago";
         }
         output = gsb_tweetfeed.format;
         output = output.replace(/\bl\b/gi, tweetweekday )
