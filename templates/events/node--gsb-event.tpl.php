@@ -78,9 +78,11 @@
  * @see template_process()
  */
 ?>
+<?php dpm(get_defined_vars()); ?>
+
 <?php 
 
-$speaker_array = array();
+/* $speaker_array = array();
 foreach ($variables['field_speakers'] as $key => $speaker_id) {
   $speaker = $variables['elements']['field_speakers'][$key]['entity']['field_collection_item'][$speaker_id['value']]['field_speaker'][
     '#items'][0]['entity'];
@@ -93,7 +95,8 @@ foreach ($variables['field_speakers'] as $key => $speaker_id) {
     $speaker_array[] = $speaker_name . ' ' . $speaker_sname;
   }
 }
-$speaker_output = implode(', ', $speaker_array);
+$speaker_output = implode(', ', $speaker_array); */
+$speaker_output = '';
 
 $taxonomy_array = array();
 foreach ($field_event_test_vocab_1 as $key => $tax_value) {
@@ -107,15 +110,17 @@ $taxonomy_output = implode(', ', $taxonomy_array);
 $eventtitle = $variables['title'];
 $eventdate1 = !empty($variables['field_event_date']) ? strtotime($variables['field_event_date'][0]['value']) : '';
 $eventdate2 = !empty($variables['field_event_date']) ?  strtotime($variables['field_event_date'][0]['value2']) : '';
-$eventadress1 = !empty($variables['field_street_address_1']) ? $variables['field_street_address_1'][0]['value'] : '';
-$eventadress2 = !empty($variables['field_street_address_2']) ? $variables['field_street_address_2'][0]['value'] : '';
-$eventadress3 = !empty($variables['field_street_address_3']) ? $variables['field_street_address_3'][0]['value'] : '';
-$eventcity = !empty($variables['field_city']) ? $variables['field_city'][0]['safe_value'] : '';
-$eventstate = !empty($variables['field_state']) ? taxonomy_term_load($variables['field_state'][0]['tid'])->name : '';
+$eventadress1 = !empty($variables['field_address'][0]['thoroughfare']) ? $variables['field_address'][0]['thoroughfare'] : '';
+$eventadress2 = !empty($variables['field_address'][0]['premise']) ? $variables['field_address'][0]['premise'] : '';
+$eventadress3 = !empty($variables['field_address'][0]['value']) ? $variables['field_address'][0]['value'] : '';
+$eventcity = !empty($variables['field_address'][0]['locality']) ? $variables['field_address'][0]['locality'] : '';
+$eventstate = !empty($variables['field_address'][0]['administrative_area']) ? $variables['field_address'][0]['administrative_area'] : '';
+$eventcountry = !empty($variables['field_address'][0]['country']) ? $variables['field_address'][0]['country'] : '';
 $maplink = !empty($variables['field_map_url']) ? $variables['field_map_url'][0]['url'] : '';
 $eventregisterlink = !empty($variables['field_register_url']) ? $variables['field_register_url'][0]['url'] : '';
+$eventregistertitle = !empty($variables['field_register_url'][0]['title']) ? $variables['field_register_url'][0]['title'] : 'Register';
 $eventimage = !empty($variables['field_event_image']) ? $variables['field_event_image'][0] : '';
-$eventtargetaudience = !empty($variables['field_target_audience']) ? $variables['field_target_audience'][0]['value'] : '';
+$eventtargetaudience = !empty($variables['field_target_audience']) ? taxonomy_term_load($variables['field_target_audience'][0]['tid'])->name : '';
 $eventeditorialblurb = !empty($variables['field_editorial_blurb']) ? $variables['field_editorial_blurb'][0]['value'] : '';
 $eventbody = !empty($variables['body']) ? $variables['body'][0]['safe_value'] : '';
 
@@ -143,7 +148,7 @@ if ($eventdate1 != $eventdate2) {
     . '</span>'
     . strtoupper(date('M j', $eventdate2));
   } else {
-    if ($row->field_field_all_day_event['0']['raw']['value'] == 1) {
+    if ($field_all_day_event['0']['value'] == 1) {
       $dateoutput .= date('l, ', $eventdate1)
       . strtoupper(date('M j', $eventdate1));
     } else {
@@ -157,7 +162,7 @@ if ($eventdate1 != $eventdate2) {
     }
   }
 } else {
-  if ($row->field_field_all_day_event['0']['raw']['value'] == 1) {
+  if ($field_all_day_event['0']['value'] == 1) {
     $dateoutput .= '<span>'
     . date('l, ', $eventdate1)
     . '</span>'
@@ -193,6 +198,9 @@ if ($eventdate1 != $eventdate2) {
           print $eventcity . $eventstate;
         }
         ?></span>
+        <?php if ($eventcountry) { ?>
+          <span><?php print $eventcountry; ?></span>
+        <?php } ?>
       </p>
       <?php if ($maplink) { ?>
       <a class="view-map-link" href="<?php print $maplink; ?>">View Map</a>
@@ -200,9 +208,9 @@ if ($eventdate1 != $eventdate2) {
     </div>
     <div class="event-details-actions">
       <?php if($eventregisterlink) { ?>
-      <a class="green-rounded-button" href="<?php print $eventregisterlink; ?>">Register</a>
+        <a class="green-rounded-button" href="<?php print $eventregisterlink; ?>"><?php print $eventregistertitle ?></a>
       <?php } ?>
-      <a class="green-rounded-button" href="/addtocalendar/<?php print $uid ?>">Add to My Calendar</a>
+      <a class="green-rounded-button" href="/events/ical/<?php print $nid ?>/event.ics">Add to My Calendar</a>
       <a class="green-rounded-button" href="#">Share</a>
     </div>
   </div>
