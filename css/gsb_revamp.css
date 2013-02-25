@@ -558,6 +558,16 @@ background-position: 0 2px;
  display:block;
 }
 
+.spotlight .field-name-field-gsb-spotlight-media {
+ overflow:hidden;
+ position:relative;
+ margin-bottom:10px;
+}
+
+.span4 .spotlight-image {
+ margin-bottom:12px;
+}
+
 /* gsb person list */
 
 .pane-bundle-gsb-person-fpp .pane-title {
