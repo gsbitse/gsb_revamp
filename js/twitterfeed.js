@@ -35,7 +35,7 @@ gsb_tweetfeed = {
 
       this.months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'June', 'July', 'Aug', 'Sep', 'Oct', 'Nov', 'Dev'],
       this.weekDays = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
-			this.checkTweets();
+      this.checkTweets();
 		},
 
     // checking for user or hastag
@@ -55,6 +55,7 @@ gsb_tweetfeed = {
  
     // core function of gsb_tweetfeed
     loadTweets: function() {
+      tempAppendTo = gsb_tweetfeed.appendTo;
         $.ajax({
             url: 'http://api.twitter.com/1/statuses/user_timeline.json/',
             type: 'GET',
@@ -66,10 +67,10 @@ gsb_tweetfeed = {
                 include_entities: true
             },
             success: function(data, textStatus, xhr) {
-                 var html = '<div class="tweet">TWEET_TEXT<div class="time">tweetime</div>';
+                 var html = '<div class="tweet">TWEET_TEXT<p class="time">tweetime</p>';
                  // append tweets into page
                  for (var i = 0; i < data.length; i++) {
-                    $(gsb_tweetfeed.appendTo).append(
+                    $(tempAppendTo).append(
                         html.replace('TWEET_TEXT', gsb_tweetfeed.ify.clean(data[i].text) )
                             .replace(/USER/g, data[i].user.screen_name)
                             .replace('tweetime', gsb_tweetfeed.tweetime(data[i].created_at) )
@@ -77,7 +78,7 @@ gsb_tweetfeed = {
                  }                  
             },
             error: function(data, textStatus, xhr) {
-              $(gsb_tweetfeed.appendTo).append('<span class="no-tweets">No tweets found</span>');
+              $(tempAppendTo).append('<span class="no-tweets">No tweets found</span>');
             }   
  
         });
@@ -85,12 +86,13 @@ gsb_tweetfeed = {
     }, 
 
     loadHashtagTweets: function() {
-    	var hashtagurl = 'http://search.twitter.com/search.json?q=' + gsb_tweetfeed.search + '&callback=?';
+      var tempAppendTo = gsb_tweetfeed.appendTo,
+          hashtagurl = 'http://search.twitter.com/search.json?q=' + gsb_tweetfeed.search + '&callback=?';
 			$.getJSON( hashtagurl, function( data ) {
 				 var html = '<div class="tweet"><span class="tweet-from-user">FROM-USER: </span>TWEET_TEXT<div class="time">tweetime</div>',
 				 data = data['results'];
         for (var i = 0; i < gsb_tweetfeed.numTweets; i++) {
-        	$(gsb_tweetfeed.appendTo).append(
+        	$(tempAppendTo).append(
             html.replace('TWEET_TEXT', gsb_tweetfeed.ify.clean(data[i].text) )
               .replace('FROM-USER', data[i].from_user)
               .replace('tweetime', gsb_tweetfeed.tweetime(data[i].created_at) )
@@ -140,7 +142,7 @@ gsb_tweetfeed = {
         }
  
         else if (diff < minute * 2) {
-          ago = "about 1 minute ago";
+          ago = "1 minute ago";
         }
  
         else if (diff < hour) {
@@ -148,7 +150,7 @@ gsb_tweetfeed = {
         }
  
         else if (diff < hour * 2) {
-          ago = "about 1 hour ago";
+          ago = "1 hour ago";
         }
  
         else if (diff < day) {

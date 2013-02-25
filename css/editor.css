@@ -101,3 +101,24 @@
 #modal-content .widget-preview .spotlight-image {
 	float: left;
 }
+
+/* social */
+
+#modal-content .widget-preview .twitter-feed {
+ background: #c1dbd9;
+}
+
+#modal-content .widget-preview .twitter-feed-source:after {
+ content: 'Save and reload the page to see the tweets.';
+ color:#202020;
+ display:block;
+ margin-top:9px;
+}
+
+#modal-content .widget-preview .social-block-link {
+margin-top: 15px;
+}
+
+#modal-content .widget-preview .social-icon {
+ display:none;
+}

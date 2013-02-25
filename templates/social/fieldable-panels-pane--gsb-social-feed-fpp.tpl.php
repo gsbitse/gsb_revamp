@@ -8,21 +8,29 @@
   <?php 
   /* define variables */
   $count = !empty($field_number_display_items) ? $field_number_display_items[0]['value'] : 3;
-  $name = !empty($field_search_name) ? $field_search_name[0]['safe_value'] : 0;
+  $name = !empty($field_search_name) ? $field_search_name[0]['safe_value'] : '';
   $format = 'l, M j | a';
+  $buttonname = !empty($field_source_link[0]) ? $field_source_link[0]['title'] : 'Learn more';
+  $buttonlink = !empty($field_source_link[0]) ? $field_source_link[0]['url'] : '';
+  $title = !empty($field_button_title[0]) ? $field_button_title[0]['safe_value'] : 'Twitter Feed';
   if ($name) { $link = 'http://twitter.com/' . $name; }
-  else { $link = 'https://twitter.com/search?q=%23' . $tag; }
   ?>
-
-  <div class="twitter-feed designed-box feed-bg">
-    <a class="twitter-icon" href="<?php print $link; ?>">twitter-feed</a>
+<?php dpm(get_defined_vars()); ?>
+  <div class="twitter-feed designed-box feed-bg <?php if ($count < 3) { print 'bg'; } ?>">
+    <a class="social-icon twitter-icon" href="<?php print $link; ?>">twitter-feed</a>
+    <h5><?php print $title ?></h5>
+    <p class="twitter-feed-source"><?php print $name ?></p>
+    <div id="fpp-tweets-<?php print $id; ?>"></div>
+    <?php if ($buttonlink) { ?>
+      <a class="social-block-link" href="<?php print $buttonlink?>"><?php print $buttonname ?></a>
+    <?php } ?>
   </div>
 
   <?php 
   $toutput = 'gsb_tweetfeed.init({';
   if ($name) $toutput .= 'search: "'. $name .'",';
   $toutput .= 'numTweets: ' . $count . ',';
-  $toutput .= 'appendTo: ".twitter-feed",';
+  $toutput .= 'appendTo: "#fpp-tweets-' . $id . '",';
   $toutput .= 'format: "' . $format . '"});';
   drupal_add_js($toutput,
     array('type' => 'inline', 'scope' => 'footer', 'weight' => 100));

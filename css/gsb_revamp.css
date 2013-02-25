@@ -553,7 +553,7 @@ background-position: 0 2px;
 }
 
 .person-thumb {
- margin-bottom:10px;
+ margin-bottom:5px;
  display:block;
 }
 
@@ -1114,9 +1114,8 @@ cursor: pointer;
 	margin-bottom: 11px;
 }
 
-.pane-gsb-event-sidebar .views-field-field-location,
-.pane-gsb-event-sidebar .views-field-field-state {
-	 font-family: 'NewsGothicBT-Demi', sans-serif;
+.pane-gsb-event-sidebar .event-adress {
+	font-family: 'NewsGothicBT-Demi', sans-serif;
 	color: #666;
 	font-size: 13px;
 	margin-bottom: 5px;
@@ -1634,4 +1633,86 @@ margin-bottom:15px;
 .qtip-wrapper a:hover,
 .qtip-wrapper ul.menu li a:hover {
  color:#63acd5;
+}
+
+/* social feed */
+
+.twitter-feed {
+ position:relative;
+ background: #c1dbd9;
+}
+
+.twitter-feed.bg {
+background: url('../images/homepage-social-block-background-full.png') no-repeat bottom right;
+}
+
+.twitter-feed h5,
+.twitter-feed .twitter-feed-source  {
+color: #8A0000;
+margin: 0;
+font-size: 17px;
+}
+
+.twitter-feed .twitter-feed-source {
+ font-size:16px;
+}
+
+.twitter-feed h5  {
+font-family: NewsGothicBT-Bold, sans-serif;
+font-weight: normal;
+} 
+
+.twitter-feed .social-icon {
+ position:absolute;
+ right:26px;
+ top:26px;
+}
+
+.tweet {
+ margin-top:20px;
+}
+
+.tweet a {
+ color: #8A0000;
+ border:none;
+}
+
+.tweet a:hover {
+ border:none;
+}
+
+.tweet .time {
+ font-size:13px;
+ margin-top:7px;
+}
+
+a.social-block-link,
+a.social-block-link:hover {
+ display:block;
+ background:#754760;
+ border:none;
+ color:#fff;
+ line-height:29px;
+ height:29px;
+ padding-left:15px;
+ font-family: NewsGothicBT-Bold, sans-serif;
+}
+
+a.social-icon  {
+border:none;
+display:block;
+width: 40px;
+height: 41px;
+background-image: url(../images/social-icons.png);
+background-repeat: no-repeat;
+text-indent: -10000px;
+}
+
+a.twitter-icon {
+ background-position:0 0;
+}
+
+a.twitter-icon:hover {
+	background-position: 0 -41px;
+	border: 0;
 }

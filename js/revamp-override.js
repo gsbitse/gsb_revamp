@@ -108,13 +108,13 @@
 						      $this.html('<span>Show Less</span>');
 						      spotlightStory.animate({'max-height': storyContent}, 350);
 						      if (!$this.parents('.span4').length>0) {
-						      	spotlightStory.siblings('.spotlight-image').animate({'height': storyContent + 20}, 350);
+						      	spotlightStory.siblings('.spotlight-image').animate({'min-height': storyContent + 20}, 350);
 						      }
 						    } else {
 						      $this.html('<span>Show More</span>');
 						      spotlightStory.animate({'max-height': visibleHeight}, 300);
 						      if (!$this.parents('.span4').length>0) {
-						      	spotlightStory.siblings('.spotlight-image').animate({'height': 158}, 350);
+						      	spotlightStory.siblings('.spotlight-image').animate({'min-height': 158}, 350);
 						      }
 						 
 						    }
