@@ -1,4 +1,9 @@
 <?php $videolink = '/video'; ?>
+<?php
+  if (!isset($field_gsb_video_video[0]['uri'])) {
+    return;
+  }
+?>
 <div class="gsb-video">
   <span class="gsb-video-border"></span>
   <div class="gsb-video-image">
