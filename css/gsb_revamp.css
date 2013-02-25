@@ -139,7 +139,8 @@ ul.menu {
 		padding: 14px 9px 0 10px; 
 		display: block;
 		font-family: NewsGothicBT-Bold, sans-serif;
-		}
+		background: url('../images/navigation-arrow.png') no-repeat 96px 59px;
+	}
 	.main-menu ul li a:hover {}
 	.main-menu ul li a.active {} 
 	.main-menu ul li ul li { display: block; }
@@ -1256,6 +1257,9 @@ color: #383838;
  font-family: NewsGothicBT-Bold;
  font-size:16px;
  font-weight:normal;
+ padding-left: 24px;
+ position: relative;
+ left: -24px;
 }
 
 .clubs-filter-exposed .fieldset-title:hover {
