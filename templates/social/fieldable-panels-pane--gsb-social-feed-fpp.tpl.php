@@ -15,7 +15,7 @@
   $title = !empty($field_button_title[0]) ? $field_button_title[0]['safe_value'] : 'Twitter Feed';
   if ($name) { $link = 'http://twitter.com/' . $name; }
   ?>
-<?php dpm(get_defined_vars()); ?>
+  
   <div class="twitter-feed designed-box feed-bg <?php if ($count < 3) { print 'bg'; } ?>">
     <a class="social-icon twitter-icon" href="<?php print $link; ?>">twitter-feed</a>
     <h5><?php print $title ?></h5>

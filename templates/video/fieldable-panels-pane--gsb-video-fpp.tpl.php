@@ -12,6 +12,7 @@
 ?>
 <div class="gsb-video">
   <span class="gsb-video-border"></span>
+  <div class="designed-box">
   <?php if (!empty($field_gsb_video_video)) { ?>
     <div class="gsb-video-image">
 
@@ -52,8 +53,6 @@
       ?>
     </div>
   <?php } ?>
-
-<div class="designed-box">
 <div class="rendered-video"><?php
 
     // Print the video player

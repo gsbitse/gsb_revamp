@@ -78,25 +78,29 @@
  * @see template_process()
  */
 ?>
-<?php dpm(get_defined_vars()); ?>
 
 <?php 
 
-/* $speaker_array = array();
+$speaker_array = array();
 foreach ($variables['field_speakers'] as $key => $speaker_id) {
-  $speaker = $variables['elements']['field_speakers'][$key]['entity']['field_collection_item'][$speaker_id['value']]['field_speaker'][
-    '#items'][0]['entity'];
-  $speaker_name = $speaker->field_first_name['und'][0]['safe_value'];
-  $speaker_sname = $speaker->field_last_name['und'][0]['safe_value'];
-  $speaker_url = !empty($speaker->field_url) ? $speaker->field_url['und'][0]['safe_value'] : 0;
-  if ($speaker_url) {
-    $speaker_array[] = '<a href="' . $speaker_url . '">' . $speaker_name . ' ' . $speaker_sname . '</a>';
+  $speaker = $variables['elements']['field_speakers'][$key]['entity']['field_collection_item'][$speaker_id['value']];
+  if ($speaker['field_speaker_reference'][0]['#markup'] != 'Other') {
+    $speaker_ref = $speaker['field_speaker']['#items'][0]['entity'];
+    $speaker_name = $speaker_ref->field_first_name['und'][0]['safe_value'];
+    $speaker_sname = $speaker_ref->field_last_name['und'][0]['safe_value'];
+    $speaker_url = !empty($speaker_ref->field_url) ? $speaker_ref->field_url['und'][0]['safe_value'] : 0;
+    if ($speaker_url) {
+      $speaker_array[] = '<a href="' . $speaker_url . '">' . $speaker_name . ' ' . $speaker_sname . '</a>';
+    } else {
+      $speaker_array[] = $speaker_name . ' ' . $speaker_sname;
+    }
   } else {
-    $speaker_array[] = $speaker_name . ' ' . $speaker_sname;
+    $speaker_name = $speaker['field_speaker_first_name'][0]['#markup'];
+    $speaker_second = $speaker['field_speaker_last_name'][0]['#markup'];
+    $speaker_array[] = $speaker_name . ' ' . $speaker_second;
   }
 }
-$speaker_output = implode(', ', $speaker_array); */
-$speaker_output = '';
+$speaker_output = implode(', ', $speaker_array);
 
 $taxonomy_array = array();
 foreach ($field_event_test_vocab_1 as $key => $tax_value) {
@@ -120,9 +124,16 @@ $maplink = !empty($variables['field_map_url']) ? $variables['field_map_url'][0][
 $eventregisterlink = !empty($variables['field_register_url']) ? $variables['field_register_url'][0]['url'] : '';
 $eventregistertitle = !empty($variables['field_register_url'][0]['title']) ? $variables['field_register_url'][0]['title'] : 'Register';
 $eventimage = !empty($variables['field_event_image']) ? $variables['field_event_image'][0] : '';
-$eventtargetaudience = !empty($variables['field_target_audience']) ? taxonomy_term_load($variables['field_target_audience'][0]['tid'])->name : '';
 $eventeditorialblurb = !empty($variables['field_editorial_blurb']) ? $variables['field_editorial_blurb'][0]['value'] : '';
 $eventbody = !empty($variables['body']) ? $variables['body'][0]['safe_value'] : '';
+
+$eventaudiencetext = array();
+if (!empty($variables['field_target_audience'])) {
+  foreach ($variables['field_target_audience'] as $key => $speaker_id) {
+    $eventaudiencetext[] = taxonomy_term_load($variables['field_target_audience'][$key]['tid'])->name;
+  }
+}
+$eventtargetaudience = implode(', ', $eventaudiencetext);
 
 if(!empty($eventimage)) {
   $eventimagestyle = array(

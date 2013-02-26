@@ -87,7 +87,7 @@ ul.menu {
 	#header { 
 		margin: 0; 
 		height: 146px; 
-		border-top:10px #880000 solid;
+		border-top:10px #990000 solid;
 		border-bottom:1px #aaa solid;
 		box-shadow: 0px 0px 4px rgba(0,0,0,0.5);
 	}
@@ -442,7 +442,7 @@ a.green-rounded-button:hover {
 /* Spotlights */
 
 .page-node #content-body .spotlight .field {
- margin-bottom:10px;
+ margin-bottom:0px;
 }
 
 .page-node #content-body .span8 .spotlight .field {
@@ -493,9 +493,13 @@ a.green-rounded-button:hover {
 }
 
 .spotlight .spotlight-story {
- max-height:88px;
+ max-height:72px;
  overflow:hidden;
  clear: both;
+}
+
+.span8 .span6 .spotlight {
+	min-height: 342px;
 }
 
 .span8 .spotlight .spotlight-story {
@@ -564,8 +568,14 @@ background-position: 0 2px;
  margin-bottom:10px;
 }
 
-.span4 .spotlight-image {
- margin-bottom:12px;
+.span4 .spotlight-image,
+.span8 .span6 .spotlight-image {
+ overflow:hidden;
+ margin-bottom:10px;
+}
+
+.span8 .span6 .spotlight-image img {
+	min-height: 130px;
 }
 
 /* gsb person list */
@@ -605,9 +615,9 @@ background-position: 0 2px;
 }
 
 .gsb-person-teaser {
- width:168px;
+ width:170px;
  float:left;
- margin:0 34px 20px 0;
+ margin:0 31px 20px 0;
  font-family: 'NewsGothicBT-Roman', sans-serif;
 }
 
@@ -623,8 +633,8 @@ background-position: 0 2px;
 
 .gsb-person-teaser img,
 .gsb-person-featured  img{
- width:168px;
- max-width: 168px;
+ width:170px;
+ max-width: 170px;
  height:auto;
 }
 
@@ -636,7 +646,7 @@ margin-right: 21px;
 .gsb-person-teaser a,
 .gsb-person-featured a {
  border:0;
- color:#800;
+ color:#900;
  display:block;
 }
 
@@ -1027,6 +1037,16 @@ background: #739d95;
 }
 
 /* video block */
+
+.gsb-video .designed-box>p:last-child {
+	margin-bottom: 0;
+}
+
+.span4 .gsb-video .gsb-video-image {
+	width: 272px;
+margin: -26px 0 15px -26px;
+}
+
 .span4 .gsb-video .gsb-video-image img {
  width:276px;
  display:block;
@@ -1140,7 +1160,7 @@ cursor: pointer;
 	font-weight: normal;
 	line-height: 1em;
 	margin-bottom: 18px;
-	color: #800;
+	color: #900;
 }
 
 .pane-gsb-event-frontpage h2 {
@@ -1259,6 +1279,9 @@ color: #383838;
  font-size:16px;
  font-weight:normal;
  padding-left: 23px;
+ padding-right: 9px;
+ height: 40px;
+ margin-bottom: 1px;
 }
 
 .clubs-filter-exposed .fieldset-title {
@@ -1577,6 +1600,16 @@ margin-bottom:15px;
  margin-top:20px;
 }
 
+.event-target-audience {
+ font-size:14px;
+ font-family: NewsGothicBT-Roman, sans-serif;
+ margin-bottom:17px;
+}
+ 
+.event-target-audience span {
+ font-family: NewsGothicBT-Bold, sans-serif
+}
+
 .event-innerpage-description {
  float:right;
  width:270px;
@@ -1662,7 +1695,7 @@ background: url('../images/homepage-social-block-background-full.png') no-repeat
 
 .twitter-feed h5,
 .twitter-feed .twitter-feed-source  {
-color: #8A0000;
+color: #990000;
 margin: 0;
 font-size: 17px;
 }
@@ -1687,7 +1720,7 @@ font-weight: normal;
 }
 
 .tweet a {
- color: #8A0000;
+ color: #990000;
  border:none;
 }
 
@@ -1698,6 +1731,7 @@ font-weight: normal;
 .tweet .time {
  font-size:13px;
  margin-top:7px;
+ font-family: NewsGothicBT-Roman, sans-serif;
 }
 
 a.social-block-link,

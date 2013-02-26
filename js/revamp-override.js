@@ -91,30 +91,36 @@
     attach: function (context, settings) {
     	if ($('.spotlight').length>0) {
 			  var spotlightShowMore = $('.spotlight a.show-more'),
-			      visibleLines = 5,
-			      visibleHeight = visibleLines*parseInt(spotlightShowMore.siblings('.spotlight-story').children('p').css('line-height'));
+			      visibleLines = 4,
+			      visibleHeight = visibleLines * parseInt(spotlightShowMore.siblings('.spotlight-story').children('p').css('line-height'));
 			  spotlightShowMore.each(function() {
 			    var $this = $(this);
 			    if (!$this.hasClass('showmore-processed')) {
 			    	$this.addClass('showmore-processed');
 				    var spotlightStory = $this.siblings('.spotlight-story'),
 				      	storyContent = spotlightStory.children('p').height();
-				    if (storyContent<=visibleHeight) {
+
+				     if (spotlightStory.position().top > 276) { // >276 means description is lower 
+				     	spotlightStory.css('max-height', 35); // set height to 2 lines
+				     	visibleHeight = parseInt(visibleHeight / visibleLines * visibleLines/2);
+				     }
+
+				    if (storyContent <= visibleHeight) {
 				    	$this.remove();
 				    } else {
 					    $this.click(function() { 
 						    var $this = $(this);
 						    if (!$this.hasClass('active')) {
 						      $this.html('<span>Show Less</span>');
-						      spotlightStory.animate({'max-height': storyContent}, 350);
-						      if (!$this.parents('.span4').length>0) {
-						      	spotlightStory.siblings('.spotlight-image').animate({'min-height': storyContent + 20}, 350);
+						      spotlightStory.animate({'max-height' : storyContent}, 350);
+						      if (!$this.parents('.span4, #content-upper-middle-column1, #content-upper-middle-column2').length > 0) {
+						      	spotlightStory.siblings('.spotlight-image').animate({'min-height' : storyContent + 20}, 350);
 						      }
 						    } else {
 						      $this.html('<span>Show More</span>');
-						      spotlightStory.animate({'max-height': visibleHeight}, 300);
-						      if (!$this.parents('.span4').length>0) {
-						      	spotlightStory.siblings('.spotlight-image').animate({'min-height': 158}, 350);
+						      spotlightStory.animate({'max-height' : visibleHeight}, 300);
+						      if (!$this.parents('.span4, #content-upper-middle-column1, #content-upper-middle-column2').length > 0 ) {
+						      	spotlightStory.siblings('.spotlight-image').animate({'min-height' : 158}, 350);
 						      }
 						 
 						    }

@@ -64,7 +64,6 @@
 }
 
 /* video */
-
 #modal-content .widget-preview .fieldset-wrapper .gsb-video-image a,
 #modal-content .widget-preview .fieldset-wrapper .video-play-icon {
  display:none;
@@ -84,7 +83,6 @@
 }
 
 /* spotlight */
-
 #modal-content .widget-preview .spotlight-story {
  margin-left:288px;
  clear:none;
@@ -103,7 +101,6 @@
 }
 
 /* social */
-
 #modal-content .widget-preview .twitter-feed {
  background: #c1dbd9;
 }
@@ -124,7 +121,6 @@ margin-top: 15px;
 }
 
 /* media widget */
-
 .media-widget .preview {
  float:left;
  margin-bottom:13px;
@@ -157,4 +153,25 @@ box-shadow: 0 3px 3px 0 #D2D2D2;
 padding: 0 13px 1px;
 display:block;
 float:left;
+}
+
+.media-widget a.ctools-modal-media-file-edit {
+ display:none !important;
+}
+
+#media-browser-tabset a.button.fake-cancel {
+ display:none !important;
+}
+
+#media-browser-tabset .form-actions {
+	padding-top: 25px;
+}
+
+#edit-upload-ajax-wrapper {
+	float: left;
+	margin-right: 15px;
+}
+
+.view-gsb-media-browser {
+	clear: both;
 }
