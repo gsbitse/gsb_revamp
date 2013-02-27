@@ -141,6 +141,23 @@
     }
   }
 
+  Drupal.behaviors.accordion = {
+    attach: function (context, settings) {
+    	if ($('.field-name-field-accordion-item').length > 0) {
+    		var accordionHead = $(".field-name-field-accordion-item .field-name-field-header");
+    		accordionHead.prepend('<span class="accordion-toggle"></span>');
+    		accordionHead.click(function (e) {
+    			$(this).toggleClass('opened').parents('.entity').find('.field-name-field-description').slideToggle(250);
+    		});    		
+
+    		accordionHead.find('div').click(function(e) {
+    			e.stopPropagation();
+    		});
+
+    	}
+    }
+  }
+
   Drupal.behaviors.theme_checkboxes = {
     attach: function (context, settings) {
     	if ($('.clubs-filter-exposed').length > 0) {

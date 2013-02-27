@@ -580,6 +580,10 @@ background-position: 0 2px;
 
 /* gsb person list */
 
+.view-id-gsb_person_fpp_view {
+	overflow: hidden;
+}
+
 .pane-bundle-gsb-person-fpp .pane-title {
  color:#222;
  font-size:25px;
@@ -1189,6 +1193,11 @@ cursor: pointer;
  .span8 .pane-gsb-event-sidebar .views-row>div { 
  max-width:320px;
  }
+
+ .event-sidebar .views-field-body a,
+.event-sidebar .views-field-body a:hover {
+ border:none;
+}
  
 .pane-gsb-event-sidebar img {
  position:absolute;
@@ -1763,4 +1772,55 @@ a.twitter-icon {
 a.twitter-icon:hover {
 	background-position: 0 -41px;
 	border: 0;
+}
+
+/* accordion */
+.accordion-toggle {
+	display: none;
+}
+
+.content .accordion-toggle {
+	display: block;
+	float: left;
+	width: 15px;
+	height: 15px;
+ background: url('../images/accordion-icons.png') no-repeat 0 0;
+ margin-top: 9px;
+}
+
+.accordion-toggle.opened {
+	background-position: 0 -16px;
+}
+
+.accordion-toggle:hover {
+	background-position: -15px 0px;
+}
+
+.accordion-toggle.opened:hover {
+	background-position: -15px -16px;
+}
+
+.page-node #content-body .field-name-field-accordion-item .field {
+	margin-bottom: 0;
+	font-size: 18px;
+	line-height: 24px;
+	font-family: NewsGothicBT-Roman, sans-serif;
+}
+
+.content .field-name-field-accordion-item .field-name-field-description {
+	margin-top: 0;
+	padding-left: 45px;
+	display: none;
+}
+
+.content .field-name-field-accordion-item .field-name-field-header {
+	border-top: 2px #e1e5e4 solid;
+	font-family: NewsGothicBT-Demi, sans-serif;
+	cursor: pointer;
+}
+
+.content .field-name-field-accordion-item .field-name-field-header .field-items {
+	padding: 8px 8px 8px 5px;
+	margin-left: 40px;
+	cursor: default;
 }
