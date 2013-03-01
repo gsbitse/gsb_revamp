@@ -97,3 +97,50 @@ function gsb_revamp_preprocess_page(&$vars) {
   // Add the rendered output to the $main_menu_expanded variables
   $vars['main_menu_collapsed'] = menu_tree_output(menu_tree_all_data('main-menu', NULL, 1));    
 }
+
+/**
+ * Return formated date
+ */
+function _gsb_revamp_format_event_date($eventdate1, $eventdate2, $all_day) {
+  $dateoutput = '';
+  if ($eventdate1 != $eventdate2) {
+    if (date('o M j', $eventdate1) != date('o M j', $eventdate2)) {
+      $dateoutput .= '<span>'
+      . date('l, ', $eventdate1)
+      . '</span>'
+      . strtoupper(date('M j', $eventdate1)) 
+      . ' – ' 
+      . '<span>'
+      . date('l, ', $eventdate2)
+      . '</span>'
+      . strtoupper(date('M j', $eventdate2));
+    } else {
+      if ($field_all_day_event['0']['value'] == 1) {
+        $dateoutput .= date('l, ', $eventdate1)
+        . strtoupper(date('M j', $eventdate1));
+      } else {
+        $dateoutput .= '<span>'
+        . date('l, ', $eventdate1)
+        . '</span>'
+        . strtoupper(date('M j', $eventdate1)) 
+        . date(', ga', $eventdate1) 
+        . ' – ' 
+        . date('ga', $eventdate2);
+      }
+    }
+  } else {
+    if ($all_day == 1) {
+      $dateoutput .= '<span>'
+      . date('l, ', $eventdate1)
+      . '</span>'
+      . strtoupper(date('M j', $eventdate1));
+    } else {
+      $dateoutput .= '<span>'
+      . date('l, ', $eventdate1)
+      . '</span>'
+      . strtoupper(date('M j,', $eventdate1))
+      . date(' ga', $eventdate1);
+    }
+  }
+  return $dateoutput;
+}

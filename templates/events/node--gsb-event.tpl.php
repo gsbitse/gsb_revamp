@@ -146,46 +146,7 @@ if(!empty($eventimage)) {
   );
 }
 
-$dateoutput = '';
-if ($eventdate1 != $eventdate2) {
-  if (date('o M j', $eventdate1) != date('o M j', $eventdate2)) {
-    $dateoutput .= '<span>'
-    . date('l, ', $eventdate1)
-    . '</span>'
-    . strtoupper(date('M j', $eventdate1)) 
-    . ' – ' 
-    . '<span>'
-    . date('l, ', $eventdate2)
-    . '</span>'
-    . strtoupper(date('M j', $eventdate2));
-  } else {
-    if ($field_all_day_event['0']['value'] == 1) {
-      $dateoutput .= date('l, ', $eventdate1)
-      . strtoupper(date('M j', $eventdate1));
-    } else {
-      $dateoutput .= '<span>'
-      . date('l, ', $eventdate1)
-      . '</span>'
-      . strtoupper(date('M j', $eventdate1)) 
-      . date(', ga', $eventdate1) 
-      . ' – ' 
-      . date('ga', $eventdate2);
-    }
-  }
-} else {
-  if ($field_all_day_event['0']['value'] == 1) {
-    $dateoutput .= '<span>'
-    . date('l, ', $eventdate1)
-    . '</span>'
-    . strtoupper(date('M j', $eventdate1));
-  } else {
-    $dateoutput .= '<span>'
-    . date('l, ', $eventdate1)
-    . '</span>'
-    . strtoupper(date('M j,', $eventdate1))
-    . date(' ga', $eventdate1);
-  }
-}
+$dateoutput = _gsb_revamp_format_event_date($eventdate1, $eventdate2, $field_all_day_event['0']['value']);
 
 ?>
 
