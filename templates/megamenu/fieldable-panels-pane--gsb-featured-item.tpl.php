@@ -1,6 +1,7 @@
 <?php 
 
   // Get all titles and nodes
+  printf( '<div class="mm-featured-header">%s</div>', t('Featured News') );
   foreach ($variables['field_gsb_featured_item'] as $key => $feature_item) {
     $imagestyle = '';
     $date = '';
