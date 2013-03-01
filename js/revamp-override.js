@@ -143,17 +143,55 @@
 
   Drupal.behaviors.accordion = {
     attach: function (context, settings) {
-    	if ($('.field-name-field-accordion-item').length > 0) {
-    		var accordionHead = $(".field-name-field-accordion-item .field-name-field-header");
+
+    	var acctitle = $('.acc-title');
+    	if ( acctitle.length > 0 ) {
+    		acctitle.each(function () {
+    			var $this = $(this),
+    				next = $this.next('.acc-body');
+    				if ( next.length > 0 ) {
+    					next.wrapAll('<div class="accordion-body-wrap" />');
+    					touchNeighbour(next, 'acc-body');
+    				} else {
+    					$this.removeClass('acc-title');
+    				}
+    		});
+    		var firstelem = acctitle.first();
+    		if ( !firstelem.parent().hasClass('accordion-processed') ) {
+	    		firstelem.wrap('<div class="accordion-body accordion-processed" />');
+	    		touchNeighbour( firstelem, 'acc-title', 'accordion-body-wrap' );
+    		}
+
+
+    	}
+
+    	if ( $('.field-name-field-accordion-item, .acc-title').length > 0 ) {
+    		var accordionHead = $(".field-name-field-accordion-item .field-name-field-header, .acc-title");
     		accordionHead.prepend('<span class="accordion-toggle"></span>');
     		accordionHead.click(function (e) {
-    			$(this).toggleClass('opened').parents('.entity').find('.field-name-field-description').slideToggle(250);
+    			var $this = $(this);
+    			if ($this.parents('.entity').length > 0) {
+    				$this.toggleClass('opened').parents('.entity').find('.field-name-field-description').slideToggle(250);
+    			} else {
+    				$this.toggleClass('opened').next('.accordion-body-wrap').slideToggle(250);
+    			
+    			}
     		});    		
 
     		accordionHead.find('div').click(function(e) {
     			e.stopPropagation();
     		});
 
+    	}
+
+    	function touchNeighbour(e, className, className2) {
+    		var next = e.parent().next(); 		
+    		if ( next.hasClass(className) || next.hasClass(className2) ) {
+    			next.insertAfter(e);
+    			touchNeighbour(next, className, className2);
+    		} else {
+    			return false;
+    		}
     	}
     }
   }

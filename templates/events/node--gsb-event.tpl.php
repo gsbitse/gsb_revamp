@@ -81,6 +81,8 @@
 
 <?php 
 
+dpm(get_defined_vars());
+
 $speaker_array = array();
 foreach ($variables['field_speakers'] as $key => $speaker_id) {
   $speaker = $variables['elements']['field_speakers'][$key]['entity']['field_collection_item'][$speaker_id['value']];
@@ -103,29 +105,46 @@ foreach ($variables['field_speakers'] as $key => $speaker_id) {
 $speaker_output = implode(', ', $speaker_array);
 
 $taxonomy_array = array();
-foreach ($field_event_test_vocab_1 as $key => $tax_value) {
-  $tax = taxonomy_term_load($field_event_test_vocab_1[$key]['tid']);
-  $tax_tid = $tax->tid;
-  $tax_name = $tax->name;
-  $taxonomy_array[] = '<a href="/events/' . $tax_tid . '">' . $tax_name . '</a>';
+$taxonomies = array();
+if ( !empty($field_business_insight_topic) ) { $taxonomies[] = $field_business_insight_topic[0]['tid']; }
+if ( !empty($field_event_category) ) { $taxonomies[] = $field_event_category[0]['tid']; }
+if ( !empty($field_discipline) ) { $taxonomies[] = $field_discipline[0]['tid']; }
+if ( !empty($field_industry) ) { $taxonomies[] = $field_industry[0]['tid']; }
+if ( !empty($field_region) ) { $taxonomies[] = $field_region[0]['tid']; }
+if ( !empty($field_company_organization) ) { $taxonomies[] = $field_company_organization[0]['tid']; }
+if ( !empty($field_tag) ) { $taxonomies[] = $field_tag[0]['tid']; }
+
+
+foreach ( $taxonomies as $taxid ) {
+  $tax = taxonomy_term_load($taxid);
+  $taxonomy_array[] = '<a href="/taxonomy/term/' . $tax->tid . '">' . $tax->name . '</a>';
 }
 $taxonomy_output = implode(', ', $taxonomy_array);
 
+
+/*strtotime(*/
+
 $eventtitle = $variables['title'];
-$eventdate1 = !empty($variables['field_event_date']) ? strtotime($variables['field_event_date'][0]['value']) : '';
-$eventdate2 = !empty($variables['field_event_date']) ?  strtotime($variables['field_event_date'][0]['value2']) : '';
+$eventdate1 = !empty($variables['field_event_date']) ? $variables['field_event_date'][0]['value'] : '';
+$eventdate2 = !empty($variables['field_event_date']) ?  $variables['field_event_date'][0]['value2'] : '';
 $eventadress1 = !empty($variables['field_address'][0]['thoroughfare']) ? $variables['field_address'][0]['thoroughfare'] : '';
 $eventadress2 = !empty($variables['field_address'][0]['premise']) ? $variables['field_address'][0]['premise'] : '';
 $eventadress3 = !empty($variables['field_address'][0]['value']) ? $variables['field_address'][0]['value'] : '';
 $eventcity = !empty($variables['field_address'][0]['locality']) ? $variables['field_address'][0]['locality'] : '';
 $eventstate = !empty($variables['field_address'][0]['administrative_area']) ? $variables['field_address'][0]['administrative_area'] : '';
 $eventcountry = !empty($variables['field_address'][0]['country']) ? $variables['field_address'][0]['country'] : '';
-$maplink = !empty($variables['field_map_url']) ? $variables['field_map_url'][0]['url'] : '';
-$eventregisterlink = !empty($variables['field_register_url']) ? $variables['field_register_url'][0]['url'] : '';
+$maplink = !empty($variables['field_map_url']) ? $variables['field_map_url'][0]['display_url'] : '';
+$eventregisterlink = !empty($variables['field_register_url']) ? $variables['field_register_url'][0]['display_url'] : '';
 $eventregistertitle = !empty($variables['field_register_url'][0]['title']) ? $variables['field_register_url'][0]['title'] : 'Register';
 $eventimage = !empty($variables['field_event_image']) ? $variables['field_event_image'][0] : '';
 $eventeditorialblurb = !empty($variables['field_editorial_blurb']) ? $variables['field_editorial_blurb'][0]['value'] : '';
 $eventbody = !empty($variables['body']) ? $variables['body'][0]['safe_value'] : '';
+
+$dateTime = new DateTime($eventdate1);
+$dateTime2 = new DateTime($eventdate2);
+$DateTimeZone = timezone_open ( 'America/Los_Angeles' );
+date_timezone_set( $dateTime, $DateTimeZone );
+date_timezone_set( $dateTime2, $DateTimeZone );
 
 $eventaudiencetext = array();
 if (!empty($variables['field_target_audience'])) {
@@ -146,7 +165,47 @@ if(!empty($eventimage)) {
   );
 }
 
-$dateoutput = _gsb_revamp_format_event_date($eventdate1, $eventdate2, $field_all_day_event['0']['value']);
+$dateoutput = '';
+if ($eventdate1 != $eventdate2) {
+  if (date_format($dateTime, 'o M j') != date($dateTime2, 'o M j')) {
+    $dateoutput .= '<span>'
+    . date_format($dateTime, 'l, ')
+    . '</span>'
+    . date_format($dateTime, 'M j') 
+    . ' – ' 
+    . '<span>'
+    . date_format($dateTime2, 'l, ')
+    . '</span>'
+    . date_format($dateTime2, 'M j');
+  } else {
+    if ($field_all_day_event['0']['value'] == 1) {
+      $dateoutput .= date_format('l, ', $eventdate1)
+      . date_format($eventdate1, 'M j');
+    } else {
+      $dateoutput .= '<span>'
+      . date_format($eventdate1, 'l, ')
+      . '</span>'
+      . date_format($eventdate1, 'M j') 
+      . date_format($eventdate1, ', ga') 
+      . ' – ' 
+      . date_format($dateTime2, 'ga');
+    }
+  }
+} else {
+  if ($field_all_day_event['0']['value'] == 1) {
+    $dateoutput .= '<span>'
+    . date_format($dateTime, 'l, ')
+    . '</span>'
+    . date_format($dateTime, 'M j');
+  } else {
+    $dateoutput .= '<span>'
+    . date_format($dateTime, 'l, ')
+    . '</span>'
+    . date_format($dateTime, 'M j,')
+    . date_format($dateTime, ' ga');
+  }
+}
+
 
 ?>
 
