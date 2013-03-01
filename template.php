@@ -101,45 +101,40 @@ function gsb_revamp_preprocess_page(&$vars) {
 /**
  * Return formated date
  */
-function _gsb_revamp_format_event_date($eventdate1, $eventdate2, $all_day) {
+function _gsb_revamp_format_event_date($eventdate1, $eventdate2, $all_day, $format = 'default') {
   $dateoutput = '';
+
+  $eventdate1 = strtotime($eventdate1);
+  $eventdate2 = strtotime($eventdate2);
+
+  if ($format == 'megamenu') {
+    $monthday1 = date('F j, Y', $eventdate1);
+    $monthday2 = date('F j, Y', $eventdate2);
+  }
+  elseif ($format == 'eventdetail') {
+    $monthday1 = date('M j', $eventdate1);
+    $monthday2 = date('M j', $eventdate2);
+  }
+  else {
+    $monthday1 = strtoupper(date('M j', $eventdate1));
+    $monthday2 = strtoupper(date('M j', $eventdate2));
+  }
+
   if ($eventdate1 != $eventdate2) {
     if (date('o M j', $eventdate1) != date('o M j', $eventdate2)) {
-      $dateoutput .= '<span>'
-      . date('l, ', $eventdate1)
-      . '</span>'
-      . strtoupper(date('M j', $eventdate1)) 
-      . ' – ' 
-      . '<span>'
-      . date('l, ', $eventdate2)
-      . '</span>'
-      . strtoupper(date('M j', $eventdate2));
+      $dateoutput .= sprintf('<span>%s</span>%s – <span>%s</span>%s', date('l, ', $eventdate1), $monthday1, date('l, ', $eventdate2), $monthday2);
     } else {
       if ($field_all_day_event['0']['value'] == 1) {
-        $dateoutput .= date('l, ', $eventdate1)
-        . strtoupper(date('M j', $eventdate1));
+        $dateoutput .= date('l, ', $eventdate1) . $monthday1;
       } else {
-        $dateoutput .= '<span>'
-        . date('l, ', $eventdate1)
-        . '</span>'
-        . strtoupper(date('M j', $eventdate1)) 
-        . date(', ga', $eventdate1) 
-        . ' – ' 
-        . date('ga', $eventdate2);
+        $dateoutput .= sprintf('<span>%s</span>%s%s – %s', date('l, ', $eventdate1), $monthday1, date(', ga', $eventdate1), date('ga', $eventdate2));
       }
     }
   } else {
     if ($all_day == 1) {
-      $dateoutput .= '<span>'
-      . date('l, ', $eventdate1)
-      . '</span>'
-      . strtoupper(date('M j', $eventdate1));
+      $dateoutput .= sprintf('<span>%s</span>%s', date('l, ', $eventdate1), $monthday1);
     } else {
-      $dateoutput .= '<span>'
-      . date('l, ', $eventdate1)
-      . '</span>'
-      . strtoupper(date('M j,', $eventdate1))
-      . date(' ga', $eventdate1);
+      $dateoutput .= sprintf('<span>%s</span>%s%s', date('l, ', $eventdate1), $monthday1, date(' ga', $eventdate1));
     }
   }
   return $dateoutput;

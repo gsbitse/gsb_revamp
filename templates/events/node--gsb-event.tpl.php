@@ -140,12 +140,6 @@ $eventimage = !empty($variables['field_event_image']) ? $variables['field_event_
 $eventeditorialblurb = !empty($variables['field_editorial_blurb']) ? $variables['field_editorial_blurb'][0]['value'] : '';
 $eventbody = !empty($variables['body']) ? $variables['body'][0]['safe_value'] : '';
 
-$dateTime = new DateTime($eventdate1);
-$dateTime2 = new DateTime($eventdate2);
-$DateTimeZone = timezone_open ( 'America/Los_Angeles' );
-date_timezone_set( $dateTime, $DateTimeZone );
-date_timezone_set( $dateTime2, $DateTimeZone );
-
 $eventaudiencetext = array();
 if (!empty($variables['field_target_audience'])) {
   foreach ($variables['field_target_audience'] as $key => $speaker_id) {
@@ -165,47 +159,7 @@ if(!empty($eventimage)) {
   );
 }
 
-$dateoutput = '';
-if ($eventdate1 != $eventdate2) {
-  if (date_format($dateTime, 'o M j') != date($dateTime2, 'o M j')) {
-    $dateoutput .= '<span>'
-    . date_format($dateTime, 'l, ')
-    . '</span>'
-    . date_format($dateTime, 'M j') 
-    . ' – ' 
-    . '<span>'
-    . date_format($dateTime2, 'l, ')
-    . '</span>'
-    . date_format($dateTime2, 'M j');
-  } else {
-    if ($field_all_day_event['0']['value'] == 1) {
-      $dateoutput .= date_format('l, ', $eventdate1)
-      . date_format($eventdate1, 'M j');
-    } else {
-      $dateoutput .= '<span>'
-      . date_format($eventdate1, 'l, ')
-      . '</span>'
-      . date_format($eventdate1, 'M j') 
-      . date_format($eventdate1, ', ga') 
-      . ' – ' 
-      . date_format($dateTime2, 'ga');
-    }
-  }
-} else {
-  if ($field_all_day_event['0']['value'] == 1) {
-    $dateoutput .= '<span>'
-    . date_format($dateTime, 'l, ')
-    . '</span>'
-    . date_format($dateTime, 'M j');
-  } else {
-    $dateoutput .= '<span>'
-    . date_format($dateTime, 'l, ')
-    . '</span>'
-    . date_format($dateTime, 'M j,')
-    . date_format($dateTime, ' ga');
-  }
-}
-
+$dateoutput = _gsb_revamp_format_event_date($eventdate1, $eventdate2, $field_all_day_event['0']['value'], 'eventdetail');
 
 ?>
 

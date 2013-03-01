@@ -29,7 +29,7 @@
           'height' => '158',
         ));
 
-        $date = _gsb_revamp_format_event_date(strtotime($node->field_event_date[$node->language][0]['value']), strtotime($node->field_event_date[$node->language][0]['value2']), $node->field_all_day_event[$node->language]['0']['value']);
+        $date = _gsb_revamp_format_event_date($node->field_event_date[$node->language][0]['value'], $node->field_event_date[$node->language][0]['value2'], $node->field_all_day_event[$node->language]['0']['value'], 'megamenu');
         break;
       
       default:
