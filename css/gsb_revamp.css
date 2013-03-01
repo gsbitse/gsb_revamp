@@ -1982,3 +1982,46 @@ display: block;
 .designed-box.cta-link.cta-green {
 	padding-right: 22px;
 }
+
+/* megamenu featured */
+
+.mm-featured {
+	border-top: 8px #100f0f solid;
+	overflow: hidden;
+	margin-top: 16px;
+}
+
+.mm-featured:first-child {
+	margin-top: 0;
+}
+
+.mm-featured-image{
+	float: left;
+}
+
+.mm-featured-image img{
+opacity: 0.7;
+}
+
+.mm-featured-content {
+	float: right;
+	width: 220px;
+}
+
+.mm-featured-date {
+	color: #aaa;
+	font-family: NewsGothicBT-Roman;
+	font-size: 13px;
+	margin-top: 5px;
+	display: block;
+}
+
+a.mm-featured-title {
+	color: #aaa;
+	margin-top: 6px;
+	display: block;
+	font-size: 25px;
+	font-family: NewsGothicBT-Bold;
+	display: block;
+	line-height: 28px;
+}
