@@ -81,8 +81,6 @@
 
 <?php 
 
-dpm(get_defined_vars());
-
 $speaker_array = array();
 foreach ($variables['field_speakers'] as $key => $speaker_id) {
   $speaker = $variables['elements']['field_speakers'][$key]['entity']['field_collection_item'][$speaker_id['value']];
@@ -104,6 +102,7 @@ foreach ($variables['field_speakers'] as $key => $speaker_id) {
 }
 $speaker_output = implode(', ', $speaker_array);
 
+/* all taxonomies */
 $taxonomy_array = array();
 $taxonomies = array();
 if ( !empty($field_business_insight_topic) ) { $taxonomies[] = $field_business_insight_topic[0]['tid']; }
@@ -114,16 +113,14 @@ if ( !empty($field_region) ) { $taxonomies[] = $field_region[0]['tid']; }
 if ( !empty($field_company_organization) ) { $taxonomies[] = $field_company_organization[0]['tid']; }
 if ( !empty($field_tag) ) { $taxonomies[] = $field_tag[0]['tid']; }
 
-
+/* tags */
 foreach ( $taxonomies as $taxid ) {
   $tax = taxonomy_term_load($taxid);
   $taxonomy_array[] = '<a href="/taxonomy/term/' . $tax->tid . '">' . $tax->name . '</a>';
 }
 $taxonomy_output = implode(', ', $taxonomy_array);
 
-
-/*strtotime(*/
-
+/* variables */
 $eventtitle = $variables['title'];
 $eventdate1 = !empty($variables['field_event_date']) ? $variables['field_event_date'][0]['value'] : '';
 $eventdate2 = !empty($variables['field_event_date']) ?  $variables['field_event_date'][0]['value2'] : '';
@@ -140,6 +137,7 @@ $eventimage = !empty($variables['field_event_image']) ? $variables['field_event_
 $eventeditorialblurb = !empty($variables['field_editorial_blurb']) ? $variables['field_editorial_blurb'][0]['value'] : '';
 $eventbody = !empty($variables['body']) ? $variables['body'][0]['safe_value'] : '';
 
+/* audience taxonomy */
 $eventaudiencetext = array();
 if (!empty($variables['field_target_audience'])) {
   foreach ($variables['field_target_audience'] as $key => $speaker_id) {
