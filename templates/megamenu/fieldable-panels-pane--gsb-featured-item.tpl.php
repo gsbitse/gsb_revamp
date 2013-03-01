@@ -14,22 +14,42 @@
     switch ($node->type) {
       case 'gsb_event':
         $image = $node->field_event_image[$node->language][0];
-        $imagestyle = theme_image_style(array(
-          'style_name' => 'megamenu_170x100',
-          'path' => $image['uri'],
-          'alt' => $image['alt'],
-          'title' => $image['title'],
-          'width' => '170',
-          'height' => '100',
-        ));
+        $image_url = $image['uri'];
+        $image_alt = $image['alt'];
+        $image_title = $image['alt'];
 
         $date = _gsb_revamp_format_event_date($node->field_event_date[$node->language][0]['value'], $node->field_event_date[$node->language][0]['value2'], $node->field_all_day_event[$node->language]['0']['value'], 'megamenu');
         break;
-      
+
+      case 'business_insight':
+        $image = $node->field_content_image[$node->language][0];
+        $image_url = $image['uri'];
+        $image_alt = $image['field_file_image_alt_text'][$node->language][0]['safe_value'];
+        $image_title = $image['field_file_image_title_text'][$node->language][0]['safe_value'];
+        $date = format_date(strtotime($node->field_date_published[$node->language][0]['value']), 'custom', 'l, F j, Y');
+      break;
+
+      case 'gsb_media_mention':
+        $image = $node->field_content_image[$node->language][0];
+        $image_url = $image['uri'];
+        $image_alt = $image['field_file_image_alt_text'][$node->language][0]['safe_value'];
+        $image_title = $image['field_file_image_title_text'][$node->language][0]['safe_value'];
+        $date = format_date(strtotime($node->field_date_published[$node->language][0]['value']), 'custom', 'l, F j, Y');
+      break;  
+
       default:
         $date = format_date($node->created, 'medium_time');
         break;
     }
+
+    $imagestyle = theme_image_style(array(
+      'style_name' => 'megamenu_170x100',
+      'path' => $image_url,
+      'alt' => $image_alt,
+      'title' => $image_title,
+      'width' => '170',
+      'height' => '100',
+    ));    
 
     printf( '<div class="mm-featured"><div class="mm-featured-image">%s</div><div class="mm-featured-content"><span class="mm-featured-date">%s</span><a class="mm-featured-title" href="%s">%s</a></div></div>', $imagestyle, $date, $node_url, $title );
   }
