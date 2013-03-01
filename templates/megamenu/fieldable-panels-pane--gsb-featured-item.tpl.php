@@ -9,7 +9,7 @@
     $node = $variables['elements']['field_gsb_featured_item'][$key]['entity']['field_collection_item'][$feature_item['value']]['field_gsb_featured_reference']['#items'][0]['entity'];
     $title = isset($variables['elements']['field_gsb_featured_item'][$key]['entity']['field_collection_item'][$feature_item['value']]['field_gsb_feature_title']) ? $variables['elements']['field_gsb_featured_item'][$key]['entity']['field_collection_item'][$feature_item['value']]['field_gsb_feature_title'][0]['#markup'] : $node->title;
 
-    $node_url = url('node/' . $node->nid);  
+    $node_url = url('node/' . $node->nid);
 
     switch ($node->type) {
       case 'gsb_event':
@@ -24,16 +24,16 @@
       case 'business_insight':
         $image = $node->field_content_image[$node->language][0];
         $image_url = $image['uri'];
-        $image_alt = $image['field_file_image_alt_text'][$node->language][0]['safe_value'];
-        $image_title = $image['field_file_image_title_text'][$node->language][0]['safe_value'];
+        $image_alt = !empty($image['field_file_image_alt_text']) ? $image['field_file_image_alt_text'][$node->language][0]['safe_value'] : '';
+        $image_title = !empty($image['field_file_image_title_text']) ? $image['field_file_image_title_text'][$node->language][0]['safe_value'] : '';
         $date = format_date(strtotime($node->field_date_published[$node->language][0]['value']), 'custom', 'l, F j, Y');
       break;
 
       case 'gsb_media_mention':
         $image = $node->field_content_image[$node->language][0];
         $image_url = $image['uri'];
-        $image_alt = $image['field_file_image_alt_text'][$node->language][0]['safe_value'];
-        $image_title = $image['field_file_image_title_text'][$node->language][0]['safe_value'];
+        $image_alt = !empty($image['field_file_image_alt_text']) ? $image['field_file_image_alt_text'][$node->language][0]['safe_value'] : '';
+        $image_title = !empty($image['field_file_image_title_text']) ? $image['field_file_image_title_text'][$node->language][0]['safe_value'] : '';
         $date = format_date(strtotime($node->field_date_published[$node->language][0]['value']), 'custom', 'l, F j, Y');
       break;  
 
@@ -51,5 +51,6 @@
       'height' => '100',
     ));    
 
-    printf( '<div class="mm-featured"><div class="mm-featured-image">%s</div><div class="mm-featured-content"><span class="mm-featured-date">%s</span><a class="mm-featured-title" href="%s">%s</a></div></div>', $imagestyle, $date, $node_url, $title );
+    printf( '<div class="mm-featured"><div class="mm-featured-image">%s</div><div class="mm-featured-content"><span class="mm-featured-date">%s</span><a class="mm-featured-title" href="%s">%s</a></div></div>', 
+      $imagestyle, $date, $node_url, $title );
   }
