@@ -70,11 +70,13 @@ if(!empty($headshot)) {
     'style_name' => 'medium',
     'path' => $headshot['uri'],
     'alt' => $headshot['alt'],
-    'title' => $headshot['title'],
+    'title' => $headshot['alt'],
     'width' => '168',
     'height' => '168'
   );
 }
+
+dpm($headshot);
 
 ?>
 

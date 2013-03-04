@@ -36,7 +36,7 @@
               }
               // Create the image.
               render($content['field_gsb_spotlight_image_video']);
-              $img_tag = theme_image_style(array('style_name' => $content['field_gsb_spotlight_image_video'][0]['file']['#style_name'], 'path' => $content['field_gsb_spotlight_image_video'][0]['file']['#path'], 'alt' => $field_gsb_spotlight_image_video[0]['filename'], 'width' => NULL, 'height' => NULL));
+              $img_tag = theme_image_style(array('style_name' => 'business_insights_220x125', 'path' => $content['field_gsb_spotlight_image_video'][0]['file']['#path'], 'alt' => $field_gsb_spotlight_image_video[0]['filename'], 'width' => NULL, 'height' => NULL));
               // Print a link wrapper so that it can open in a modal.
               print '<div class="field field-type-image field-name-field-gsb-spotlight-media">';
               print l($img_tag, $video_path, array('attributes' => array('class' => 'fancybox fancybox.iframe'), 'html' => TRUE));
@@ -46,6 +46,7 @@
         }
       ?>
     </div>
+    <div class="spotlight-content">
     <h4 class="spotlight-name"><?php print $field_first_name[0]['safe_value'] . " " . $field_last_name[0]['safe_value']; ?></h4>
       <?php if ($field_gsb_spotlight_person_type[0]['value'] !== 'Student') { ?>
   	    <?php if(!empty($field_title_position[0])) { ?>
@@ -64,5 +65,6 @@
   	</div>
   	<a href="javascript:void(0)" class="show-more"><span>Show More</span></a>
     <?php } ?>
+  </div>
   <?php } ?>
 </div>

@@ -8,5 +8,3 @@
       $title, 
       $field_cta_link[0]['title']);
   }
-
-

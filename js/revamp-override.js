@@ -6,83 +6,7 @@
 			// Bootstrap Dropdown Menu
 			$('#main-menu ul > li:has(.active)').addClass('active');
 			$('#main-menu ul > li:has(ul .active)').removeClass('active');			
-	        $('#main-menu ul > li > ul > li:has(.active)').removeClass('active');	
-			
-			// Update CSS classes based on window load
-			$(window).load(function() {
-				var width = $(window).width(),
-						documentBody = $('body');
-
-				if ((width >= 751) && (width < 963)) {
-				documentBody.addClass('tablet-vew');
-				documentBody.find('.two-sidebars #sidebar-first').removeClass('span3').addClass('span4').
-				end().find('.two-sidebars #sidebar-second').removeClass('span3').addClass('span12').
-				end().find('.two-sidebars #content').removeClass('span6').addClass('span8').
-				end().find('.two-sidebars .region-sidebar-second .block').addClass('span4').
-		    end().find('.sidebar-first #sidebar-first').removeClass('span3').addClass('span4').
-				end().find('.sidebar-first #content').removeClass('span9').addClass('span8').
-				end().find('.sidebar-second #sidebar-second').removeClass('span3').addClass('span12').
-				end().find('.sidebar-second #content').removeClass('span9').addClass('span12').
-				end().find('.sidebar-second .region-sidebar-second .block').addClass('span4');
-				}
-
-				else {
-				documentBody.addClass('desktop-view');
-				documentBody.find('.two-sidebars #sidebar-first').removeClass('span4').addClass('span3').
-				end().find('.two-sidebars #sidebar-second').removeClass('span12').addClass('span3').
-				end().find('.two-sidebars #content').removeClass('span8').addClass('span6').
-				end().find('.two-sidebars .region-sidebar-second .block').removeClass('span4').
-		    end().find('.sidebar-first #sidebar-first').removeClass('span4').addClass('span3').
-				end().find('.sidebar-first #content').removeClass('span8').addClass('span9').
-				end().find('.sidebar-second #sidebar-second').removeClass('span12').addClass('span3').
-				end().find('.sidebar-second #content').removeClass('span12').addClass('span9').
-				end().find('.sidebar-second .region-sidebar-second .block').removeClass('span4');
-				}
-
-			});
-
-			// Update CSS classes based on window resize
-			$(window).resize(function() {
-				var width = $(window).width();
-
-				if ((width >= 751) && (width < 963)) {
-				$('.two-sidebars #sidebar-first').removeClass('span3');
-				$('.two-sidebars #sidebar-first').addClass('span4');
-				$('.two-sidebars #sidebar-second').removeClass('span3');
-				$('.two-sidebars #sidebar-second').addClass('span12');
-				$('.two-sidebars #content').removeClass('span6');
-				$('.two-sidebars #content').addClass('span8');
-				$('.two-sidebars .region-sidebar-second .block').addClass('span4');
-		    $('.sidebar-first #sidebar-first').removeClass('span3');
-				$('.sidebar-first #sidebar-first').addClass('span4');
-				$('.sidebar-first #content').removeClass('span9');
-				$('.sidebar-first #content').addClass('span8');
-				$('.sidebar-second #sidebar-second').removeClass('span3');
-				$('.sidebar-second #sidebar-second').addClass('span12');
-				$('.sidebar-second #content').removeClass('span9');
-				$('.sidebar-second #content').addClass('span12');
-				$('.sidebar-second .region-sidebar-second .block').addClass('span4');
-				}
-
-				else {
-				$('.two-sidebars #sidebar-first').removeClass('span4');
-				$('.two-sidebars #sidebar-first').addClass('span3');
-				$('.two-sidebars #sidebar-second').removeClass('span12');
-				$('.two-sidebars #sidebar-second').addClass('span3');
-				$('.two-sidebars #content').removeClass('span8');
-				$('.two-sidebars #content').addClass('span6');
-				$('.two-sidebars .region-sidebar-second .block').removeClass('span4');
-		    	$('.sidebar-first #sidebar-first').removeClass('span4');
-				$('.sidebar-first #sidebar-first').addClass('span3');
-				$('.sidebar-first #content').removeClass('span8');
-				$('.sidebar-first #content').addClass('span-awesome');
-				$('.sidebar-second #sidebar-second').removeClass('span12');
-				$('.sidebar-second #sidebar-second').addClass('span3');
-				$('.sidebar-second #content').removeClass('span12');
-				$('.sidebar-second #content').addClass('span9');
-				$('.sidebar-second .region-sidebar-second .block').removeClass('span4');
-				}
-			});
+	    $('#main-menu ul > li > ul > li:has(.active)').removeClass('active');	
 
 		}
 	}
@@ -94,35 +18,28 @@
 			      visibleLines = 4,
 			      visibleHeight = visibleLines * parseInt(spotlightShowMore.siblings('.spotlight-story').children('p').css('line-height'));
 			  spotlightShowMore.each(function() {
-			    var $this = $(this);
-			    if (!$this.hasClass('showmore-processed')) {
+			  	var visHeight = visibleHeight,
+			  		$this = $(this);
+			    if ( !$this.hasClass('showmore-processed') ) {
 			    	$this.addClass('showmore-processed');
 				    var spotlightStory = $this.siblings('.spotlight-story'),
 				      	storyContent = spotlightStory.children('p').height();
 
-				     if (spotlightStory.position().top > 276) { // >276 means description is lower 
+				     if ( spotlightStory.position().top > 285 && spotlightStory.children('p').height() > 57 && spotlightStory.parents('.span4').length == 0 ) { // >276 means description is lower 
 				     	spotlightStory.css('max-height', 35); // set height to 2 lines
-				     	visibleHeight = parseInt(visibleHeight / visibleLines * visibleLines/2);
+				     	visHeight = parseInt(visHeight / visibleLines * visibleLines/2);
 				     }
-
-				    if (storyContent <= visibleHeight) {
+				    if ( storyContent <= visHeight ) {
 				    	$this.remove();
 				    } else {
-					    $this.click(function() { 
+					    $this.click(function() {
 						    var $this = $(this);
-						    if (!$this.hasClass('active')) {
+						    if ( !$this.hasClass('active') ) {
 						      $this.html('<span>Show Less</span>');
 						      spotlightStory.animate({'max-height' : storyContent}, 350);
-						      if (!$this.parents('.span4, #content-upper-middle-column1, #content-upper-middle-column2').length > 0) {
-						      	spotlightStory.siblings('.spotlight-image').animate({'min-height' : storyContent + 20}, 350);
-						      }
 						    } else {
 						      $this.html('<span>Show More</span>');
-						      spotlightStory.animate({'max-height' : visibleHeight}, 300);
-						      if (!$this.parents('.span4, #content-upper-middle-column1, #content-upper-middle-column2').length > 0 ) {
-						      	spotlightStory.siblings('.spotlight-image').animate({'min-height' : 158}, 350);
-						      }
-						 
+						      spotlightStory.animate({'max-height' : visHeight}, 300);						 
 						    }
 						    $this.toggleClass('active');
 					  	});

@@ -84,7 +84,6 @@
 
 /* spotlight */
 #modal-content .widget-preview .spotlight-story {
- margin-left:288px;
  clear:none;
 }
 
@@ -92,12 +91,8 @@
  overflow:hidden;
 }
 
-#modal-content .widget-preview .spotlight a.show-more {
- margin-left:18px;
-}
-
-#modal-content .widget-preview .spotlight-image {
-	float: left;
+#modal-content .widget-preview .spotlight-content {
+ margin-top: 10px;
 }
 
 /* social */

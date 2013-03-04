@@ -9,3 +9,11 @@
 .clubs-filter-exposed .bef-checkboxes .form-item:nth-child(3n+1) {
  clear:both;
 }
+
+.view-gsb-business-insight .entity-field-collection-item {
+ margin-right:-4px;
+}
+
+.view-gsb-business-insight .entity-field-collection-item:first-child > div {
+	margin-left: -3px;
+}
