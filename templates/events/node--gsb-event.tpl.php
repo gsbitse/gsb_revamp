@@ -81,85 +81,109 @@
 
 <?php 
 
-$speaker_array = array();
-foreach ($variables['field_speakers'] as $key => $speaker_id) {
-  $speaker = $variables['elements']['field_speakers'][$key]['entity']['field_collection_item'][$speaker_id['value']];
-  if ($speaker['field_speaker_reference'][0]['#markup'] != 'Other') {
-    $speaker_ref = $speaker['field_speaker']['#items'][0]['entity'];
-    $speaker_name = $speaker_ref->field_first_name['und'][0]['safe_value'];
-    $speaker_sname = $speaker_ref->field_last_name['und'][0]['safe_value'];
-    $speaker_url = !empty($speaker_ref->field_url) ? $speaker_ref->field_url['und'][0]['safe_value'] : 0;
-    if ($speaker_url) {
-      $speaker_array[] = '<a href="' . $speaker_url . '">' . $speaker_name . ' ' . $speaker_sname . '</a>';
+  $imageclass = '';
+
+  $speaker_array = array();
+  foreach ($variables['field_speakers'] as $key => $speaker_id) {
+    $speaker = $variables['elements']['field_speakers'][$key]['entity']['field_collection_item'][$speaker_id['value']];
+    if ($speaker['field_speaker_reference'][0]['#markup'] != 'Other') {
+      $speaker_ref = $speaker['field_speaker']['#items'][0]['entity'];
+      $speaker_name = $speaker_ref->field_first_name['und'][0]['safe_value'];
+      $speaker_sname = $speaker_ref->field_last_name['und'][0]['safe_value'];
+      $speaker_url = !empty($speaker_ref->field_url) ? $speaker_ref->field_url['und'][0]['safe_value'] : 0;
+      if ($speaker_url) {
+        $speaker_array[] = '<a href="' . $speaker_url . '">' . $speaker_name . ' ' . $speaker_sname . '</a>';
+      } else {
+        $speaker_array[] = $speaker_name . ' ' . $speaker_sname;
+      }
     } else {
-      $speaker_array[] = $speaker_name . ' ' . $speaker_sname;
+      $speaker_name = $speaker['field_speaker_first_name'][0]['#markup'];
+      $speaker_second = $speaker['field_speaker_last_name'][0]['#markup'];
+      $speaker_array[] = $speaker_name . ' ' . $speaker_second;
     }
+  }
+  $speaker_output = implode(', ', $speaker_array);
+
+  /* all taxonomies */
+  $taxonomy_array = array();
+  $taxonomies = array();
+  if ( !empty($field_business_insight_topic) ) { $taxonomies[] = $field_business_insight_topic[0]['tid']; }
+  if ( !empty($field_event_category) ) { $taxonomies[] = $field_event_category[0]['tid']; }
+  if ( !empty($field_discipline) ) { $taxonomies[] = $field_discipline[0]['tid']; }
+  if ( !empty($field_industry) ) { $taxonomies[] = $field_industry[0]['tid']; }
+  if ( !empty($field_region) ) { $taxonomies[] = $field_region[0]['tid']; }
+  if ( !empty($field_company_organization) ) { $taxonomies[] = $field_company_organization[0]['tid']; }
+  if ( !empty($field_tag) ) { $taxonomies[] = $field_tag[0]['tid']; }
+
+  /* tags */
+  foreach ( $taxonomies as $taxid ) {
+    $tax = taxonomy_term_load($taxid);
+    $taxonomy_array[] = '<a href="/taxonomy/term/' . $tax->tid . '">' . $tax->name . '</a>';
+  }
+  $taxonomy_output = implode(', ', $taxonomy_array);
+
+  /* variables */
+  $eventtitle = $node->title;
+  $eventdate1 = !empty($node->field_event_date) ? $field_event_date[0]['value'] : '';
+  $eventdate2 = !empty($node->field_event_date) ?  $field_event_date[0]['value2'] : '';
+  $eventadress1 = !empty($variables['field_address'][0]['thoroughfare']) ? $variables['field_address'][0]['thoroughfare'] : '';
+  $eventadress2 = !empty($variables['field_address'][0]['premise']) ? $variables['field_address'][0]['premise'] : '';
+  $eventadress3 = !empty($variables['field_address'][0]['value']) ? $variables['field_address'][0]['value'] : '';
+  $eventcity = !empty($variables['field_address'][0]['locality']) ? $variables['field_address'][0]['locality'] : '';
+  $eventstate = !empty($variables['field_address'][0]['administrative_area']) ? $variables['field_address'][0]['administrative_area'] : '';
+  $eventcountry = !empty($variables['field_address'][0]['country']) ? $variables['field_address'][0]['country'] : '';
+  $maplink = !empty($node->field_map_url) ? $node->field_map_url['und'][0]['display_url'] : '';
+  $eventregisterlink = !empty($variables['field_register_url']) ? $variables['field_register_url'][0]['display_url'] : '';
+  $eventregistertitle = !empty($variables['field_register_url'][0]['title']) ? $variables['field_register_url'][0]['title'] : 'Register';
+  $eventimage = !empty($variables['field_event_image']) ? $variables['field_event_image'][0] : '';
+  $eventeditorialblurb = !empty($node->field_editorial_blurb) ? $node->field_editorial_blurb['und'][0]['value'] : '';
+  $eventbody = !empty($node->body) ? $node->body['und'][0]['safe_value'] : '';
+
+  $dateoutput = _gsb_revamp_format_event_date($eventdate1, $eventdate2, $node->field_all_day_event['und']['0']['value'], 'eventdetail');
+
+  /* audience taxonomy */
+  $eventaudiencetext = array();
+  if (!empty($variables['field_target_audience'])) {
+    foreach ($variables['field_target_audience'] as $key => $speaker_id) {
+      $eventaudiencetext[] = taxonomy_term_load($variables['field_target_audience'][$key]['tid'])->name;
+    }
+  }
+  $eventtargetaudience = implode(', ', $eventaudiencetext);
+
+  if(!empty($eventimage)) {
+    $eventimagestyle = array(
+      'style_name' => 'sidebar_full_270x158',
+      'path' => $eventimage['uri'],
+      'alt' => $eventimage['alt'],
+      'title' => $eventimage['title'],
+      'width' => '268',
+      'height' => '158',
+    );
   } else {
-    $speaker_name = $speaker['field_speaker_first_name'][0]['#markup'];
-    $speaker_second = $speaker['field_speaker_last_name'][0]['#markup'];
-    $speaker_array[] = $speaker_name . ' ' . $speaker_second;
+    $imageclass = 'no-image';
   }
-}
-$speaker_output = implode(', ', $speaker_array);
-
-/* all taxonomies */
-$taxonomy_array = array();
-$taxonomies = array();
-if ( !empty($field_business_insight_topic) ) { $taxonomies[] = $field_business_insight_topic[0]['tid']; }
-if ( !empty($field_event_category) ) { $taxonomies[] = $field_event_category[0]['tid']; }
-if ( !empty($field_discipline) ) { $taxonomies[] = $field_discipline[0]['tid']; }
-if ( !empty($field_industry) ) { $taxonomies[] = $field_industry[0]['tid']; }
-if ( !empty($field_region) ) { $taxonomies[] = $field_region[0]['tid']; }
-if ( !empty($field_company_organization) ) { $taxonomies[] = $field_company_organization[0]['tid']; }
-if ( !empty($field_tag) ) { $taxonomies[] = $field_tag[0]['tid']; }
-
-/* tags */
-foreach ( $taxonomies as $taxid ) {
-  $tax = taxonomy_term_load($taxid);
-  $taxonomy_array[] = '<a href="/taxonomy/term/' . $tax->tid . '">' . $tax->name . '</a>';
-}
-$taxonomy_output = implode(', ', $taxonomy_array);
-
-/* variables */
-$eventtitle = $variables['title'];
-$eventdate1 = !empty($variables['field_event_date']) ? $variables['field_event_date'][0]['value'] : '';
-$eventdate2 = !empty($variables['field_event_date']) ?  $variables['field_event_date'][0]['value2'] : '';
-$eventadress1 = !empty($variables['field_address'][0]['thoroughfare']) ? $variables['field_address'][0]['thoroughfare'] : '';
-$eventadress2 = !empty($variables['field_address'][0]['premise']) ? $variables['field_address'][0]['premise'] : '';
-$eventadress3 = !empty($variables['field_address'][0]['value']) ? $variables['field_address'][0]['value'] : '';
-$eventcity = !empty($variables['field_address'][0]['locality']) ? $variables['field_address'][0]['locality'] : '';
-$eventstate = !empty($variables['field_address'][0]['administrative_area']) ? $variables['field_address'][0]['administrative_area'] : '';
-$eventcountry = !empty($variables['field_address'][0]['country']) ? $variables['field_address'][0]['country'] : '';
-$maplink = !empty($variables['field_map_url']) ? $variables['field_map_url'][0]['display_url'] : '';
-$eventregisterlink = !empty($variables['field_register_url']) ? $variables['field_register_url'][0]['display_url'] : '';
-$eventregistertitle = !empty($variables['field_register_url'][0]['title']) ? $variables['field_register_url'][0]['title'] : 'Register';
-$eventimage = !empty($variables['field_event_image']) ? $variables['field_event_image'][0] : '';
-$eventeditorialblurb = !empty($variables['field_editorial_blurb']) ? $variables['field_editorial_blurb'][0]['value'] : '';
-$eventbody = !empty($variables['body']) ? $variables['body'][0]['safe_value'] : '';
-
-/* audience taxonomy */
-$eventaudiencetext = array();
-if (!empty($variables['field_target_audience'])) {
-  foreach ($variables['field_target_audience'] as $key => $speaker_id) {
-    $eventaudiencetext[] = taxonomy_term_load($variables['field_target_audience'][$key]['tid'])->name;
-  }
-}
-$eventtargetaudience = implode(', ', $eventaudiencetext);
-
-if(!empty($eventimage)) {
-  $eventimagestyle = array(
-    'style_name' => 'event_detail_270x158',
-    'path' => $eventimage['uri'],
-    'alt' => $eventimage['alt'],
-    'title' => $eventimage['title'],
-    'width' => '268',
-    'height' => '158',
-  );
-}
-
-$dateoutput = _gsb_revamp_format_event_date($eventdate1, $eventdate2, $field_all_day_event['0']['value'], 'eventdetail');
-
 ?>
+
+<?php if ($teaser) { ?>
+<div class="cp-event cp-block <?php print $imageclass; ?>">
+  <span class="blue-small-border"></span>
+  <?php if(!empty($eventimage)) { ?>
+    <div class="cp-image"><?php print theme_image_style($eventimagestyle); ?></div>
+  <?php } ?>
+  <div class="cp-content"><span class="cp-date"><?php print $dateoutput ?></span>
+    <h4 class="cp-title"><i></i><?php printf('<a href="/node/%s">%s</a>', $nid, $eventtitle); ?></h4>
+    <span class="cp-adress"><?php 
+        if (!empty($eventcity) && !empty($eventstate)) {
+          print $eventcity . ', ' . $eventstate; 
+        } else {
+          print $eventcity . $eventstate;
+        } ?>
+    </span>
+    <div class="cp-body"><?php print $eventbody; ?></div>
+    <span class="cp-taxonomy"><?php print $taxonomy_output; ?></span>
+  </div>
+</div>
+<?php } ?>
 
 <?php if ($view_mode == 'full') { ?>
 
@@ -225,4 +249,4 @@ $dateoutput = _gsb_revamp_format_event_date($eventdate1, $eventdate2, $field_all
   </div>
 </div>
 
-<?php } ?>
+<?php }
