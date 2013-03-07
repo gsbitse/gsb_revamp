@@ -83,8 +83,8 @@
 	//dpm(get_defined_vars());
 
 	$authors_array = array();
-  foreach ($variables['field_authors'] as $key => $speaker_id) {
-    $author = $variables['elements']['field_authors'][$key]['entity']['field_collection_item'][$speaker_id['value']];
+  foreach ($variables['field_authors'] as $key => $author_id) {
+    $author = $variables['elements']['field_authors'][$key]['entity']['field_collection_item'][$author_id['value']];
     if ($author['field_author_reference'][0]['#markup'] != 'Other') {
       $author_ref = $author['field_author']['#items'][0]['entity'];
       $author_name = $author_ref->field_first_name['und'][0]['safe_value'];
@@ -107,7 +107,9 @@
   echo $title = $variables['title'];
   $image = empty($variables['field_content_image'])?'':$variables['field_content_image'][0];
   echo $editorial_summary = $variables['field_editorial_summary'][0]['safe_value'];
-  echo $date = date('o M j', $variables['created']);
+  echo $date = date('o M j', strtotime($variables['field_date_published'][0]['value'])); 
+
+  var_dump($authors_array);
 
   /*
   $image = 
