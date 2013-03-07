@@ -80,7 +80,7 @@
 ?>
 
 <?php 
-	dpm(get_defined_vars());
+	//dpm(get_defined_vars());
 
 	$authors_array = array();
   foreach ($variables['field_authors'] as $key => $speaker_id) {
@@ -97,29 +97,17 @@
       }
     } else {
       $author_name = $author['field_first_name'][0]['#markup'];
-      $author_second = $author['field_last_name '][0]['#markup'];
+      $author_second = $author['field_last_name'][0]['#markup'];
       $authors_array[] = $author_name . ' ' . $author_second;
     }
   }
   $authors_output = implode(', ', $authors_array);
 
-  /* all taxonomies */
-  $taxonomy_array = array();
-  $taxonomies = array();
-  if ( !empty($field_business_insight_topic) ) { $taxonomies[] = $field_business_insight_topic[0]['tid']; }
-  if ( !empty($field_event_category) ) { $taxonomies[] = $field_event_category[0]['tid']; }
-  if ( !empty($field_discipline) ) { $taxonomies[] = $field_discipline[0]['tid']; }
-  if ( !empty($field_industry) ) { $taxonomies[] = $field_industry[0]['tid']; }
-  if ( !empty($field_region) ) { $taxonomies[] = $field_region[0]['tid']; }
-  if ( !empty($field_company_organization) ) { $taxonomies[] = $field_company_organization[0]['tid']; }
-  if ( !empty($field_tag) ) { $taxonomies[] = $field_tag[0]['tid']; }
-
-  /* tags */
-  foreach ( $taxonomies as $taxid ) {
-    $tax = taxonomy_term_load($taxid);
-    $taxonomy_array[] = '<a href="/taxonomy/term/' . $tax->tid . '">' . $tax->name . '</a>';
-  }
-  $taxonomy_output = implode(', ', $taxonomy_array);
+  echo $taxonomy_output = implode(', ', _gsb_revamp_get_tags($variables));
+  echo $title = $variables['title'];
+  $image = empty($variables['field_content_image'])?'':$variables['field_content_image'][0];
+  echo $editorial_summary = $variables['field_editorial_summary'][0]['safe_value'];
+  echo $date = date('o M j', $variables['created']);
 
   /*
   $image = 
