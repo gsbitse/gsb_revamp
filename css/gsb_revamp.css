@@ -1821,6 +1821,19 @@ a.twitter-icon:hover {
 }
 
 /* accordion */
+
+.pane-bundle-gsb-accordion.designed-box {
+	padding: 10px 26px 10px 26px;
+}
+
+.pane-bundle-gsb-accordion .field-name-field-description p {
+	color: #555;
+}
+
+.pane-bundle-gsb-accordion .field-name-field-description p:last-child {
+	margin-bottom: 5px;
+}
+
 .content .acc-title,
 .content .acc-body {
 	margin-bottom: 0;
@@ -1865,10 +1878,10 @@ top: 9px;
 	margin-bottom: 0;
 	font-size: 18px;
 	line-height: 24px;
-	font-family: NewsGothicBT-Roman, sans-serif;
 }
 
 .content .field-name-field-accordion-item .field-name-field-description {
+		font-family: NewsGothicBT-Roman, sans-serif;
 	margin-top: 0;
 	padding-left: 45px;
 	display: none;
@@ -1894,11 +1907,14 @@ top: 9px;
 	cursor: pointer;
 }
 
+.content .field-name-field-accordion-item .field-item:first-child .field-name-field-header{
+	border-top: 0;
+}
+
 .content .field-name-field-accordion-item .field-name-field-header .field-items,
 .content .acc-title {
 	padding: 8px 8px 8px 5px;
 	margin-left: 40px;
-	cursor: default;
 }
 
 .content .acc-title {

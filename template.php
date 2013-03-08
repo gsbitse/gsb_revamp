@@ -108,20 +108,21 @@ function _gsb_revamp_format_event_date($eventdate1, $eventdate2, $all_day, $form
   $eventdate2 = strtotime($eventdate2);
 
   /* if start date is not equal with end date */
-  if ( $eventdate1 != $eventdate2 ) {
-    if ( $format == 'megamenu' ) {
-      $monthday1 = date('F j, Y', $eventdate1);
-      $monthday2 = date('F j, Y', $eventdate2);
-    }
-    elseif ( $format == 'eventdetail' ) {
-      $monthday1 = date('M j', $eventdate1);
-      $monthday2 = date('M j', $eventdate2);
-    }
-    else {
-      $monthday1 = strtoupper(date('M j', $eventdate1));
-      $monthday2 = strtoupper(date('M j', $eventdate2));
-    }
 
+  if ( $format == 'megamenu' ) {
+    $monthday1 = date('F j, Y', $eventdate1);
+    $monthday2 = date('F j, Y', $eventdate2);
+  }
+  elseif ( $format == 'eventdetail' ) {
+    $monthday1 = date('M j', $eventdate1);
+    $monthday2 = date('M j', $eventdate2);
+  }
+  else {
+    $monthday1 = strtoupper(date('M j', $eventdate1));
+    $monthday2 = strtoupper(date('M j', $eventdate2));
+   }
+
+  if ( $eventdate1 != $eventdate2 ) {
     if ( date('o M j', $eventdate1) != date('o M j', $eventdate2) ) {
       $dateoutput .= sprintf('<span>%s</span>%s – <span>%s</span>%s', date('l, ', $eventdate1), $monthday1, date('l, ', $eventdate2), $monthday2);
     } else {
@@ -131,9 +132,11 @@ function _gsb_revamp_format_event_date($eventdate1, $eventdate2, $all_day, $form
         $dateoutput .= sprintf('<span>%s</span>%s%s – %s', date('l, ', $eventdate1), $monthday1, date(', ga', $eventdate1), date('ga', $eventdate2));
       }
     }
+  } elseif ( $eventdate1 == $eventdate2 ) {
+    $dateoutput .= sprintf('<span>%s</span>%s', date('l, ', $eventdate1), date('M j, ga', $eventdate1));
   }
     
-  if ( $all_day == 1 || $eventdate1 == $eventdate2 ) {
+  elseif ( $all_day == 1 ) {
       $dateoutput .= sprintf('<span>%s</span>%s', date('l, ', $eventdate1), $monthday1);
     } else {
       $dateoutput .= sprintf('<span>%s</span>%s%s', date('l, ', $eventdate1), $monthday1, date(' ga', $eventdate1));
