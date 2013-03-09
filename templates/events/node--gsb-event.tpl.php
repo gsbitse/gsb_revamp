@@ -84,6 +84,7 @@
   $imageclass = '';
 
   $speaker_array = array();
+  dpm($variables);
   foreach ($variables['field_speakers'] as $key => $speaker_id) {
     $speaker = $variables['elements']['field_speakers'][$key]['entity']['field_collection_item'][$speaker_id['value']];
     if ($speaker['field_speaker_reference'][0]['#markup'] != 'Other') {

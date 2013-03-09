@@ -149,16 +149,14 @@ function _gsb_revamp_format_event_date($eventdate1, $eventdate2, $all_day, $form
  * Returns array of all tags in variable
  */
 function _gsb_revamp_get_tags($vars) {
-
   $taxonomy_urls = array();
-
-  $fields = array('field_business_insight_topic', 'field_event_category', 'field_industry', 'field_region', 'field_company_organization', 'field_tag');
-
-  foreach ($fields as $filed_name) {  
-    if (!empty($vars[$filed_name])) { 
-      $taxonomy_urls[] = l($vars[$filed_name][0]['taxonomy_term']->name, 'taxonomy/term/' . $vars[$filed_name][0]['taxonomy_term']->tid);
-    }
+  $fields = array('field_business_insight_topic', 'field_discipline', 'field_industry', 'field_region', 'field_company_organization', 'field_programs');
+  foreach ($fields as $field_name) {
+    dpm($vars[$field_name]);
+    if (!empty($vars[$field_name])) { 
+       printf('<a href="/business-insights/%s">%s</a>', $vars[$field_name][0]['taxonomy_term']->name, $vars[$field_name][0]['taxonomy_term']->name);
+     }
   }
-
   return $taxonomy_urls;
 }
+
