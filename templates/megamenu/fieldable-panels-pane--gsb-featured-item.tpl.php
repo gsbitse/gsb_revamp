@@ -15,8 +15,8 @@
 
     switch ($node->type) {
       case 'gsb_event':
-        $image = $node->field_event_image[$node->language][0];
-        $image_url = $image['uri'];
+        $image = isset($node->field_event_image) ? $node->field_event_image[$node->language][0] : '';
+	$image_url = $image['uri'];
         $image_alt = $image['alt'];
         $image_title = $image['alt'];
 
