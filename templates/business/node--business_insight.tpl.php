@@ -80,7 +80,6 @@
 ?>
 
 <?php 
-	//dpm(get_defined_vars());
 
 	$authors_array = array();
   foreach ($variables['field_authors'] as $key => $author_id) {
@@ -101,15 +100,47 @@
       $authors_array[] = $author_name . ' ' . $author_second;
     }
   }
+
   $authors_output = implode(', ', $authors_array);
+  $taxonomy_output = implode(', ', _gsb_revamp_get_tags($variables));
 
-  echo $taxonomy_output = implode(', ', _gsb_revamp_get_tags($variables));
-  echo $title = $variables['title'];
-  $image = empty($variables['field_content_image'])?'':$variables['field_content_image'][0];
-  echo $editorial_summary = $variables['field_editorial_summary'][0]['safe_value'];
-  echo $date = date('o M j', strtotime($variables['field_date_published'][0]['value'])); 
+  $title = $variables['title'];
+  $image = empty($variables['field_content_image']) ? '' : $variables['field_content_image'][0];
+  $editorial_summary = $variables['field_editorial_summary'][0]['safe_value'];
+  $date = date('l, M j, ga', strtotime($variables['field_date_published'][0]['value'])); 
+  
+  $imageclass = '';
+  if(!empty($image)) {
+    $eventimagestyle = array(
+      'style_name' => 'sidebar_full_270x158',
+      'path' => $image['uri'],
+      'alt' => $image['alt'],
+      'title' => $image['title'],
+      'width' => '268',
+      'height' => '158',
+    );
+  } else {
+    $imageclass = 'no-image';
+  }
 
-  var_dump($authors_array);
+  if ( $teaser ) { ?>
+    <div class="cp-business-insight cp-block <?php print $imageclass; ?>">
+      <span class="blue-small-border"></span>
+      <?php if(!empty($image)) { ?>
+        <div class="cp-image"><?php print theme_image_style($image); ?></div>
+      <?php } ?>
+      <div class="cp-content"><span class="cp-date"><?php print $date ?></span>
+        <h4 class="cp-title"><i></i><?php printf('<a href="/node/%s">%s</a>', $nid, $title); ?></h4>
+        <?php if ($authors_output) { ?>
+          <span class="cp-author"><?php 
+          print $authors_output; ?></span>
+        <?php } ?>
+        <?php ?>
+        <div class="cp-body"><?php print $editorial_summary; ?></div>
+        <span class="cp-taxonomy"><?php print $taxonomy_output; ?></span>
+      </div>
+    </div>
+  <?php } 
 
   /*
   $image = 

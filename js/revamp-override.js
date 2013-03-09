@@ -83,6 +83,7 @@
     	}
 
     	if ( $('.field-name-field-accordion-item, .acc-title').length > 0 ) {
+        $(".pane-bundle-gsb-accordion").addClass('designed-box');
     		var accordionHead = $(".field-name-field-accordion-item .field-name-field-header, .acc-title");
     		accordionHead.prepend('<span class="accordion-toggle"></span>');
     		accordionHead.click(function (e) {
@@ -94,10 +95,6 @@
     			
     			}
     		});    		
-
-    		accordionHead.find('div').click(function(e) {
-    			e.stopPropagation();
-    		});
 
     	}
 

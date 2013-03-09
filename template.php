@@ -108,20 +108,21 @@ function _gsb_revamp_format_event_date($eventdate1, $eventdate2, $all_day, $form
   $eventdate2 = strtotime($eventdate2);
 
   /* if start date is not equal with end date */
-  if ( $eventdate1 != $eventdate2 ) {
-    if ( $format == 'megamenu' ) {
-      $monthday1 = date('F j, Y', $eventdate1);
-      $monthday2 = date('F j, Y', $eventdate2);
-    }
-    elseif ( $format == 'eventdetail' ) {
-      $monthday1 = date('M j', $eventdate1);
-      $monthday2 = date('M j', $eventdate2);
-    }
-    else {
-      $monthday1 = strtoupper(date('M j', $eventdate1));
-      $monthday2 = strtoupper(date('M j', $eventdate2));
-    }
 
+  if ( $format == 'megamenu' ) {
+    $monthday1 = date('F j, Y', $eventdate1);
+    $monthday2 = date('F j, Y', $eventdate2);
+  }
+  elseif ( $format == 'eventdetail' ) {
+    $monthday1 = date('M j', $eventdate1);
+    $monthday2 = date('M j', $eventdate2);
+  }
+  else {
+    $monthday1 = strtoupper(date('M j', $eventdate1));
+    $monthday2 = strtoupper(date('M j', $eventdate2));
+   }
+
+  if ( $eventdate1 != $eventdate2 ) {
     if ( date('o M j', $eventdate1) != date('o M j', $eventdate2) ) {
       $dateoutput .= sprintf('<span>%s</span>%s – <span>%s</span>%s', date('l, ', $eventdate1), $monthday1, date('l, ', $eventdate2), $monthday2);
     } else {
@@ -131,9 +132,11 @@ function _gsb_revamp_format_event_date($eventdate1, $eventdate2, $all_day, $form
         $dateoutput .= sprintf('<span>%s</span>%s%s – %s', date('l, ', $eventdate1), $monthday1, date(', ga', $eventdate1), date('ga', $eventdate2));
       }
     }
+  } elseif ( $eventdate1 == $eventdate2 ) {
+    $dateoutput .= sprintf('<span>%s</span>%s', date('l, ', $eventdate1), date('M j, ga', $eventdate1));
   }
     
-  if ( $all_day == 1 || $eventdate1 == $eventdate2 ) {
+  elseif ( $all_day == 1 ) {
       $dateoutput .= sprintf('<span>%s</span>%s', date('l, ', $eventdate1), $monthday1);
     } else {
       $dateoutput .= sprintf('<span>%s</span>%s%s', date('l, ', $eventdate1), $monthday1, date(' ga', $eventdate1));
@@ -146,16 +149,14 @@ function _gsb_revamp_format_event_date($eventdate1, $eventdate2, $all_day, $form
  * Returns array of all tags in variable
  */
 function _gsb_revamp_get_tags($vars) {
-
   $taxonomy_urls = array();
-
-  $fields = array('field_business_insight_topic', 'field_event_category', 'field_industry', 'field_region', 'field_company_organization', 'field_tag');
-
-  foreach ($fields as $filed_name) {  
-    if (!empty($vars[$filed_name])) { 
-      $taxonomy_urls[] = l($vars[$filed_name][0]['taxonomy_term']->name, 'taxonomy/term/' . $vars[$filed_name][0]['taxonomy_term']->tid);
-    }
+  $fields = array('field_business_insight_topic', 'field_discipline', 'field_industry', 'field_region', 'field_company_organization', 'field_programs');
+  foreach ($fields as $field_name) {
+    dpm($vars[$field_name]);
+    if (!empty($vars[$field_name])) { 
+       printf('<a href="/business-insights/%s">%s</a>', $vars[$field_name][0]['taxonomy_term']->name, $vars[$field_name][0]['taxonomy_term']->name);
+     }
   }
-
   return $taxonomy_urls;
 }
+
