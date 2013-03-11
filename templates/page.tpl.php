@@ -94,7 +94,11 @@
       </div>
       <!-- /#sidebar-first -->
       <?php endif; ?>
-      <div id="content" class="span9">
+      <?php 
+        $spannine = 'span9';
+        if ($node->type == 'business_insight') { $spannine = ''; } 
+      ?>
+      <div id="content" class="<?php print $spannine ?>">
         <div id="content-wrapper">
           <div id="content-head" class="row-fluid">
 

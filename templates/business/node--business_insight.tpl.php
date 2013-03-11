@@ -86,29 +86,25 @@
 
     foreach ($variables['field_authors'] as $key => $author_id) {
       $author = $variables['elements']['field_authors'][$key]['entity']['field_collection_item'][$author_id['value']];
-      if (!empty($author['field_author_reference'])) {
-      if ($author['field_author_reference'][0]['#markup'] != 'Other') {
+      if (!empty($author['field_author_reference']) && $author['field_author_reference'][0]['#markup'] != 'Other') {
         $author_ref = $author['field_author']['#items'][0]['entity'];
-        $author_name = $author_ref->field_first_name['und'][0]['safe_value'];
+        $author_name = !empty($author_ref->field_first_name['und']) ? $author_ref->field_first_name['und'][0]['safe_value'] : $author_ref->field_first_name[0]['safe_value'];
         $author_sname = $author_ref->field_last_name['und'][0]['safe_value'];
-        $author_url = !empty($author_ref->field_url) ? $author_ref->field_url['und'][0]['safe_value'] : 0;
+        if (!empty($author_ref->field_url)) {
+          $author_url = !empty($author_ref->field_url['und']) ? $author_ref->field_url['und'][0]['safe_value'] : $author_ref->field_url[0]['safe_value'];
+        }
         if ($author_url) {
           $authors_array[] = '<a href="' . $author_url . '">' . $author_name . ' ' . $author_sname . '</a>';
         } else {
           $authors_array[] = $author_name . ' ' . $author_sname;
         }
-      }
       } else {
         $author_name = $author['field_first_name'][0]['#markup'];
         $author_second = $author['field_last_name'][0]['#markup'];
         $authors_array[] = $author_name . ' ' . $author_second;
       }
     }
-
   $authors_output = implode(', ', $authors_array);
-
-
-  $title = $variables['title'];
   $image = empty($variables['field_content_image']) ? '' : $variables['field_content_image'][0];
   $editorial_summary = $variables['field_editorial_summary'][0]['safe_value'];
   $date = date('l, M j, ga', strtotime($variables['field_date_published'][0]['value'])); 
@@ -129,7 +125,8 @@
 
   if ( $teaser ) { ?>
   <?php
-  $taxonomy_output = implode(', ', _gsb_revamp_get_tags($variables, true)); ?>
+  $taxonomy_output = implode(', ', _gsb_revamp_get_tags($variables, true)); 
+  ?>
     <div class="cp-business-insight cp-block <?php print $imageclass; ?>">
       <span class="blue-small-border"></span>
       <?php if(!empty($image)) { ?>
@@ -138,7 +135,7 @@
       <div class="cp-content"><span class="cp-date"><?php print $date ?></span>
         <h4 class="cp-title"><i></i><?php printf('<a href="/node/%s">%s</a>', $nid, $title); ?></h4>
         <?php if ($authors_output) { ?>
-          <span class="cp-author"><?php 
+          <span class="cp-author"><span>by </span><?php 
           print $authors_output; ?></span>
         <?php } ?>
         <?php ?>
@@ -151,7 +148,6 @@
     $taxonomy_output = implode(', ', _gsb_revamp_get_tags($variables, false)); 
     $body = $body[0]['safe_value'];
     $imagecaption = !empty($field_content_image_caption) ?  $field_content_image_caption[0]['safe_value'] : '';
-  
   ?>
     <div class="business-insights-inner">
       <div class="bizin-header">
