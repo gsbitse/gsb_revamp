@@ -84,7 +84,6 @@
   $imageclass = '';
 
   $speaker_array = array();
-  dpm($variables);
   foreach ($variables['field_speakers'] as $key => $speaker_id) {
     $speaker = $variables['elements']['field_speakers'][$key]['entity']['field_collection_item'][$speaker_id['value']];
     if ($speaker['field_speaker_reference'][0]['#markup'] != 'Other') {
@@ -106,22 +105,6 @@
   $speaker_output = implode(', ', $speaker_array);
 
   /* all taxonomies */
-  $taxonomy_array = array();
-  $taxonomies = array();
-  if ( !empty($field_business_insight_topic) ) { $taxonomies[] = $field_business_insight_topic[0]['tid']; }
-  if ( !empty($field_event_category) ) { $taxonomies[] = $field_event_category[0]['tid']; }
-  if ( !empty($field_discipline) ) { $taxonomies[] = $field_discipline[0]['tid']; }
-  if ( !empty($field_industry) ) { $taxonomies[] = $field_industry[0]['tid']; }
-  if ( !empty($field_region) ) { $taxonomies[] = $field_region[0]['tid']; }
-  if ( !empty($field_company_organization) ) { $taxonomies[] = $field_company_organization[0]['tid']; }
-  if ( !empty($field_tag) ) { $taxonomies[] = $field_tag[0]['tid']; }
-
-  /* tags */
-  foreach ( $taxonomies as $taxid ) {
-    $tax = taxonomy_term_load($taxid);
-    $taxonomy_array[] = '<a href="/taxonomy/term/' . $tax->tid . '">' . $tax->name . '</a>';
-  }
-  $taxonomy_output = implode(', ', $taxonomy_array);
 
   /* variables */
   $eventtitle = $node->title;
@@ -166,6 +149,7 @@
 ?>
 
 <?php if ($teaser) { ?>
+<?php $taxonomy_output = implode(', ', _gsb_revamp_get_tags($variables, true)); ?>
 <div class="cp-event cp-block <?php print $imageclass; ?>">
   <span class="blue-small-border"></span>
   <?php if(!empty($eventimage)) { ?>
@@ -187,7 +171,7 @@
 <?php } ?>
 
 <?php if ($view_mode == 'full') { ?>
-
+<?php $taxonomy_output = implode(', ', _gsb_revamp_get_tags($variables, false));  ?>
 <div class="event-innerpage <?php print $classes; ?>">
   <div class="event-innerpage-details">
     <p class="event-details-date"><?php print $dateoutput; ?></p>

@@ -148,14 +148,22 @@ function _gsb_revamp_format_event_date($eventdate1, $eventdate2, $all_day, $form
 /**
  * Returns array of all tags in variable
  */
-function _gsb_revamp_get_tags($vars) {
+function _gsb_revamp_get_tags($vars, $bizin) {
   $taxonomy_urls = array();
   $fields = array('field_business_insight_topic', 'field_discipline', 'field_industry', 'field_region', 'field_company_organization', 'field_programs');
   foreach ($fields as $field_name) {
-    dpm($vars[$field_name]);
-    if (!empty($vars[$field_name])) { 
-       printf('<a href="/business-insights/%s">%s</a>', $vars[$field_name][0]['taxonomy_term']->name, $vars[$field_name][0]['taxonomy_term']->name);
-     }
+    if (!empty($vars[$field_name])) {
+      if ($bizin) { 
+        if (empty($vars[$field_name][0])) {
+          $name = taxonomy_term_load($vars[$field_name]['und'][0]['tid'])->name;
+        } else {
+          $name = $vars[$field_name][0]['taxonomy_term']->name;
+        }
+        $taxonomy_urls[] = '<a href="/business-insights/' . $name . '">' . $name . '</a>';
+      } else {
+        $taxonomy_urls[] = l($vars[$field_name][0]['taxonomy_term']->name, 'taxonomy/term/' . $vars[$field_name][0]['taxonomy_term']->tid);
+      }
+    }
   }
   return $taxonomy_urls;
 }

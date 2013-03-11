@@ -1626,6 +1626,10 @@ margin-bottom:15px;
  margin:0;
 }
 
+.event-innerpage-details .event-adress-block {
+	overflow: hidden;
+}
+
 .event-innerpage-details .event-adress-block p {
  margin-bottom:0;
 }
@@ -1644,10 +1648,13 @@ margin-bottom:15px;
  border:none;
  display:block;
  margin-top:3px;
+ float: left;
+ border-bottom: 1px transparent solid;
 }
 
 .event-innerpage-details .event-details-actions {
  margin-top:20px;
+ clear: both;
 }
 
 .event-target-audience {

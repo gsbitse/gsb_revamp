@@ -79,30 +79,34 @@
  */
 ?>
 
-<?php 
 
-	$authors_array = array();
-  foreach ($variables['field_authors'] as $key => $author_id) {
-    $author = $variables['elements']['field_authors'][$key]['entity']['field_collection_item'][$author_id['value']];
-    if ($author['field_author_reference'][0]['#markup'] != 'Other') {
-      $author_ref = $author['field_author']['#items'][0]['entity'];
-      $author_name = $author_ref->field_first_name['und'][0]['safe_value'];
-      $author_sname = $author_ref->field_last_name['und'][0]['safe_value'];
-      $author_url = !empty($author_ref->field_url) ? $author_ref->field_url['und'][0]['safe_value'] : 0;
-      if ($author_url) {
-        $authors_array[] = '<a href="' . $author_url . '">' . $author_name . ' ' . $author_sname . '</a>';
-      } else {
-        $authors_array[] = $author_name . ' ' . $author_sname;
+<?php
+
+  $authors_array = array();
+
+    foreach ($variables['field_authors'] as $key => $author_id) {
+      $author = $variables['elements']['field_authors'][$key]['entity']['field_collection_item'][$author_id['value']];
+      if (!empty($author['field_author_reference'])) {
+      if ($author['field_author_reference'][0]['#markup'] != 'Other') {
+        $author_ref = $author['field_author']['#items'][0]['entity'];
+        $author_name = $author_ref->field_first_name['und'][0]['safe_value'];
+        $author_sname = $author_ref->field_last_name['und'][0]['safe_value'];
+        $author_url = !empty($author_ref->field_url) ? $author_ref->field_url['und'][0]['safe_value'] : 0;
+        if ($author_url) {
+          $authors_array[] = '<a href="' . $author_url . '">' . $author_name . ' ' . $author_sname . '</a>';
+        } else {
+          $authors_array[] = $author_name . ' ' . $author_sname;
+        }
       }
-    } else {
-      $author_name = $author['field_first_name'][0]['#markup'];
-      $author_second = $author['field_last_name'][0]['#markup'];
-      $authors_array[] = $author_name . ' ' . $author_second;
+      } else {
+        $author_name = $author['field_first_name'][0]['#markup'];
+        $author_second = $author['field_last_name'][0]['#markup'];
+        $authors_array[] = $author_name . ' ' . $author_second;
+      }
     }
-  }
 
   $authors_output = implode(', ', $authors_array);
-  $taxonomy_output = implode(', ', _gsb_revamp_get_tags($variables));
+
 
   $title = $variables['title'];
   $image = empty($variables['field_content_image']) ? '' : $variables['field_content_image'][0];
@@ -111,7 +115,7 @@
   
   $imageclass = '';
   if(!empty($image)) {
-    $eventimagestyle = array(
+    $bizinimage = array(
       'style_name' => 'sidebar_full_270x158',
       'path' => $image['uri'],
       'alt' => $image['alt'],
@@ -124,10 +128,12 @@
   }
 
   if ( $teaser ) { ?>
+  <?php
+  $taxonomy_output = implode(', ', _gsb_revamp_get_tags($variables, true)); ?>
     <div class="cp-business-insight cp-block <?php print $imageclass; ?>">
       <span class="blue-small-border"></span>
       <?php if(!empty($image)) { ?>
-        <div class="cp-image"><?php print theme_image_style($image); ?></div>
+        <div class="cp-image"><?php print theme_image_style($bizinimage); ?></div>
       <?php } ?>
       <div class="cp-content"><span class="cp-date"><?php print $date ?></span>
         <h4 class="cp-title"><i></i><?php printf('<a href="/node/%s">%s</a>', $nid, $title); ?></h4>
@@ -138,6 +144,37 @@
         <?php ?>
         <div class="cp-body"><?php print $editorial_summary; ?></div>
         <span class="cp-taxonomy"><?php print $taxonomy_output; ?></span>
+      </div>
+    </div>
+  <?php } else { ?>
+  <?php 
+    $taxonomy_output = implode(', ', _gsb_revamp_get_tags($variables, false)); 
+    $body = $body[0]['safe_value'];
+    $imagecaption = !empty($field_content_image_caption) ?  $field_content_image_caption[0]['safe_value'] : '';
+  
+  ?>
+    <div class="business-insights-inner">
+      <div class="bizin-header">
+        <div class="bizin-title">
+          <p class="bi-date"><?php print $date ?></p>
+          <h3 class="bi-title"><?php print $title ?></h3>
+        </div>
+        <div class="bizin-image">
+          <?php print theme_image_style($bizinimage); ?>
+          <?php if ($imagecaption) { ?> 
+            <p class="bi-image-title"><?php print $imagecaption ?></p>
+          <?php } ?>
+        </div>        
+      </div>
+      <div class="bizin-content">
+        <div class="tags"><span>Tags: </span><span class="all-tags"><?php print $taxonomy_output ?></span></div>
+        <div class="bizin-body">
+          <p class="bi-editorial"><?php print $editorial_summary ?></p>
+          <div class="bi-body"><?php print $body ?></div>
+        </div>
+        <div class="bizin-authors">
+          <?php print '—by ' . $authors_output; ?>
+        </div>
       </div>
     </div>
   <?php } 
