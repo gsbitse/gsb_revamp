@@ -5,8 +5,7 @@
   }
 
   foreach ($variables['field_gsb_featured_item'] as $key => $feature_item) {
-    $imagestyle = '';
-    $date = '';
+    $image = $image_url = $image_alt = $image_title = $date = '';
 
     $node = $variables['elements']['field_gsb_featured_item'][$key]['entity']['field_collection_item'][$feature_item['value']]['field_gsb_featured_reference']['#items'][0]['entity'];
     $title = isset($variables['elements']['field_gsb_featured_item'][$key]['entity']['field_collection_item'][$feature_item['value']]['field_gsb_feature_title']) ? $variables['elements']['field_gsb_featured_item'][$key]['entity']['field_collection_item'][$feature_item['value']]['field_gsb_feature_title'][0]['#markup'] : $node->title;
@@ -15,10 +14,12 @@
 
     switch ($node->type) {
       case 'gsb_event':
-        $image = isset($node->field_event_image) ? $node->field_event_image[$node->language][0] : '';
-	$image_url = $image['uri'];
-        $image_alt = $image['alt'];
-        $image_title = $image['alt'];
+        if (!empty($node->field_event_image)) {
+          $image = $node->field_event_image[$node->language][0];
+          $image_url = $image['uri'];
+          $image_alt = $image['alt'];
+          $image_title = $image['alt'];
+        }
 
         $date = _gsb_revamp_format_event_date($node->field_event_date[$node->language][0]['value'], $node->field_event_date[$node->language][0]['value2'], $node->field_all_day_event[$node->language]['0']['value'], 'megamenu');
         break;
