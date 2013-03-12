@@ -25,7 +25,6 @@
 <?php 
 
 $entity_info = entity_get_info('field_collection_item');
-dpm($entity_info);
 
 ?>
 

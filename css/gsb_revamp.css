@@ -1118,13 +1118,13 @@ cursor: pointer;
 .cp-title a {
 color:#900;
 font-family: 'NewsGothicBT-Bold', sans-serif;
-border: 0 none;
+border-bottom: 1px transparent solid;
 font-size: 19px;
 font-weight:normal;
 }
 
 .cp-title a:hover {
- border:none;
+ border-bottom-style: dashed;
  color:#005580;
 }
 
@@ -1152,6 +1152,28 @@ font-weight:normal;
 .cp-image-large,
 .cp-image-large img {
 	display: none;
+}
+
+.cp-author {
+ color:#666;
+ margin-bottom:5px;
+ display:block;
+}
+
+.cp-taxonomy {
+ font-size:14px;
+ line-height:18px;
+ margin-top:8px;
+ display:block;
+}
+
+.cp-taxonomy a {
+ color:#900;
+ border-bottom: 1px transparent solid;
+}
+
+.cp-taxonomy a:hover {
+ border-bottom-style:dashed;
 }
 
 /* upcoming events (ue) */
@@ -2248,41 +2270,93 @@ float: left;
  font-size:14px;
 }
 
-/* panel */
+/* business insights detailed */
 
-.panels-dnd [class*='span'] {
- float:left;
- margin-bottom:13px;
+.bi-date,
+.tags {
+ font-size:14px;
+line-height:18px;
+color:#656162;
+margin:0;
+font-family: NewsGothicBT-Roman, sans-serif;
 }
 
-.panels-dnd>div.row {
+.bi-date {
+ margin-top:10px;
+}
+
+.tags {
+ margin-bottom:15px;
+}
+
+.tags a {
+ border:none;
+ color:#900;
+}
+
+.tags a:hover {
+ border:none;
+}
+
+.bizin-header {
  overflow:hidden;
- float:none;
+ border-top:3px #231f20 solid;
+ padding-top:1px;
+ padding-bottom:30px;
+ padding-left:25px;
 }
 
-.panels-dnd .span4 {
- width:32%;
- margin-left:2%;
- margin-bottom:0;
+.bizin-image {
+float:right;
 }
 
-.panels-dnd .span4:first-child {
- margin-left:0;
+.bi-image-title {
+ color:#887e6e;
+ font-size:14px;
+ line-height:18px;
+ margin:5px 0 0 0;
 }
 
-.panels-dnd .span9 {
- width:66%;
- margin-right:1.5%;
+.bizin-title {
+ float:left;
+ width:530px;
 }
 
-.panels-dnd .span3 {
- width:32.5%;
+.bi-title {
+ margin:0;
+ font-size:36px;
+ line-height:42px;
+ color:#231f20;
+ margin-top:22px;
 }
 
-.panels-dnd .span9 .span12 {
- width:100%;
+.bi-editorial {
+ font-size:26px;
+ line-height:32px;
+ font-family: NewsGothicBT-Bold, sans-serif;
+ margin-bottom:10px;
 }
 
-.panels-dnd .clear-row {
- clear:both;
-} 
+.bi-body p {
+margin-bottom:10px;
+}
+
+/* business insights related */
+
+.related-business-insights .span4 {
+ padding-right:30px;
+}
+
+.related-business-insights .cp-date {
+ margin-top:15px;
+ display:block;
+}
+
+.related-business-insights .cp-title a{
+ font-size:26px;
+ line-height:30px;
+}
+
+.related-business-insights .cp-taxonomy {
+ display:none;
+}
