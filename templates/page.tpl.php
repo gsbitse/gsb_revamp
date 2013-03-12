@@ -25,7 +25,6 @@
           <div id="site-name" class=""><a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home"><?php print $site_name; ?></a></div>
           <?php endif; ?>
 
-
          <?php if ($main_menu): ?>
           <div id="main-menu" class="clearfix main-menu">
           
@@ -54,16 +53,11 @@
 
          </div>
 
-
         <?php if ($site_slogan): ?>
           <div id="site-slogan" class="span6 offset2 float-right"><p style="float: right;"><?php print $site_slogan; ?></p></div>
         <?php endif; ?>
 
-
-
         </div>
-
-
 
         <!-- /#name-and-slogan -->
         <?php endif; ?>
@@ -96,7 +90,9 @@
       <?php endif; ?>
       <?php 
         $spannine = 'span9';
-        if ($node->type == 'business_insight') { $spannine = ''; } 
+        if (!empty($node)) {
+          if ( $node->type == 'business_insight') { $spannine = ''; } 
+        }
       ?>
       <div id="content" class="<?php print $spannine ?>">
         <div id="content-wrapper">
@@ -129,9 +125,6 @@
           </div>
          
           <div id="content-body" class="row-fluid"> <?php print render($page['content']); ?> <?php print $feed_icons; ?> </div>
-          
-         
-      
 
         </div>
         <!-- /#content-wrap --> 
