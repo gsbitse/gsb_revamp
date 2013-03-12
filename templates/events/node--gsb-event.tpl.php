@@ -83,7 +83,72 @@
 
   $imageclass = '';
 
-  $speaker_array = array();
+  /* all taxonomies */
+
+  /* variables */
+  $eventtitle = $node->title;
+  $eventdate1 = !empty($node->field_event_date) ? $field_event_date[0]['value'] : '';
+  $eventdate2 = !empty($node->field_event_date) ?  $field_event_date[0]['value2'] : '';
+  $eventadress1 = !empty($variables['field_address'][0]['thoroughfare']) ? $variables['field_address'][0]['thoroughfare'] : '';
+  $eventadress2 = !empty($variables['field_address'][0]['premise']) ? $variables['field_address'][0]['premise'] : '';
+  $eventadress3 = !empty($variables['field_address'][0]['value']) ? $variables['field_address'][0]['value'] : '';
+  $eventcity = !empty($variables['field_address'][0]['locality']) ? $variables['field_address'][0]['locality'] : '';
+  $eventstate = !empty($variables['field_address'][0]['administrative_area']) ? $variables['field_address'][0]['administrative_area'] : '';
+  $eventcountry = !empty($variables['field_address'][0]['country']) ? $variables['field_address'][0]['country'] : '';
+  $eventimage = !empty($variables['field_event_image']) ? $variables['field_event_image'][0] : '';
+  $eventeditorialblurb = !empty($node->field_editorial_blurb) ? $node->field_editorial_blurb['und'][0]['value'] : '';
+
+  $dateoutput = _gsb_revamp_format_event_date($eventdate1, $eventdate2, $node->field_all_day_event['und']['0']['value'], 'eventdetail');
+
+  if(!empty($eventimage)) {
+    $eventimagestyle = array(
+      'style_name' => 'sidebar_full_270x158',
+      'path' => $eventimage['uri'],
+      'alt' => $eventimage['alt'],
+      'title' => $eventimage['title'],
+      'width' => '268',
+      'height' => '158',
+    );
+  } else {
+    $imageclass = 'no-image';
+  }
+?>
+
+<?php if ($teaser) { ?>
+<?php 
+  $taxonomy_output = implode(', ', _gsb_revamp_get_tags($variables, true)); 
+  $summary_trim = array(
+    'max_length' => 125,
+    'word_boundary' => true,
+    'ellipsis' => true,
+    'html' => true,
+  );
+?>
+<div class="cp-event cp-block <?php print $imageclass; ?>">
+  <span class="blue-small-border"></span>
+  <?php if(!empty($eventimage)) { ?>
+    <div class="cp-image"><?php print theme_image_style($eventimagestyle); ?></div>
+  <?php } ?>
+  <div class="cp-content"><span class="cp-date"><?php print $dateoutput ?></span>
+    <h4 class="cp-title"><i></i><?php printf('<a href="/node/%s">%s</a>', $nid, $eventtitle); ?></h4>
+    <span class="cp-adress"><?php 
+        if (!empty($eventcity) && !empty($eventstate)) {
+          print $eventcity . ', ' . $eventstate; 
+        } else {
+          print $eventcity . $eventstate;
+        } ?>
+    </span>
+    <?php if (!empty($eventeditorialblurb)) { ?>
+    <div class="cp-body"><?php print $eventeditorialblurb; ?></div>
+    <?php } ?>    
+    <span class="cp-taxonomy"><?php print $taxonomy_output; ?></span>
+  </div>
+</div>
+<?php } ?>
+
+<?php if ($view_mode == 'full') { ?>
+<?php
+    $speaker_array = array();
   foreach ($variables['field_speakers'] as $key => $speaker_id) {
     $speaker = $variables['elements']['field_speakers'][$key]['entity']['field_collection_item'][$speaker_id['value']];
     if ($speaker['field_speaker_reference'][0]['#markup'] != 'Other') {
@@ -103,29 +168,12 @@
     }
   }
   $speaker_output = implode(', ', $speaker_array);
-
-  /* all taxonomies */
-
-  /* variables */
-  $eventtitle = $node->title;
-  $eventdate1 = !empty($node->field_event_date) ? $field_event_date[0]['value'] : '';
-  $eventdate2 = !empty($node->field_event_date) ?  $field_event_date[0]['value2'] : '';
-  $eventadress1 = !empty($variables['field_address'][0]['thoroughfare']) ? $variables['field_address'][0]['thoroughfare'] : '';
-  $eventadress2 = !empty($variables['field_address'][0]['premise']) ? $variables['field_address'][0]['premise'] : '';
-  $eventadress3 = !empty($variables['field_address'][0]['value']) ? $variables['field_address'][0]['value'] : '';
-  $eventcity = !empty($variables['field_address'][0]['locality']) ? $variables['field_address'][0]['locality'] : '';
-  $eventstate = !empty($variables['field_address'][0]['administrative_area']) ? $variables['field_address'][0]['administrative_area'] : '';
-  $eventcountry = !empty($variables['field_address'][0]['country']) ? $variables['field_address'][0]['country'] : '';
-  $maplink = !empty($node->field_map_url) ? $node->field_map_url['und'][0]['display_url'] : '';
   $eventregisterlink = !empty($variables['field_register_url']) ? $variables['field_register_url'][0]['display_url'] : '';
   $eventregistertitle = !empty($variables['field_register_url'][0]['title']) ? $variables['field_register_url'][0]['title'] : 'Register';
-  $eventimage = !empty($variables['field_event_image']) ? $variables['field_event_image'][0] : '';
-  $eventeditorialblurb = !empty($node->field_editorial_blurb) ? $node->field_editorial_blurb['und'][0]['value'] : '';
+  $maplink = !empty($node->field_map_url) ? $node->field_map_url['und'][0]['display_url'] : '';
   $eventbody = !empty($node->body) ? $node->body['und'][0]['safe_value'] : '';
 
-  $dateoutput = _gsb_revamp_format_event_date($eventdate1, $eventdate2, $node->field_all_day_event['und']['0']['value'], 'eventdetail');
-
-  /* audience taxonomy */
+    /* audience taxonomy */
   $eventaudiencetext = array();
   if (!empty($variables['field_target_audience'])) {
     foreach ($variables['field_target_audience'] as $key => $speaker_id) {
@@ -134,43 +182,7 @@
   }
   $eventtargetaudience = implode(', ', $eventaudiencetext);
 
-  if(!empty($eventimage)) {
-    $eventimagestyle = array(
-      'style_name' => 'sidebar_full_270x158',
-      'path' => $eventimage['uri'],
-      'alt' => $eventimage['alt'],
-      'title' => $eventimage['title'],
-      'width' => '268',
-      'height' => '158',
-    );
-  } else {
-    $imageclass = 'no-image';
-  }
 ?>
-
-<?php if ($teaser) { ?>
-<?php $taxonomy_output = implode(', ', _gsb_revamp_get_tags($variables, true)); ?>
-<div class="cp-event cp-block <?php print $imageclass; ?>">
-  <span class="blue-small-border"></span>
-  <?php if(!empty($eventimage)) { ?>
-    <div class="cp-image"><?php print theme_image_style($eventimagestyle); ?></div>
-  <?php } ?>
-  <div class="cp-content"><span class="cp-date"><?php print $dateoutput ?></span>
-    <h4 class="cp-title"><i></i><?php printf('<a href="/node/%s">%s</a>', $nid, $eventtitle); ?></h4>
-    <span class="cp-adress"><?php 
-        if (!empty($eventcity) && !empty($eventstate)) {
-          print $eventcity . ', ' . $eventstate; 
-        } else {
-          print $eventcity . $eventstate;
-        } ?>
-    </span>
-    <div class="cp-body"><?php print $eventbody; ?></div>
-    <span class="cp-taxonomy"><?php print $taxonomy_output; ?></span>
-  </div>
-</div>
-<?php } ?>
-
-<?php if ($view_mode == 'full') { ?>
 <?php $taxonomy_output = implode(', ', _gsb_revamp_get_tags($variables, false));  ?>
 <div class="event-innerpage <?php print $classes; ?>">
   <div class="event-innerpage-details">
