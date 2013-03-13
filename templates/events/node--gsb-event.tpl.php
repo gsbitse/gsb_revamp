@@ -139,7 +139,7 @@
         } ?>
     </span>
     <?php if (!empty($eventeditorialblurb)) { ?>
-    <div class="cp-body"><?php print $eventeditorialblurb; ?></div>
+    <div class="cp-body"><?php print views_trim_text($summary_trim, $eventeditorialblurb); ?></div>
     <?php } ?>    
     <span class="cp-taxonomy"><?php print $taxonomy_output; ?></span>
   </div>
