@@ -4,7 +4,7 @@ $imageclass = '';
 $title = $variables['title'];
 $image = !empty($variables['field_header_image']) ? $variables['field_header_image']['und'][0] : '';
 $summary = !empty($variables['field_editorial_summary']) ? $variables['field_editorial_summary']['und'][0]['safe_value'] : '';
-$date = !empty($variables['field_date_published']) ? date('l, M j, ga', strtotime($variables['field_date_published']['und'][0]['value'])) : '';
+$date = !empty($variables['field_date_published']) ? date('l, M j, Y', strtotime($variables['field_date_published']['und'][0]['value'])) : '';
 
 if(!empty($image)) {
   $imagestyle = array(

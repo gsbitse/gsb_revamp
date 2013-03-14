@@ -107,7 +107,7 @@
   $authors_output = implode(', ', $authors_array);
   $image = empty($variables['field_content_image']) ? '' : $variables['field_content_image'][0];
   $editorial_summary = $variables['field_editorial_summary'][0]['safe_value'];
-  $date = date('l, M j, ga', strtotime($variables['field_date_published'][0]['value'])); 
+  $date = date('l, M j, Y', strtotime($variables['field_date_published'][0]['value'])); 
 
   $imageclass = '';
   if(!empty($image)) {
