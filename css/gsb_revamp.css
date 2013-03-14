@@ -2604,3 +2604,87 @@ padding:15px 0 35px 0;
  margin:8px 0 7px;
  display:block;
  }
+
+ /* quote */
+
+.quote-wrapper {
+margin-bottom:20px; 
+}
+
+.quote-text, 
+.quote-text p {
+ font-family: NewsGothicBT-Bold, sans-serif;
+ font-size:35px;
+ line-height:1.2em;
+ margin:0;
+}
+
+a.quote-link,
+a.quote-link:hover {
+	border: none;
+}
+
+.quote-text p {
+display: inline;
+border: none;
+}
+
+.quote-text {
+	margin-left: 35px;
+	position: relative;
+}
+
+.quote-link .quote-text {
+	display: inline;
+	margin: 0;
+}
+
+.quote-link {
+	margin-left: 35px;
+	display: block;
+}
+
+.quote-text i,
+.quote-text i:hover {
+border: none;
+color: #000;
+font-style: normal;
+font-size: 38px;
+}
+
+.quote-text i.last {
+	position: relative;
+	left: -10px;
+}
+
+.quote-text i.first { 
+	font-size: 58px;
+}
+
+.quote-text i.first {
+	position: absolute;
+	left: -30px;
+	top: 13px;
+}
+
+.quote-link i.arrow,
+.quote-link i.arrow:hover {
+border: none;
+display: inline-block;
+width: 18px;
+background: url(../images/arrows-icons.png) no-repeat 0 -100px;
+height: 21px;
+position: relative;
+left: -3px;
+top: -2px;
+}
+
+.quote-person {
+ padding-top:10px;
+ padding-left: 35px;
+}
+
+.quote-person a,
+.quote-person a:hover {
+ border:none;
+}
