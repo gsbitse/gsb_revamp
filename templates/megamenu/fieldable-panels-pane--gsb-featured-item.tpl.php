@@ -32,13 +32,21 @@
         $date = format_date(strtotime($node->field_date_published[$node->language][0]['value']), 'custom', 'l, F j, Y');
       break;
 
+      case 'gsb_school_story':
+        $image = $node->field_header_image[$node->language][0];
+        $image_url = $image['uri'];
+        $image_alt = !empty($image['field_file_image_alt_text']) ? $image['field_file_image_alt_text'][$node->language][0]['safe_value'] : '';
+        $image_title = !empty($image['field_file_image_title_text']) ? $image['field_file_image_title_text'][$node->language][0]['safe_value'] : '';
+        $date = format_date(strtotime($node->field_date_published[$node->language][0]['value']), 'custom', 'l, F j, Y');      
+      break;
+
       case 'gsb_media_mention':
         $image = $node->field_content_image[$node->language][0];
         $image_url = $image['uri'];
         $image_alt = !empty($image['field_file_image_alt_text']) ? $image['field_file_image_alt_text'][$node->language][0]['safe_value'] : '';
         $image_title = !empty($image['field_file_image_title_text']) ? $image['field_file_image_title_text'][$node->language][0]['safe_value'] : '';
         $date = format_date(strtotime($node->field_date_published[$node->language][0]['value']), 'custom', 'l, F j, Y');
-      break;  
+      break;
 
       default:
         $date = format_date($node->created, 'medium_time');
