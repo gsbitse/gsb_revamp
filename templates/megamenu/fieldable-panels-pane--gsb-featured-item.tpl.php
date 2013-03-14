@@ -46,7 +46,7 @@
     }
 
     $imagestyle = theme_image_style(array(
-      'style_name' => 'thumbnail_170x100',
+      'style_name' => '170x100',
       'path' => $image_url,
       'alt' => $image_alt,
       'title' => $image_title,

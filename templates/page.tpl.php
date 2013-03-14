@@ -91,8 +91,9 @@
       <?php 
         $spannine = 'span9';
         if (!empty($node)) {
-          if ( $node->type == 'business_insight') { $spannine = ''; } 
+          if ($node->type == 'business_insight') { $spannine = ''; } 
         }
+        elseif (arg(0) == 'business-insights') { $spannine = ''; }
       ?>
       <div id="content" class="<?php print $spannine ?>">
         <div id="content-wrapper">

@@ -36,7 +36,7 @@
               }
               // Create the image.
               render($content['field_gsb_spotlight_image_video']);
-              $img_tag = theme_image_style(array('style_name' => 'business_insights_220x125', 'path' => $content['field_gsb_spotlight_image_video'][0]['file']['#path'], 'alt' => $field_gsb_spotlight_image_video[0]['filename'], 'width' => NULL, 'height' => NULL));
+              $img_tag = theme_image_style(array('style_name' => '270x158', 'path' => $content['field_gsb_spotlight_image_video'][0]['file']['#path'], 'alt' => $field_gsb_spotlight_image_video[0]['filename'], 'width' => NULL, 'height' => NULL));
               // Print a link wrapper so that it can open in a modal.
               print '<div class="field field-type-image field-name-field-gsb-spotlight-media">';
               print l($img_tag, $video_path, array('attributes' => array('class' => 'fancybox fancybox.iframe'), 'html' => TRUE));

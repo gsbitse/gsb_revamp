@@ -37,7 +37,7 @@
         // Create the image.
 
         $img_tag = theme_image_style(array(
-          'style_name' => $content['field_gsb_video_video'][0]['file']['#style_name'],
+          'style_name' => '270x158',
           'path' => $content['field_gsb_video_video'][0]['file']['#path'],
           'alt' => $field_gsb_video_video[0]['filename'],
           'width' => NULL,

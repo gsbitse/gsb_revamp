@@ -8,7 +8,7 @@ $date = !empty($variables['field_date_published']) ? date('l, M j, ga', strtotim
 
 if(!empty($image)) {
   $imagestyle = array(
-    'style_name' => 'sidebar_full_270x158',
+    'style_name' => '270x158',
     'path' => $image['uri'],
     'alt' => $image['alt'],
     'title' => $image['title'],

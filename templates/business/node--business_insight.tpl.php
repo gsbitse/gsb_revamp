@@ -112,7 +112,7 @@
   $imageclass = '';
   if(!empty($image)) {
     $bizinimage = array(
-      'style_name' => 'sidebar_full_270x158',
+      'style_name' => '270x158',
       'path' => $image['uri'],
       'alt' => $image['alt'],
       'title' => $image['title'],

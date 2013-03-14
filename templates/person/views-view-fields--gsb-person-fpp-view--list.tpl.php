@@ -67,7 +67,7 @@ if ($entityref && isset($entityref->field_department['und'][0]['tid'])) {
 
 if(!empty($headshot)) {
   $headshotstyle = array(
-    'style_name' => 'medium',
+    'style_name' => '170x170',
     'path' => $headshot['uri'],
     'alt' => $headshot['alt'],
     'title' => $headshot['title'],

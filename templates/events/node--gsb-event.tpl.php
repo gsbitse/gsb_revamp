@@ -102,7 +102,7 @@
 
   if(!empty($eventimage)) {
     $eventimagestyle = array(
-      'style_name' => 'sidebar_full_270x158',
+      'style_name' => '270x158',
       'path' => $eventimage['uri'],
       'alt' => $eventimage['alt'],
       'title' => $eventimage['title'],
