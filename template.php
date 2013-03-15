@@ -126,7 +126,7 @@ function _gsb_revamp_format_event_date($eventdate1, $eventdate2, $all_day, $form
     if ( date('o M j', $eventdate1) != date('o M j', $eventdate2) ) {
       $dateoutput .= sprintf('<span>%s</span>%s – <span>%s</span>%s', date('l, ', $eventdate1), $monthday1, date('l, ', $eventdate2), $monthday2);
     } else {
-      if ( $field_all_day_event['0']['value'] == 1 ) {
+      if ( $all_day == 1 ) {
         $dateoutput .= date('l, ', $eventdate1) . $monthday1;
       } else {
         $dateoutput .= sprintf('<span>%s</span>%s%s – %s', date('l, ', $eventdate1), $monthday1, date(', ga', $eventdate1), date('ga', $eventdate2));

@@ -2704,15 +2704,22 @@ top: -2px;
 
 /* icons */
 
-.span4 .bi-section-link {
-	display: block;
-	padding: 0 26px;
-	line-height: 36px;
-	color: #fff;
-	font-size: 15px;
-	font-family: NewsGothicBT-Roman, sans-serif;
-	background: rgba(0,0,0,0.5);
-	margin-top: -36px;
+.span4 a.bi-section-link,
+.span4 a.bi-section-link:hover {
+ display: block;
+padding: 0 26px;
+line-height: 36px;
+color: #fff;
+font-size: 15px;
+font-family: NewsGothicBT-Roman,sans-serif;
+background: rgba(0,0,0,0.5);
+margin-top: -48px;
+z-index: 100;
+position: relative;
+margin-bottom: 15px;
+border:none;
+width:214px;
+margin-left:-26px;
 }
 
 .page-business-insights .bi-section-link {

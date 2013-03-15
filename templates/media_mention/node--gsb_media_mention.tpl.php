@@ -2,7 +2,7 @@
 
 $imageclass = ''; 
 $title = $variables['title'];
-$image = !empty($variables['field_content_image']) ? $variables['field_content_image']['und'][0] : '';
+$image = !empty($variables['field_content_image']) ? $variables['field_content_image'][0] : '';
 $summary = !empty($variables['field_editorial_summary']) ? $variables['field_editorial_summary'][0]['safe_value'] : '';
 $date = !empty($variables['field_date_published']) ? date('l, M j, Y', strtotime($variables['field_date_published'][0]['value'])) : '';
 
