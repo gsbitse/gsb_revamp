@@ -2068,14 +2068,27 @@ a.cta-link i {
 }
 
 a.cta-red.cta-link i {
-	width: 24px;
+	width: 26px;
 	height: 27px;
 	right: 18px;
 	margin-top: -14px;
+	background: url('../images/cta_red_icon.png') no-repeat top left;
+}
+
+a.cta-red.cta-link:hover i {
+	background-image: url('../images/cta_red_icon_hover.png');
 }
 
 a.cta-green.cta-link i {
-	display: none;
+	width: 26px;
+	height: 27px;
+	right: 18px;
+	margin-top: -14px;
+	background: url('../images/cta_green_icon.png') no-repeat top left;
+}
+
+a.cta-green.cta-link:hover i {
+	background-image: url('../images/cta_green_icon_hover.png');
 }
 
 .cta-wrapper {
@@ -2687,4 +2700,45 @@ top: -2px;
 .quote-person a,
 .quote-person a:hover {
  border:none;
+}
+
+/* icons */
+
+.span4 .bi-section-link {
+	display: block;
+	padding: 0 26px;
+	line-height: 36px;
+	color: #fff;
+	font-size: 15px;
+	font-family: NewsGothicBT-Roman, sans-serif;
+	background: rgba(0,0,0,0.5);
+	margin-top: -36px;
+}
+
+.page-business-insights .bi-section-link {
+	display: none;
+}
+
+.page-business-insights .span4 .cp-title a{
+font-size: 22px;
+}
+
+.page-business-insights .span4 .no-image .cp-title a{
+font-size: 30px;
+}
+
+.page-business-insights .span4 .cp-event .cp-title i {
+ display:inline-block;
+ width:21px;
+ height:18px;
+ background: url('../images/bi_event_icon.png') no-repeat center left;
+ margin-right:5px;
+}
+
+.page-business-insights .span4 .cp-video-block .cp-title i {
+ display:inline-block;
+ width:24px;
+ height:17px;
+ background: url('../images/bi_video_icon.png') no-repeat center left;
+ margin-right:5px;
 }

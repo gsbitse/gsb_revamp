@@ -137,6 +137,7 @@
       <span class="blue-small-border"></span>
       <?php if(!empty($image)) { ?>
         <div class="cp-image"><?php print theme_image_style($bizinimage); ?></div>
+        <a href="/business-insights" class="bi-section-link">Business Insights</a>
       <?php } ?>
       <div class="cp-content"><span class="cp-date"><?php print $date ?></span>
         <h4 class="cp-title"><i></i><?php printf('<a href="/node/%s">%s</a>', $nid, $title); ?></h4>

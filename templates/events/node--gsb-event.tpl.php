@@ -96,9 +96,9 @@
   $eventstate = !empty($variables['field_address'][0]['administrative_area']) ? $variables['field_address'][0]['administrative_area'] : '';
   $eventcountry = !empty($variables['field_address'][0]['country']) ? $variables['field_address'][0]['country'] : '';
   $eventimage = !empty($variables['field_event_image']) ? $variables['field_event_image'][0] : '';
-  $eventeditorialblurb = !empty($node->field_editorial_blurb) ? $node->field_editorial_blurb['und'][0]['value'] : '';
+  $eventeditorialblurb = !empty($variables['field_editorial_summary']) ? $variables['field_editorial_summary'][0]['safe_value'] : '';
 
-  $dateoutput = _gsb_revamp_format_event_date($eventdate1, $eventdate2, $node->field_all_day_event['und']['0']['value'], 'eventdetail');
+  $dateoutput = _gsb_revamp_format_event_date($eventdate1, $eventdate2, $variables['field_all_day_event']['0']['value'], 'eventdetail');
 
   if(!empty($eventimage)) {
     $eventimagestyle = array(

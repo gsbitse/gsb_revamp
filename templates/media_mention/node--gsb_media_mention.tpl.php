@@ -3,8 +3,8 @@
 $imageclass = ''; 
 $title = $variables['title'];
 $image = !empty($variables['field_content_image']) ? $variables['field_content_image']['und'][0] : '';
-$summary = !empty($variables['field_editorial_summary']) ? $variables['field_editorial_summary']['und'][0]['safe_value'] : '';
-$date = !empty($variables['field_date_published']) ? date('l, M j, Y', strtotime($variables['field_date_published']['und'][0]['value'])) : '';
+$summary = !empty($variables['field_editorial_summary']) ? $variables['field_editorial_summary'][0]['safe_value'] : '';
+$date = !empty($variables['field_date_published']) ? date('l, M j, Y', strtotime($variables['field_date_published'][0]['value'])) : '';
 
 if(!empty($image)) {
   $imagestyle = array(
@@ -27,7 +27,7 @@ $summary_trim = array(
     'html' => true,
   );
 ?>
-<div class="cp-event cp-block <?php print $imageclass; ?>">
+<div class="cp-media-mention cp-block <?php print $imageclass; ?>">
   <span class="blue-small-border"></span>
   <?php if(!empty($image)) { ?>
     <div class="cp-image"><?php print theme_image_style($imagestyle); ?></div>

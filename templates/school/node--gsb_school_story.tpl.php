@@ -27,7 +27,7 @@ $summary_trim = array(
     'html' => true,
   );
 ?>
-<div class="cp-event cp-block <?php print $imageclass; ?>">
+<div class="cp-school cp-block <?php print $imageclass; ?>">
   <span class="blue-small-border"></span>
   <?php if(!empty($image)) { ?>
     <div class="cp-image"><?php print theme_image_style($imagestyle); ?></div>

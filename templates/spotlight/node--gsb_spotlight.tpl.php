@@ -112,7 +112,7 @@
         }
 
         // Create the image.
-        $img_tag = theme_image_style(array('style_name' => $build['file']['#style_name'], 'path' => $build['file']['#path'], 'alt' => $build['#file']->filename, 'width' => NULL, 'height' => NULL));
+        $img_tag = theme_image_style(array('style_name' => '270x158', 'path' => $build['file']['#path'], 'alt' => $build['#file']->filename, 'width' => NULL, 'height' => NULL));
 
         // Print a link wrapper so that it can open in a modal.
         print '<div class="field field-type-image field-name-field-gsb-spotlight-media">';

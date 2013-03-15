@@ -28,7 +28,7 @@ $summary_trim = array(
     'html' => true,
   );
 ?>
-<div class="cp-event cp-block <?php print $imageclass; ?>">
+<div class="cp-video-block cp-block <?php print $imageclass; ?>">
   <span class="blue-small-border"></span>
   <div class="cp-video"><?php
 
