@@ -2741,4 +2741,6 @@ font-size: 30px;
  height:17px;
  background: url('../images/bi_video_icon.png') no-repeat center left;
  margin-right:5px;
+ position: relative;
+ top: 1px;
 }
