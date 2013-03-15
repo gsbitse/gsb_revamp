@@ -2716,13 +2716,13 @@ background: rgba(0,0,0,0.5);
 margin-top: -48px;
 z-index: 100;
 position: relative;
-margin-bottom: 15px;
+margin-bottom: 12px;
 border:none;
 width:214px;
 margin-left:-26px;
 }
 
-.page-business-insights .bi-section-link {
+.page-business-insights .span4 a.bi-section-link {
 	display: none;
 }
 
