@@ -2769,6 +2769,7 @@ a.cta-get-directions:hover {
  border:2px #fff solid;
  background: url('../images/cta-map.png') repeat-x top left;
  height:115px;
+ padding-bottom: 1px;
 }
 
 a.cta-get-directions .cta-body {
