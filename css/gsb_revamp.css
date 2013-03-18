@@ -2751,3 +2751,10 @@ font-size: 30px;
  position: relative;
  top: 1px;
 }
+
+.bizin-image {
+ width:270px;
+}
+.bizin-image p {
+ margin-top:11px;
+}
