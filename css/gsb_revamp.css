@@ -2903,6 +2903,7 @@ a.cta-rethink:hover{
 .cta-follow-us a,
 .cta-follow-us a:hover {
 border:none;
+color: #fff;
 }
 
 .cta-follow-us .cta-title {
@@ -2916,6 +2917,7 @@ border:none;
  height:49px;
  line-height:49px;
  color:#fff;
+ font-family: NewsGothicBT-Bold, sans-serif;
 }
 
 .cta-follow-us .cta-title i {
