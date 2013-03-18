@@ -271,7 +271,8 @@ a.green-rounded-button:hover {
 	#block-block-2 h3 { font-weight: normal; margin: 0; font-family: NewsGothicBT-Bold, sans-serif; font-size: 18px; color: #8a0000; padding-bottom: 10px; margin-bottom: 18px; border-bottom: 1px solid #cdcdcd;  }
 	#block-block-2 ul li { margin-right: 20px; }
 	#block-block-2 ul  { margin: 0; padding: 0; list-style-type: none;}
-	#social-block-icons li {
+	#social-block-icons li,
+	.cta-follow-us a.circle{
 		width: 40px;
 		height: 41px;
 		background-image: url(../images/social-icons.png);
@@ -2092,20 +2093,20 @@ a.cta-green.cta-link:hover i {
 }
 
 .cta-wrapper {
-         padding: 0;
+padding: 0;
 }
 
 .cta-title{
  color:#900;
  margin-top:-2px;
  font-size: 18px;
-	line-height: 24px;
+ line-height: 24px;
 }
 
 a.cta-green,
 a.cta-green:hover,
 a.cta-green .cta-title {
-	color: #7d8401;
+ color: #7d8401;
 }
 
 .cta-link {
@@ -2114,7 +2115,7 @@ a.cta-green .cta-title {
 
 .cta-link b{
  font-family:NewsGothicBT-Bold, sans-serif;
- font-size:16px;
+ font-size:14px;
  line-height:1.3em;
  font-weight: normal;
 }
@@ -2757,4 +2758,180 @@ font-size: 30px;
 }
 .bizin-image p {
  margin-top:11px;
+}
+
+/* custom cta */
+
+a.cta-get-directions,
+a.cta-get-directions:hover {
+ overflow:hidden;
+ display:block;
+ border:2px #fff solid;
+ background: url('../images/cta-map.png') repeat-x top left;
+ height:115px;
+}
+
+a.cta-get-directions .cta-body {
+ background:rgba(30,82,109,0.7);
+ padding:13px 15px;
+ color:#fff;
+ font-size:21px;
+ line-height:1.5em;
+}
+
+a.cta-get-directions:hover .cta-body{
+ background:rgba(123,130,1,0.8);
+}
+
+a.cta-virtual-tour,
+a.cta-virtual-tour:hover {
+ border: 2px #fff solid;
+ display:block;
+ overflow:hidden;
+}
+
+a.cta-virtual-tour {
+ background:url('../images/cta-visit-blured.png') repeat-x top left;
+}
+
+a.cta-virtual-tour:hover {
+ background:url('../images/cta-visit.png') repeat-x top left;
+}
+
+a.cta-virtual-tour .virtual-tour-btn {
+ display:block;
+ background:#fff;
+ line-height:35px;
+ height:35px;
+ color:#900;
+ padding:0 15px;
+ font-family:NewsGothicBT-Bold,sans-serif;
+ font-size:18px;
+ position:relative;
+}
+
+a.cta-virtual-tour .virtual-tour-btn i {
+ position:absolute;
+ top:50%;
+ margin-top:-7px;
+ right:14px;
+ width:13px;
+ height:14px;
+ background:url('../images/cta-visit-icon.png') no-repeat top left;
+}
+
+a.cta-virtual-tour:hover .virtual-tour-btn,
+.cta-rethink {
+ background-image: linear-gradient(bottom, rgb(135,0,0) 100%, rgb(196,0,0) 0%);
+background-image: -o-linear-gradient(bottom, rgb(135,0,0) 100%, rgb(196,0,0) 0%);
+background-image: -moz-linear-gradient(bottom, rgb(135,0,0) 100%, rgb(196,0,0) 0%);
+background-image: -webkit-linear-gradient(bottom, rgb(135,0,0) 100%, rgb(196,0,0) 0%);
+background-image: -ms-linear-gradient(bottom, rgb(135,0,0) 100%, rgb(196,0,0) 0%);
+
+background-image: -webkit-gradient(
+	linear,
+	left bottom,
+	left top,
+	color-stop(1, rgb(135,0,0)),
+	color-stop(0, rgb(196,0,0))
+);
+color:#fff;
+}
+
+a.cta-virtual-tour:hover .virtual-tour-btn i {
+ background: url('../images/cta-visit-icon-hover.png') no-repeat top left;
+}
+
+a.cta-virtual-tour .virtual-tour-cover {
+ display:block;
+ height:120px;
+ border:1px #fff solid;
+  background:url('../images/cta-visit.png') no-repeat -27px -62px;
+}
+
+a.cta-virtual-tour:hover .virtual-tour-cover {
+ background:none;
+ border:1px transparent solid;
+}
+
+a.cta-rethink {
+ overflow:hidden;
+ display:block;
+ color:#fff;
+}
+
+a.cta-rethink,
+a.cta-rethink:hover{
+ border:2px #fff solid;
+}
+
+.cta-rethink .cta-title {
+ color:#fff;
+ font-size:40px;
+ margin:0;
+ line-height:1em;
+}
+
+.cta-rethink a.cta-title:hover {
+ color: #fff;
+} 
+
+.cta-rethink .cta-title b {
+  font-family:NewsGothicBT-Demi,sans-serif;
+  padding-right:3px;
+}
+
+.cta-rethink .cta-description {
+ color:#fff;
+ margin:8px 0 0 0;
+ line-height:1.5em;
+ font-size:20px;
+}
+
+.cta-rethink .cta-description b {
+  font-family:NewsGothicBT-Bold,sans-serif;
+  font-weight:normal;
+}
+
+.cta-follow-us {
+ background:url('../images/cta-follow-us-bg.png') repeat-x top left;
+ height:35px;
+ position:relative;
+ padding-top:75px;
+}
+
+.cta-follow-us a,
+.cta-follow-us a:hover {
+border:none;
+}
+
+.cta-follow-us .cta-title {
+ display:block;
+ position:absolute;
+ top:2px;
+ left:0;
+ width:81%;
+ padding: 0 26px;
+ background:url('../images/cta-follow-us-title-bg.png') repeat-x top left;
+ height:49px;
+ line-height:49px;
+ color:#fff;
+}
+
+.cta-follow-us .cta-title i {
+position: absolute;
+right: 143px;
+top: 50%;
+background: url('../images/arrows-icons.png') no-repeat 0 -20px;
+width: 14px;
+height: 15px;
+margin-top: -7px;
+}
+
+.cta-follow-us .circle {
+ margin-left:19px;
+}
+
+.cta-follow-us .social-block-twitter {
+ margin-left:0;
 }
