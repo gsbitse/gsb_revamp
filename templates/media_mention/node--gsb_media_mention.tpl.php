@@ -5,7 +5,7 @@ $title = $variables['title'];
 $image = !empty($variables['field_content_image']) ? $variables['field_content_image'][0] : '';
 $summary = !empty($variables['field_editorial_summary']) ? $variables['field_editorial_summary'][0]['safe_value'] : '';
 $date = !empty($variables['field_date_published']) ? date('l, M j, Y', strtotime($variables['field_date_published'][0]['value'])) : '';
-$link = !empty($variables['field_source_publication']) ? $variables['field_source_publication'][0]['safe_value'] : '';
+$link = !empty($variables['field_source_publication']) ? $variables['field_source_publication'][0]['url'] : '';
 if(!empty($image)) {
   $imagestyle = array(
     'style_name' => '270x158',
