@@ -9,6 +9,7 @@
 .clubs-filter-exposed .bef-checkboxes .form-item:nth-child(3n+1) {
  clear:both;
 }
+#main-menu .menu li:nth-child(2) a { padding-right:15px;}
 
 .view-gsb-business-insight .entity-field-collection-item {
  margin-right:-4px;

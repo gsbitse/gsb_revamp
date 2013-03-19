@@ -20,6 +20,20 @@ $user_perm = implode(' ', $user->roles);
   <title><?php print $head_title; ?></title>
   <?php print $styles; ?>
   <?php print $scripts; ?>
+  <link rel="stylesheet/less" type="text/css" href="/<?php print drupal_get_path('theme', 'gsb_revamp'); ?>/less/styles.less" />
+  <script type="text/javascript">
+    less = {
+        env: "development", // or "production"
+        async: false,       // load imports async
+        fileAsync: false,   // load imports async when in a page under
+        poll: 1000,         // when in watch mode, time in ms between polls
+        functions: {},      // user functions, keyed by name
+        dumpLineNumbers: "comments", // or "mediaQuery" or "all"
+        relativeUrls: false,// whether to adjust url's to be relative
+        rootpath: ":/a.com/"// a path to add on to the start of every url
+    };
+  </script>
+  <script src="/<?php print drupal_get_path('theme', 'gsb_revamp'); ?>/js/less-1.3.3.min.js" type="text/javascript"></script>
   <!-- IE Fix for HTML5 Tags -->
   <!--[if lt IE 9]>
     <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>

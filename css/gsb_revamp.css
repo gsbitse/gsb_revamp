@@ -138,10 +138,18 @@ ul.menu {
 		display: block;
 		font-family: NewsGothicBT-Bold, sans-serif;
 		background: url('../images/navigation-arrow.png') no-repeat 96px 59px;
+	}
+	.main-menu ul li:hover a.qtip-hover {
+		background-color: transparent;
 	} 
+	.main-menu ul li a.qtip-hover {
+		background-color: #272727;
+	}
+
 	.main-menu ul li ul li { display: block; }
 	.main-menu ul li ul li a { text-transform: none; letter-spacing: 2px; }
 	.main-menu .btn-navbar {display: none;}
+	#main-menu .menu li:nth-child(2) a { padding-right:15px;}
 	body .header-region div.main-menu {
  		margin-top:-10px;
 	}
@@ -2109,10 +2117,6 @@ a.cta-green .cta-title {
  color: #7d8401;
 }
 
-.cta-link {
-
-}
-
 .cta-link b{
  font-family:NewsGothicBT-Bold, sans-serif;
  font-size:14px;
@@ -2159,6 +2163,15 @@ a.cta-red-gradient:hover {
  -webkit-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.45);
  -moz-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.45);
  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.45);
+ font-size: 16px;
+ font-family:NewsGothicBT-Bold, sans-serif;
+}
+
+a.cta-red-gradient b {
+	font-size: 16px;
+}
+
+a.cta-red-gradient span {
 }
 
 .item-0.cta-red-gradient {
@@ -2206,7 +2219,6 @@ background-image: -webkit-gradient(
 );
 }
 
-
 /* megamenu featured */
 
 .mm-featured-header {
@@ -2227,6 +2239,10 @@ background-image: -webkit-gradient(
 	color: #fff;
 }
 
+.mm-featured-date span {
+	display: none;
+}
+
 .mm-featured:hover img {
 	opacity: 1;
 }
@@ -2240,7 +2256,7 @@ background-image: -webkit-gradient(
 }
 
 .mm-featured-image img{
-opacity: 0.7;
+opacity: 0.5;
 }
 
 .mm-featured-content {
@@ -2272,7 +2288,7 @@ a.mm-featured-title {
 /* business insights layout */
 
 .gsb-bizin-sidebar {
- padding-left:34px;
+ padding-left:15px;
 }
 
 .gsb-bizin-content > .span12 > .span4 {
@@ -2470,7 +2486,6 @@ font-family: NewsGothicBT-Roman, sans-serif;
 .bizin-header {
  overflow:hidden;
  border-top:3px #231f20 solid;
- padding-top:1px;
  padding-bottom:30px;
 }
 
@@ -2584,7 +2599,7 @@ padding:15px 0 35px 0;
  }
  
 .business-insights-list .cp-content {
- width:380px;
+ width:74%;
 }
  
 .business-insights-list .cp-image,
@@ -2617,6 +2632,10 @@ padding:15px 0 35px 0;
 .business-insights-list .cp-title {
  margin:8px 0 7px;
  display:block;
+ }
+
+ .business-insights-list .bi-section-link {
+ 	display: none;
  }
 
  /* quote */
