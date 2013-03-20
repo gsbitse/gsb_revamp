@@ -272,7 +272,8 @@ a.green-rounded-button:hover {
 	#block-block-2 ul li { margin-right: 20px; }
 	#block-block-2 ul  { margin: 0; padding: 0; list-style-type: none;}
 	#social-block-icons li,
-	.cta-follow-us a.circle{
+	.cta-follow-us a.circle,
+	.follow-us-circles a.circle{
 		width: 40px;
 		height: 41px;
 		background-image: url(../images/social-icons.png);
@@ -358,73 +359,12 @@ a.green-rounded-button:hover {
 	.homepage-event-item p { font-size: 16px; }
 	.homepage-event-title { font-family: NewsGothicBT-Bold }
 
-	/* Homepage Footer Upper ----------------------------------------------------- */
-	#homepage-footer-upper { box-shadow: 0 1px 8px #ababab; }
-	#homepage-footer-upper-container { margin-top: 20px; }
-
-	/* Business Insights */
-	#latest-business-insights h4 { font-weight: normal; margin: 0; font-family: 'NewsGothicBT-Bold', sans-serif; font-size: 20px; color: #8a0000; padding-bottom: 10px; margin-bottom: 10px; border-bottom: 1px solid #cdcdcd;    }
-	.latest-b-i-item p  { font-size: 14px; }
-	.latest-b-i-item h5  {margin-bottom: 2px; margin-top: 0; font-size: 17px; font-weight: normal; }
-
-	.latest-b-i-content  { font-size: 16px; }
-	.latest-b-i-byline { margin: 0; padding: 0; }
-	.latest-b-i-date { padding-right: 10px; margin-right: 10px; border-right: 1px solid #666;}
-
-	/* Alumni news */
-	#alumni-news-block  h4 { font-weight: normal; margin: 0; font-family: NewsGothicBT-Bold, sans-serif; font-size: 20px; color: #8a0000; padding-bottom: 10px; margin-bottom: 10px; border-bottom: 1px solid #cdcdcd; }
-	#alumni-news-block p  { font-size: 16px; }
-
-	/* Giving block */
-	#giving-block h4 { font-weight: normal; margin: 0; font-family: NewsGothicBT-Bold, sans-serif; font-size: 20px; color: #8a0000; padding-bottom: 10px; margin-bottom: 10px; border-bottom: 1px solid #cdcdcd; }
-	#giving-block p { font-size: 16px;}
-
 /* Page Specific (secondary pages) ---------------------------------------------------- */
-
-	/* Video Spotlight */
-	.video-spotlight-container { clear: both; padding: 26px; padding-bottom:5px; }
-	.video-spotlight-headline { margin: 0; margin-bottom: 10px; padding: 0; color: #7d8401; font-size: 20px; font-family: NewsGothicBT-Bold;  }
-	.video-spotlight-content { font-size: 15px; }
-	.video-spotlight-action { background-color: #739d95; padding: 10px; padding-left: 15px;  }
-	.video-spotlight-action a { border-bottom: 0; color: #fff; font-size: 15px;  }
-
-	/* Busines Insights Spotlight */
-	.business-insights-spotlight-content-container { padding: 26px; padding-bottom:5px;	}
-	.business-insights-spotlight-image-text { margin-top: -30px; background-color: #000; opacity: 0.7; padding: 5px; }
-	.business-insights-spotlight-image-text a { color: #fff; text-decoration: none; border-bottom: none; font-size: 14px; }
-	.business-insights-spotlight-headline { margin-top: 0;}
-	.business-insights-spotlight-headline a { margin: 0; margin-bottom: 10px; padding: 0; color: #990000; font-size: 20px; font-family: NewsGothicBT-Bold, sans-serif; border-bottom: 0;  }
-	.business-insights-spotlight-byline { font-size: 15px; font-family: NewsGothicBT-Bold, sans-serif;  }
-
-	.business-insights-spotlight-content { font-size: 15px; }
 
 	/* Call to Action */
 	.cta {  padding:0;  font-size: 14px; background-color: #990000; color: #fff; margin-bottom: 4px; list-style-type: none;  }
 	.cta h3 a { font-size: 15px; color: #fff; border-bottom: 0; margin:0; padding: 0;  }
 	.cta h3 { margin: 0; padding: 5px;  margin-left: 20px; }
-
-	/* Faculty Spotlight */
-	.faculty-spotlight {  padding: 26px; padding-top: 0;  padding-bottom:5px; margin-bottom: 30px;   }
-	.faculty-spotlight-type { border-top: 10px solid #990000; width: 106px;  }
-	.faculty-spotlight-type h8 { font-size: 14px; color: #231f20;  }
-	.faculty-spotlight-name { font-family: NewsGothicBT-Bold, sans-serif; font-size: 20px; color: #990000;  }
-	.faculty-spotlight-title { font-family: NewsGothicBT-Roman, sans-serif; font-size: 20px; color: #231f20;  }
-	.faculty-spotlight-image { margin-bottom: 20px; }
-	.faculty-spotlight-description { font-size: 15px; color: #231f20; }
-
-	/* Events Listing */
-
-	.upcoming-events-feature { padding: 0; padding-bottom: 26px;   }
-	.upcoming-events-header { color: #990000; padding-left: 26px; padding-top: 20px; padding-bottom: 10px;  }
-	.upcoming-events-item-container { padding: 0; padding-top: 15px;    }
-	.upcoming-events-item-container:before {padding: 0;content:''; width:28px; height:10px; background:#aac4bf; position:absolute; }
-
-	.upcoming-events-item-date { padding-bottom: 10px; padding-top: 15px;  padding-left: 26px; font-size: 15px; color: #231f20; }
-	.upcoming-events-item-title { padding-left: 26px; color: #7d8401; font-size: 20px;  }
-	.upcoming-events-item-location { padding-left: 26px; font-family: NewsGothicBT-Roman, sans-serif; font-size: 20px; color: #231f20; }
-	.upcoming-events-item-description { padding-left: 26px; font-size: 15px; }
-	.upcoming-events-action { margin:26px; background-color: #739d95; padding: 10px; padding-left: 15px;}
-	.upcoming-events-action a { border-bottom: 0; color: #fff; font-size: 15px; }
 
 /* Spotlights */
 
@@ -1335,6 +1275,17 @@ font-weight: bold;
 font-size: 15px;
 }
 
+.pane-gsb-event-frontpage ul {
+ list-style:none;
+ margin:0;
+ padding:0;
+}
+
+.pane-gsb-event-frontpage ul li {
+ margin-left: 0;
+ margin-bottom:10px;
+}
+
 .pane-gsb-event-frontpage .views-field-field-event-date,
 .pane-gsb-event-frontpage .views-field-field-event-date div,
 .pane-gsb-event-frontpage .views-field-title {
@@ -1342,8 +1293,11 @@ font-size: 15px;
 	font-family: NewsGothicBT-Roman, sans-serif;
 	font-size: 16px;
 	color: #3D3738;
-
 }
+.pane-gsb-event-frontpage .views-field-field-event-date div {
+	color: #555;
+}
+
 .pane-gsb-event-frontpage .views-field-title a{
 font-family: NewsGothicBT-Bold;
 color: #231f20;
@@ -1357,6 +1311,13 @@ border: 0;
 .pane-gsb-event-frontpage {
 	background-repeat: no-repeat;
 	background-position: top left;
+}
+
+.pane-gsb-event-frontpage .views-field-field-address,
+.pane-gsb-event-frontpage .views-field-field-address div {
+ display:inline;
+ color:#000;
+ font-size:16px;
 }
 
 /* clubs */
@@ -2936,4 +2897,66 @@ margin-top: -7px;
 
 .cta-follow-us .social-block-twitter {
  margin-left:0;
+}
+
+/* front page */
+
+.front-sidebar-pane a.cta-link i {
+ display:none;
+}
+
+.front .follow-us-circles {
+ clear:both;
+ overflow:hidden;
+ margin-bottom:20px;
+}
+
+.front .follow-us-circles a{
+ margin-left:17px;
+}
+
+.front .follow-us-circles a:first-child {
+ margin-left:0;
+}
+
+.front .twitter-feed h5 {
+ font-family: NewsGothicBT-Bold, sans-serif;
+font-size:16px;
+}
+
+/* front page footer */
+
+.front-panel-footer-two {
+font-family: 'NewsGothicBT-Roman', sans-serif;
+}
+
+.front-panel-footer-two h2 {
+font-weight: normal; margin: 0; font-family: 'NewsGothicBT-Bold', sans-serif; font-size: 20px; color: #8a0000; padding-bottom: 10px; margin-bottom: 10px; border-bottom: 1px solid #cdcdcd;
+}
+
+.front-panel-footer-two p,
+.front-panel-footer-two .field-content {
+ font-size:15px;
+}
+
+.front-panel-footer-two .views-field-title a {
+ color:#000;
+ font-family: 'NewsGothicBT-Bold', sans-serif;
+ font-size:16px; 
+}
+
+.front-panel-footer-two .views-field-field-date-published .date-display-single{
+ color:#666;
+ font-size:13px;
+}
+
+.front-panel-footer-two .views-row {
+ float:left;
+ width:47%;
+ clear:none;
+}
+
+.front-panel-footer-two .views-row-1,
+.front-panel-footer-two .views-row-3 {
+ margin-right:6%;
 }
