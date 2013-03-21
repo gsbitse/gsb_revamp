@@ -25,22 +25,21 @@
  */
 ?>
 
-<?php 
-$fieldentity = $row->_field_data['field_url']['entity'];
-$link = (!empty($fieldentity->field_url)) ? $fieldentity->field_url['und']['0']['safe_value'] : '';
-$body = (!empty($fields['field_club_description']->content)) ? $fields['field_club_description']->content : '';
-$title = (!empty($row->_entity_properties['title'])) ? $row->_entity_properties['title'] : '';
+<?php
+$link = (!empty($fields['ss_url'])) ? $fields['ss_url']->raw : '';
+$body = (!empty($fields['ts_description'])) ? $fields['ts_description']->content : '';
+$title = (!empty($fields['label'])) ?  $fields['label']->raw : '';
 ?>
 
 <div class="club-row">
 	<span class="blue-small-border"></span>
 	<h4>
-		<?php if($link) { ?>
+		<?php if($link) : ?>
 			<a href="<?php print $link ?>" class="clib-link no-border"><?php print $title?><i></i></a>
-		<?php } else { 
-			print $title;
-		} ?>
+        <?php else: ?>
+		<?php print $title ?>
+		<?php endif ?>
 	</h4>
-	<p><?php print $body; ?></p>
+	<p><?php print $body ?></p>
 </div>
 
