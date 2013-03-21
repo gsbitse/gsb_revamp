@@ -1,4 +1,4 @@
-<div id="background-container">
+<div class="background-container">
 <div id="skipnav" class="element-invisible">
   <div class="container">
     <p>Skip to:</p>
@@ -20,7 +20,7 @@
         <!-- /#logo -->
         <?php endif; ?>
         <?php if ($site_name || $site_slogan): ?>
-        <div id="name-and-slogan" class="span8 row no-space float-right">
+        <div class="name-and-slogan" class="span8 row no-space float-right">
           <?php if ($site_name): ?>
           <div id="site-name" class=""><a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home"><?php print $site_name; ?></a></div>
           <?php endif; ?>
@@ -41,8 +41,8 @@
         <?php endif; ?>
         <!-- /#main-menu -->
 
-         <div id="event-and-search" class="span2">
-           <div id="event-calendar-cta" class="clearfix span2" style="">
+         <div class="event-and-search" class="span2">
+           <div class="event-calendar-cta" class="clearfix span2" style="">
             <a href="#">Event Calendar</a>
           </div>  
 
@@ -140,7 +140,7 @@
 </div>
 
 <?php if ($page['footer']): ?>
-<div id="footer" class="clearfix">
+<div class="footer" class="clearfix">
   <div class="footer-container">
     <div id="upper-footer-content" class="row span12 clear-row upper-footer">
       <div class="footer-social span3 clear-row"><?php print render($page['upper_footer_firstcolumn']); ?></div>

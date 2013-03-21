@@ -209,3 +209,8 @@ float:left;
 .panels-dnd .clear-row {
  clear:both;
 } 
+
+/* slider */
+.ui-sortable .field-name-field-gsb-slideshow .panopoly-spotlight-wrapper{
+	margin-left: -77px;
+}
