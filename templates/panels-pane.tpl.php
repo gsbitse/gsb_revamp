@@ -18,6 +18,13 @@
  */
 ?>
 <?php 
+
+if (!empty($content['field_gsb_slideshow']) && $content['field_gsb_slideshow'] != 'P') {
+  $classes .= ' ' 
+  . $content['field_gsb_slideshow'][0]['slideshow']['#settings']['field_slideshow_type'];
+} 
+?>
+<?php 
 if (!empty($variables['pane']->configuration['display'])) {
   $classes .= ' ' . $variables['pane']->configuration['display'];
 }
