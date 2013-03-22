@@ -51,7 +51,7 @@ $summary_trim = array(
     <?php if (!empty($date)) { ?>
       <span class="cp-date"><?php print $date ?></span>
     <?php } ?>
-    <h4 class="cp-title"><i></i><?php printf('<a href="/node/%s">%s</a>', $nid, $title); ?></h4>
+    <h4 class="cp-title"><i></i><span><?php print $title; ?></span></h4>
     <?php if (!empty($summary)) { ?>
     <div class="cp-body"><?php print views_trim_text($summary_trim, $summary); ?></div>
     <?php } ?>    
