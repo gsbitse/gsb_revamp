@@ -12,7 +12,7 @@
 
     $title = $cta_item['field_cta_destination'][0]['#markup'];
     $link =  $cta_item['field_cta_destination_link'][0]['#markup'];
-	$action =  $cta_item['field_cta_action'][0]['#markup'];
+	$action =  !empty($cta_item['field_cta_action']) ? $cta_item['field_cta_action'][0]['#markup'] : '';
  
   printf('<a href="%s" class="item-%d %s cta-link"><span>%s</span><b>%s</b><i></i></a>', 
       $link,
