@@ -1,0 +1,32 @@
+.main-menu
+  float: left
+  ul li
+    float: left
+    margin: 0
+    padding: 0
+    width: 121px
+    border-right: 1px solid $red
+    background-color: $red
+    +background(linear-gradient(bottom, #c50000 50%, #860000 50%))
+    color: $white
+    list-style-type: none
+    list-style-image: none
+    font-size: 17px
+    &:hover, &.active
+      +background(linear-gradient(bottom, #272727 50%, #1b1b1b 50%))
+    a
+      display: block
+      margin: 0
+      padding: 14px 9px 0 10px
+      min-height: 64px
+      background: image_url("navigation-arrow.png") no-repeat 96px 59px
+      color: $white
+      font-family: $font-bold
+    ul li a
+      text-transform: none
+      letter-spacing: 2px
+  .btn-navbar
+    display: none
+
+body .header-region div.main-menu
+  margin-top: -10px

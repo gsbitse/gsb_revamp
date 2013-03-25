@@ -1,16 +1,21 @@
-name = GSB Revamp
-description = GSB Revamp Specific Sub-theme of GSB Framework
+name = Meghan
+description = Meghan's theme for the GSB revamp project
 core = 7.x
-version = 1.0
-base theme = gsb_framework
 
-scripts[] = js/revamp-override.js
+version = 1.0
+
+; Stylesheets
+stylesheets[all][] = css/panels.css
+stylesheets[all][] = css/style.css
+stylesheets[all][] = css/editor.css
+
+; JavaScripts
+scripts[] = js/libs/modernizr-2.6.2.min.js
+scripts[] = js/responsive-menu.js
+scripts[] = js/jquery-ui-1.9.2.custom.min.js
 scripts[] = js/twitterfeed.js
 
-stylesheets[all][] = css/gsb_revamp.css
-stylesheets[all][] = css/editor.css
-stylesheets[all][] = css/MyFontsWebfontsKit.css
-
+; Regions
 regions[page_top] = Page: Top
 regions[header] = Header
 regions[help] = Help
@@ -28,20 +33,4 @@ regions[footer_thirdcolumn] = Footer third colum
 regions[footer_copyrights] = Footer copyrights
 regions[main_top] = Main: Top
 regions[main_upper] = Main: Upper
-
 regions[page_bottom] = Page: Bottom
-
-
-
-; Information added by drush on 2013-02-07
-version = "master-dev"
-project = "gsb_revamp"
-datestamp = "1360258168"
-
-
-
-; Information added by drush on 2013-02-28
-version = "master-dev"
-project = "gsb_revamp"
-datestamp = "1362083568"
-
