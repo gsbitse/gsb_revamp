@@ -58,6 +58,37 @@
     }
   }
 
+  Drupal.behaviors.map_hover = {
+    attach: function (context, settings) {
+      $.fn.maphilight.defaults = {
+        fill: false,
+        fillColor: 'ffffff',
+        fillOpacity: 0.5,
+        stroke: false,
+        strokeColor: 'ffffff',
+        strokeOpacity: 0.5,
+        strokeWidth: 1,
+        fade: true,
+        alwaysOn: false,
+        neverOn: false,
+        groupBy: false,
+        wrapClass: true,
+        shadow: false,
+        shadowX: 0,
+        shadowY: 0,
+        shadowRadius: 6,
+        shadowColor: '000000',
+        shadowOpacity: 0.8,
+        shadowPosition: 'outside',
+        shadowFrom: false
+      }
+
+      $('.bi-map').maphilight();
+      $('#northamerica').mouseover(function(e) {
+      });
+    }
+  }
+
   Drupal.behaviors.accordion = {
     attach: function (context, settings) {
 
