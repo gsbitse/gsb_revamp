@@ -1,4 +1,5 @@
 <?php
+// $Id: html.tpl.php,v 1.1.2.2 2011/01/22 23:47:01 timplunkett Exp $
 
 /**
  * @file
@@ -39,15 +40,23 @@
  * @see template_preprocess()
  * @see template_preprocess_html()
  * @see template_process()
- *
- * @ingroup themeable
  */
-?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN"
-  "http://www.w3.org/MarkUp/DTD/xhtml-rdfa-1.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php print $language->language; ?>" version="XHTML+RDFa 1.0" dir="<?php print $language->dir; ?>"<?php print $rdf_namespaces; ?>>
+?><!DOCTYPE html>
+<!--[if lt IE 7 ]>              <html lang="<?php print $language->language; ?>" dir="<?php print $language->dir; ?>"<?php print $rdf_namespaces; ?> class="no-js ie6"> <![endif]-->
+<!--[if IE 7 ]>                 <html lang="<?php print $language->language; ?>" dir="<?php print $language->dir; ?>"<?php print $rdf_namespaces; ?> class="no-js ie7"> <![endif]-->
+<!--[if IE 8 ]>                 <html lang="<?php print $language->language; ?>" dir="<?php print $language->dir; ?>"<?php print $rdf_namespaces; ?> class="no-js ie8"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]>      <html lang="<?php print $language->language; ?>" dir="<?php print $language->dir; ?>"<?php print $rdf_namespaces; ?> class="no-js ie9"> <![endif]-->
 
 <head profile="<?php print $grddl_profile; ?>">
   <?php print $head; ?>
+  <!-- TODO: add the following meta tags to $head via theme_settings -->
+  <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+       Remove this if you use the .htaccess -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <!--  Mobile viewport optimized: j.mp/bplateviewport -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title><?php print $head_title; ?></title>
   <?php print $styles; ?>
   <?php print $scripts; ?>
