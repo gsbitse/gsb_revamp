@@ -3033,9 +3033,7 @@ a.cta-link {
   position: relative;
   display: block;
   border: none;
-  border-top: 0;
   border-top: 1px white solid;
-  border-bottom: 0;
   border-bottom: 1px #eeeeee solid;
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
