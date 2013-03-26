@@ -1201,13 +1201,18 @@ div.label-inline {
     page-break-after: avoid;
   }
 }
-#page-wrapper {
+#page {
   border-top: 10px #990000 solid;
 }
 
-#page {
+header[role="banner"],
+div[role="main"] {
   margin: 0 auto;
   max-width: 1170px;
+}
+
+header[role="banner"] {
+  margin-top: -4px;
 }
 
 .page-container {
@@ -1230,6 +1235,11 @@ div.label-inline {
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
   box-shadow: none;
+}
+
+#nav-touch-wrapper {
+  display: inline-block;
+  float: right;
 }
 
 #main {
@@ -1267,6 +1277,7 @@ a.no-border:hover {
 }
 
 #logo {
+  display: inline-block;
   margin-top: 36px;
 }
 
@@ -1328,49 +1339,51 @@ h1.title {
   line-height: 42px;
 }
 
-.main-menu {
+#block-system-main-menu {
+  display: inline-block;
+}
+#block-system-main-menu h2 {
+  text-indent: 110%;
+  white-space: nowrap;
+  overflow: hidden;
+  height: 0;
+  margin: 0;
+  padding: 0;
+  width: 0;
+}
+#block-system-main-menu .content {
   float: left;
 }
-.main-menu ul li {
+#block-system-main-menu .content ul li {
   float: left;
   margin: 0;
   padding: 0;
   width: 121px;
-  border-right: 1px solid #990000;
+  border-right: 1px solid red;
   background-color: #990000;
-  background: -webkit-gradient(linear, 50% 100%, 50% 0%, color-stop(50%, #c50000), color-stop(50%, #860000));
-  background: -webkit-linear-gradient(bottom, #c50000 50%, #860000 50%);
-  background: -moz-linear-gradient(bottom, #c50000 50%, #860000 50%);
-  background: -o-linear-gradient(bottom, #c50000 50%, #860000 50%);
-  background: -ms-linear-gradient(bottom, #c50000 50%, #860000 50%);
-  background: linear-gradient(bottom, #c50000 50%, #860000 50%);
-  color: white;
+  background: -webkit-gradient(linear, 50% 100%, 50% 0%, color-stop(0%, #ff0000), color-stop(100%, #990000));
+  background: -webkit-linear-gradient(bottom, #ff0000, #990000);
+  background: -moz-linear-gradient(bottom, #ff0000, #990000);
+  background: -o-linear-gradient(bottom, #ff0000, #990000);
+  background: -ms-linear-gradient(bottom, #ff0000, #990000);
+  background: linear-gradient(bottom, #ff0000, #990000);
   list-style-type: none;
   list-style-image: none;
   font-size: 17px;
 }
-.main-menu ul li:hover, .main-menu ul li.active {
-  background: -webkit-gradient(linear, 50% 100%, 50% 0%, color-stop(50%, #272727), color-stop(50%, #1b1b1b));
-  background: -webkit-linear-gradient(bottom, #272727 50%, #1b1b1b 50%);
-  background: -moz-linear-gradient(bottom, #272727 50%, #1b1b1b 50%);
-  background: -o-linear-gradient(bottom, #272727 50%, #1b1b1b 50%);
-  background: -ms-linear-gradient(bottom, #272727 50%, #1b1b1b 50%);
-  background: linear-gradient(bottom, #272727 50%, #1b1b1b 50%);
+#block-system-main-menu .content ul li:hover, #block-system-main-menu .content ul li.active {
+  background: black;
 }
-.main-menu ul li a {
+#block-system-main-menu .content ul li a {
   display: block;
   margin: 0;
-  padding: 14px 9px 0 10px;
-  min-height: 64px;
-  background: url('../images/navigation-arrow.png') no-repeat 96px 59px;
+  padding: 18px 10px;
+  min-height: 75px;
+  background: url('../images/navigation-arrow.png') no-repeat 100px 60px;
   color: white;
-  font-family: "NewsGothicBT-Bold";
+  line-height: 18px;
 }
-.main-menu ul li ul li a {
-  text-transform: none;
-  letter-spacing: 2px;
-}
-.main-menu .btn-navbar {
+#block-system-main-menu .content .btn-navbar {
   display: none;
 }
 
