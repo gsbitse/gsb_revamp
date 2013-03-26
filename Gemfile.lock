@@ -16,9 +16,6 @@ GEM
       compass (>= 0.11.5)
       sassy-math (>= 1.2)
     sass (3.2.4)
-    sassy-buttons (0.1.4)
-      compass (>= 0.12.2)
-      sass (>= 3.2.0)
     sassy-math (1.2)
       compass (~> 0.11)
     singularitygs (0.0.17)
@@ -43,6 +40,5 @@ PLATFORMS
 DEPENDENCIES
   breakpoint
   compass (>= 0.13.alpha.0)
-  sassy-buttons
   singularitygs (>= 0.0.15.1)
   survivalkit (>= 1.0.beta.8)

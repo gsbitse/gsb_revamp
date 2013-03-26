@@ -1,5 +1,9 @@
 // GENERAL STYLES
 
+.red-button-gradient
+  @extend %red-button-gradient
+
+
 .designed-box,
 .person-list-view,
 .pane-gsb-event-frontpage,
@@ -55,9 +59,7 @@ a.no-border
 #header
   margin: 0
   height: 146px
-  border-top: 10px #900 solid
-  border-bottom: 1px #aaa solid
-  +box-shadow(rgba(0, 0, 0, 0.5) 0 0 4px)
+  // +box-shadow(rgba(0, 0, 0, 0.5) 0 0 4px)
 
 #logo
   margin-top: 36px

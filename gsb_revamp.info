@@ -12,7 +12,7 @@ stylesheets[all][] = css/editor.css
 ; JavaScripts
 scripts[] = js/libs/modernizr-2.6.2.min.js
 scripts[] = js/responsive-menu.js
-scripts[] = js/jquery-ui-1.9.2.custom.min.js
+;scripts[] = js/jquery-ui-1.9.2.custom.min.js
 scripts[] = js/twitterfeed.js
 
 ; Regions
@@ -21,7 +21,8 @@ regions[header] = Header
 regions[help] = Help
 regions[navigation] = Navigation
 regions[highlighted] = Highlighted
-regions[sidebar_primary] = Primary sidebar
+regions[sidebar_first] = Primary sidebar
+regions[sidebar_second] = Secondary sidebar
 regions[content] = Content: Body
 regions[upper_footer_firstcolumn] = Upper Footer first column
 regions[upper_footer_secondcolumn] = Upper Footer second column
