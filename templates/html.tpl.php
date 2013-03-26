@@ -1,5 +1,4 @@
 <?php
-// $Id: html.tpl.php,v 1.1.2.2 2011/01/22 23:47:01 timplunkett Exp $
 
 /**
  * @file
@@ -50,8 +49,7 @@
 <head profile="<?php print $grddl_profile; ?>">
   <?php print $head; ?>
   <!-- TODO: add the following meta tags to $head via theme_settings -->
-  <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
-       Remove this if you use the .htaccess -->
+  <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
   <!--  Mobile viewport optimized: j.mp/bplateviewport -->
