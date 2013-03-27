@@ -66,23 +66,23 @@
   Drupal.behaviors.map_hover = {
     attach: function (context, settings) {
       if ($('.bi-map').length) {
-        var biMap = $('.bi-map'), 
-          biMenu = $('.view-business-insights-sidebar'),
-          buMenuHeaders = biMenu.find('.view-content > h3'),
-          bitext = biMap.find('.bi-map__text'),
-          overlay = $('.bi-map__overlay');
+        var sidebar = $('.gsb-bizin-sidebar'),  
+          biMenu = sidebar.find('.view-business-insights-sidebar'),
+          biMenuHeaders = biMenu.find('.view-content > h3'),
+          biMap = sidebar.find('.bi-map'),
+          biMaptext = biMap.find('.bi-map__text'),
+          biMapOverlay = sidebar.find('.bi-map__overlay');
 
         /* if js is applied show map. */
         biMap.show();
-        /* hide text block (if empty) , until user hovers. */
-        bitext.hide();
+        /* hide text block until user hovers or link is active. */
+        biMaptext.hide();
 
-        if ( buMenuHeaders.length > 1 ) {
-          /* if taxonomy exists hide terms. */
-          buMenuHeaders.eq(1).nextAll().wrapAll('<div class="bi-location-tax"/>').hide();
-          var locationTax = $('.bi-location-tax'),
-            locationTerms = locationTax.find('a.active');
-          /* if term page is opened, highlight the map. */
+        if ( biMenuHeaders.length > 1 ) {
+          /* if location taxonomy exists hide terms. */
+          biMenuHeaders.eq(1).nextAll().wrapAll('<div class="bi-location-tax"/>').hide();
+          var locationTerms = biMenu.find('.bi-location-tax').find('a.active');
+          /* if location term page is opened, highlight the map. */
           if  (locationTerms.length) {
             change_map(locationTerms.text());
           }
@@ -95,14 +95,14 @@
 
       /* change map background on hover */
       function change_map(t) {
-        overlay.removeClass().addClass('bi-map__overlay ' + t.replace(/ /g, '').toLowerCase());
-        bitext.show().text(t);
+        biMapOverlay.removeClass().addClass('bi-map__overlay ' + t.replace(/ /g, '').toLowerCase());
+        biMaptext.show().text(t);
       }
 
       /* return default map background */
       function revert_map(t) {
-        overlay.removeClass();
-        bitext.text();
+        biMapOverlay.removeClass();
+        biMaptext.text();
       }
     }
   }
