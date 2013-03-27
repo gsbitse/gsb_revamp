@@ -1244,10 +1244,6 @@ div[role="main"] {
   max-width: 1170px;
 }
 
-header[role="banner"] {
-  margin-top: -4px;
-}
-
 .page-container {
   background: -webkit-gradient(linear, 50% 100%, 50% 0%, color-stop(14%, #f5f5f5), color-stop(79%, #ffffff));
   background: -webkit-linear-gradient(bottom, #f5f5f5 14%, #ffffff 79%);
@@ -1374,6 +1370,7 @@ h1.title {
 
 #block-system-main-menu {
   display: inline-block;
+  margin-top: -10px;
 }
 #block-system-main-menu h2 {
   text-indent: 110%;
@@ -1411,7 +1408,7 @@ h1.title {
   display: block;
   margin: 0;
   padding: 18px 10px;
-  min-height: 75px;
+  min-height: 80px;
   background: url('../images/navigation-arrow.png') no-repeat 100px 60px;
   color: white;
   line-height: 18px;
