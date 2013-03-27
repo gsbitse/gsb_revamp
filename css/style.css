@@ -950,6 +950,39 @@ del {
   max-width: 1170px;
 }
 
+.gsb-bizin-content {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  *behavior: url("../behaviors/box-sizing/boxsizing.php");
+  overflow: hidden;
+  *zoom: 1;
+  width: 74.35897%;
+  margin-right: -100%;
+  float: left;
+  clear: right;
+  overflow: hidden;
+  *zoom: 1;
+  margin-left: 0;
+  margin-left: 0%;
+}
+
+.gsb-bizin-sidebar {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  *behavior: url("../behaviors/box-sizing/boxsizing.php");
+  overflow: hidden;
+  *zoom: 1;
+  width: 20.08547%;
+  float: right;
+  margin-right: 0;
+  clear: right;
+  overflow: hidden;
+  *zoom: 1;
+  margin-left: 79.91453%;
+}
+
 .offscreenText {
   text-indent: 110%;
   white-space: nowrap;

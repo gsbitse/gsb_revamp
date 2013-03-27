@@ -32,6 +32,33 @@ $show-baseline: false
 // use the Compass baseline system
 $establish-baseline: true
 
+
+////////////////////////////
+// Singularity Grids
+////////////////////////////
+
+// Basis
+$columns: 12
+$gutter: 65
+$max-width: 1170px
+
+// BUSINESS INSIGHTS
+
+// BI Main, right sidebar (1,2)
+$bi-main-rs: 870 235
+
+// BI Left sidebar, Main (2,1)
+$bi-ls-main: 235 870
+
+// BI Main inner, right sidebar
+$bi-rs-main-inner: 570 270
+
+@function calc-max-width($columns, $unit: px)
+  $max-width: 0
+  @for $i from 1 through length($columns)
+    $max-width: $max-width + nth($columns, $i)
+  @return $max-width + $unit
+
 ////////////////////////////
 // Breakpoint Variables
 // +breakpoint($VARIABLE)
@@ -40,16 +67,3 @@ $breakpoint-to-ems: true
 
 $bp-mobile: 480px max-width
 $bp-portrait: 768px max-width
-
-
-////////////////////////////
-// Singularity Grids
-////////////////////////////
-$columns: 12
-$max-width: 1170px
-
-@function calc-max-width($columns, $unit: px)
-  $max-width: 0
-  @for $i from 1 through length($columns)
-    $max-width: $max-width + nth($columns, $i)
-  @return $max-width + $unit
