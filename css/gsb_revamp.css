@@ -2942,19 +2942,16 @@ margin-top: -7px;
 }
 
 /* map */
-
 .bi-map {
  position:relative;
  background: url('../images/businessinsights_region_map.jpg') no-repeat top left;
  display: none;
 }
-
 .bi-map__image {
  z-index: 15;
  position: relative;
  opacity: 0;
 }
-
 .bi-map__overlay {
  z-index: 11;
  position:absolute;
@@ -2966,27 +2963,19 @@ margin-top: -7px;
  background-repeat:0;
  display: block;
 }
-
-.bi-map__overlay.northamerica {
- background-image:url('../images/map_northamerica.png');
+.bi-map__overlay.americas {
+ background-image:url('../images/map_americas.png');
 }
-
 .bi-map__overlay.africa {
  background-image:url('../images/map_africa.png');
 }
-
 .bi-map__overlay.asia {
  background-image:url('../images/map_asia.png');
 }
-
 .bi-map__overlay.europe {
  background-image:url('../images/map_europe.png');
 }
-
 .bi-map__overlay.oceania {
  background-image:url('../images/map_oceania.png');
 }
 
-.bi-map__overlay.southamerica {
- background-image:url('../images/map_southamerica.png');
-}
