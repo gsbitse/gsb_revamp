@@ -58,34 +58,52 @@
     }
   }
 
+  /**
+  * Replace Location taxonomy vocabulary for Business insights
+  * with a custom map.
+  */
+
   Drupal.behaviors.map_hover = {
     attach: function (context, settings) {
-      $.fn.maphilight.defaults = {
-        fill: false,
-        fillColor: 'ffffff',
-        fillOpacity: 0.5,
-        stroke: false,
-        strokeColor: 'ffffff',
-        strokeOpacity: 0.5,
-        strokeWidth: 1,
-        fade: true,
-        alwaysOn: false,
-        neverOn: false,
-        groupBy: false,
-        wrapClass: true,
-        shadow: false,
-        shadowX: 0,
-        shadowY: 0,
-        shadowRadius: 6,
-        shadowColor: '000000',
-        shadowOpacity: 0.8,
-        shadowPosition: 'outside',
-        shadowFrom: false
+      if ($('.bi-map').length) {
+        var biMap = $('.bi-map'), 
+          biMenu = $('.view-business-insights-sidebar'),
+          buMenuHeaders = biMenu.find('.view-content > h3'),
+          bitext = biMap.find('.bi-map__text'),
+          overlay = $('.bi-map__overlay');
+
+        /* if js is applied show map. */
+        biMap.show();
+        /* hide text block (if empty) , until user hovers. */
+        bitext.hide();
+
+        if ( buMenuHeaders.length > 1 ) {
+          /* if taxonomy exists hide terms. */
+          buMenuHeaders.eq(1).nextAll().wrapAll('<div class="bi-location-tax"/>').hide();
+          var locationTax = $('.bi-location-tax'),
+            locationTerms = locationTax.find('a.active');
+          /* if term page is opened, highlight the map. */
+          if  (locationTerms.length) {
+            change_map(locationTerms.text());
+          }
+        }
+
+        /* change map image on region hover */
+        $('.bi-map-area').find('area').mouseover(function() {change_map($(this).attr('alt'));})
+          .mouseout(function() {revert_map();});
       }
 
-      $('.bi-map').maphilight();
-      $('#northamerica').mouseover(function(e) {
-      });
+      /* change map background on hover */
+      function change_map(t) {
+        overlay.removeClass().addClass('bi-map__overlay ' + t.replace(/ /g, '').toLowerCase());
+        bitext.show().text(t);
+      }
+
+      /* return default map background */
+      function revert_map(t) {
+        overlay.removeClass();
+        bitext.text();
+      }
     }
   }
 

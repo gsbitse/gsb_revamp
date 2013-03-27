@@ -6,7 +6,6 @@ base theme = gsb_framework
 
 scripts[] = js/revamp-override.js
 scripts[] = js/twitterfeed.js
-scripts[] = js/jquery.maphilight.min.js
 
 stylesheets[all][] = css/gsb_revamp.css
 stylesheets[all][] = css/editor.css
