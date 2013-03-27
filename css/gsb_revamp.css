@@ -2944,7 +2944,7 @@ margin-top: -7px;
 /* map */
 .bi-map {
  position:relative;
- background: url('../images/businessinsights_region_map.jpg') no-repeat top left;
+ background: url('../images/businessinsights_region_map.png') no-repeat top left;
  display: none;
 }
 .bi-map__image {
