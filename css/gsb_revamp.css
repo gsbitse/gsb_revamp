@@ -257,7 +257,29 @@ a.green-rounded-button:hover {
 	/* #block-menu-menu-secondary-navigation .active:before { content: "\00BB"; } */
 
 /* Footer General --------------------------------------------------*/
-	#footer { background-image: url(../images/footer-background.png); background-color: white;background-repeat: repeat-x; clear: both; margin-top: 0; padding-top: 35px;} 
+	#footer { 
+  background-image: linear-gradient(bottom, rgb(255,255,255) 0%, rgb(239,237,237) 100%);
+  background-image: -o-linear-gradient(bottom, rgb(255,255,255) 0%, rgb(239,237,237) 100%);
+  background-image: -moz-linear-gradient(bottom, rgb(255,255,255) 0%, rgb(239,237,237) 100%);
+  background-image: -webkit-linear-gradient(bottom, rgb(255,255,255) 0%, rgb(239,237,237) 100%);
+  background-image: -ms-linear-gradient(bottom, rgb(255,255,255) 0%, rgb(239,237,237) 100%);
+  background-image: -webkit-gradient(
+  linear,
+  left bottom,
+  left top,
+  color-stop(0, rgb(255,255,255)),
+  color-stop(1, rgb(239,237,237))
+  );
+  border-top: 1px #fff solid;
+  -webkit-box-shadow: 0px -1px 5px rgba(0,0,0,0.25);
+  -moz-box-shadow: 0px -1px 5px rgba(0,0,0,0.25);
+  box-shadow: 0px -1px 5px rgba(0,0,0,0.25);
+  clear: both; 
+  margin-top: 0; 
+  padding-bottom: 18px;
+  padding-top: 27px;
+margin-top: -1px;}
+
 	#footer h2 { text-indent: -10000px; display: none;}
 	#footer .block { float: left;}
 
@@ -2936,4 +2958,145 @@ margin-top: -7px;
 
 .cta-follow-us .social-block-twitter {
  margin-left:0;
+}
+
+/* footer */
+
+.footer-social .cta-follow-us {
+ background:none;
+ padding-left: 0;
+ padding-top:50px;
+ border:none;
+ -webkit-box-shadow: none;
+ -moz-box-shadow: none;
+ -ms-box-shadow: none;
+ box-shadow: none;
+ width:270px;
+}
+
+.footer-social .cta-follow-us .cta-title {
+ background:none;
+ color:#900;
+ padding:0;
+ height:35px;
+ line-height:35px;
+ border-bottom:1px #ccc solid;
+ font-size:19px;
+}
+
+.footer-social .cta-follow-us .cta-title i {
+ right:135px;
+ margin-top:-12px;
+ background-image: url('../images/cta-visit-icon.png');
+ background-position: 0 2px;
+}
+
+.region-footer-secondcolumn {
+  margin-left: 30px;
+  width: 600px;
+}
+
+.region-footer-secondcolumn .menu {
+  float: left;
+  width: 200px;
+  padding-right: 100px;
+  margin: 0;
+  padding-top: 5px;
+}
+.region-footer-secondcolumn .menu li {
+  list-style: none;
+  list-style-type: none;
+  line-height: 1.2em;
+  color: #900;
+  margin-bottom: 8px;
+}
+
+.region-footer-secondcolumn .menu li a {
+  color: #900;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+  font-size: 17px;
+  font-family: NewsGothicBT-Demi, sans-serif;
+}
+
+.footer-newsletter {
+  width: 205px;
+}
+
+.footer__signup {
+  width: 205px;
+  padding-top: 5px;
+}
+
+.footer__signup__label {
+  color: #900;
+  font-family: NewsGothicBT-Bold, sans-serif;
+  font-size: 15px;
+  margin-bottom: 0;
+}
+
+.footer__signup__description {
+  font-size: 15px;
+  width: 185px;
+  font-family: NewsGothicBT-Roman, sans-serif;
+  margin-bottom: 0.9em;
+}
+
+input.footer__signup__email {
+  border: 1px #ccc solid;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -o-border-radius: 0;
+  border-radius: 0;
+  line-height: 1em;
+  padding: 8px 14px;
+  width: 130px;
+  float: left;
+}
+
+input.footer__signup__email:focus {
+  outline: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  border: 1px #900 solid;
+}
+
+input.footer__signup__submit,
+input.footer__signup__submit:hover {
+margin: 0;
+margin-left: -1px;
+float: left;
+width: 41px;
+text-align: center;
+line-height: 38px;
+height: 38px;
+background: #900;
+color: #fff;
+border: none;
+border-radius: 0 20px 20px 0;
+font-family: NewsGothicBT-Bold, sans-serif;
+font-size: 13px;
+}
+
+.region-footer-copyrights .menu {
+  float: left;
+  width: 600px;
+  margin: 0;
+  padding: 0;
+}
+
+.region-footer-copyrights .menu li {
+  list-style: none;
+  list-style-type: none;
+  color: #900;
+  margin-right: 40px;
+  float: left;
+}
+
+.region-footer-copyrights .menu li a {
+  color: #900;  
 }
