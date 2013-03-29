@@ -99,8 +99,8 @@
           $authors_array[] = $author_name . ' ' . $author_sname;
         }
       } else {
-        $author_name = $author['field_first_name'][0]['#markup'];
-        $author_second = $author['field_last_name'][0]['#markup'];
+        $author_name = !empty($author['field_first_name'][0]) ? $author['field_first_name'][0]['#markup'] : '';
+        $author_second = !empty($author['field_last_name'][0]) ? $author['field_last_name'][0]['#markup'] : '';
         $authors_array[] = $author_name . ' ' . $author_second;
       }
     }

@@ -2527,7 +2527,7 @@ a.cta-rethink,a.cta-rethink:hover{
 .front-panel-footer-two h2{
 	margin:0;
 	margin-bottom:10px;
-	padding-bottom:10px;
+	padding-bottom:5px;
 	border-bottom:1px solid #cdcdcd;
 	color:#8a0000;
 	font-weight:400;
@@ -2742,3 +2742,17 @@ a.cta-rethink,a.cta-rethink:hover{
  #header #logo img {
  	margin-top: 38px;
  }
+
+ /* */
+ .front .twitter-feed a {
+ border:none;
+ color:#900;
+}
+
+.pane-gsb-event-frontpage span.fp-event__adress {
+ font-size:15px;
+}
+
+.front-panel-footer-two .views-field-title a {
+ border:none;
+}
