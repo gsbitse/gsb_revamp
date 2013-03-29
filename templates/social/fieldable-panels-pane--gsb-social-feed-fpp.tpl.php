@@ -12,7 +12,7 @@
   $format = 'l, M j | a';
   $buttonname = !empty($field_source_link[0]) ? $field_source_link[0]['title'] : 'Learn more';
   $buttonlink = !empty($field_source_link[0]) ? $field_source_link[0]['url'] : '';
-  $title = !empty($field_button_title[0]) ? $field_button_title[0]['safe_value'] : 'Twitter Feed';
+  $title = !empty($field_button_title[0]) ? $field_button_title[0]['safe_value'] : 'Title';
   if ($name) { $link = 'http://twitter.com/' . $name; }
   ?>
   
@@ -21,9 +21,7 @@
     <h5><?php print $title ?></h5>
     <p class="twitter-feed-source"><?php print $name ?></p>
     <div id="fpp-tweets-<?php print $id; ?>"></div>
-    <?php if ($buttonlink) { ?>
-      <a class="social-block-link" href="<?php print $buttonlink?>"><?php print $buttonname ?></a>
-    <?php } ?>
+    <a class="social-block-link" href="http://twitter.com/<?php print $name ?>">Join the conversation</a>
   </div>
 
   <?php 

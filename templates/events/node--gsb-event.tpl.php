@@ -80,34 +80,13 @@
 ?>
 
 <?php 
-
-  $imageclass = '';
-
-  /* all taxonomies */
-
-  /* variables */
-  $eventtitle = $node->title;
-  $eventdate1 = !empty($node->field_event_date) ? $field_event_date[0]['value'] : '';
-  $eventdate2 = !empty($node->field_event_date) ?  $field_event_date[0]['value2'] : '';
-  $eventadress1 = !empty($variables['field_address'][0]['thoroughfare']) ? $variables['field_address'][0]['thoroughfare'] : '';
-  $eventadress2 = !empty($variables['field_address'][0]['premise']) ? $variables['field_address'][0]['premise'] : '';
-  $eventadress3 = !empty($variables['field_address'][0]['value']) ? $variables['field_address'][0]['value'] : '';
-  $eventcity = !empty($variables['field_address'][0]['locality']) ? $variables['field_address'][0]['locality'] : '';
-  $eventstate = !empty($variables['field_address'][0]['administrative_area']) ? $variables['field_address'][0]['administrative_area'] : '';
-  $eventcountry = !empty($variables['field_address'][0]['country']) ? $variables['field_address'][0]['country'] : '';
-  $eventimage = !empty($variables['field_event_image']) ? $variables['field_event_image'][0] : '';
-  $eventeditorialblurb = !empty($variables['field_editorial_summary']) ? $variables['field_editorial_summary'][0]['safe_value'] : '';
-
-  $dateoutput = _gsb_revamp_format_event_date($eventdate1, $eventdate2, $variables['field_all_day_event']['0']['value'], 'eventdetail');
-
+ $imageclass = '';
   if(!empty($eventimage)) {
     $eventimagestyle = array(
       'style_name' => '270x158',
       'path' => $eventimage['uri'],
       'alt' => $eventimage['alt'],
       'title' => $eventimage['title'],
-      'width' => '268',
-      'height' => '158',
     );
   } else {
     $imageclass = 'no-image';
@@ -127,7 +106,7 @@
 <div class="cp-event cp-block <?php print $imageclass; ?>">
   <span class="blue-small-border"></span>
   <?php if(!empty($eventimage)) { ?>
-    <div class="cp-image"><?php print theme_image_style($eventimagestyle); ?></div>
+    <div class="cp-image"><?php print theme('image_style', $eventimagestyle); ?></div>
   <?php } ?>
   <div class="cp-content"><span class="cp-date"><?php print $dateoutput ?></span>
     <h4 class="cp-title"><i></i><?php printf('<a href="/node/%s">%s</a>', $nid, $eventtitle); ?></h4>
@@ -138,9 +117,9 @@
           print $eventcity . $eventstate;
         } ?>
     </span>
-    <?php if (!empty($eventeditorialblurb)) { ?>
-    <div class="cp-body"><?php print views_trim_text($summary_trim, $eventeditorialblurb); ?></div>
-    <?php } ?>    
+    <?php if (!empty($editorialsummary)) { ?>
+      <div class="cp-body"><?php print views_trim_text($summary_trim, $editorialsummary); ?></div>
+     <?php } ?>    
     <span class="cp-taxonomy"><?php print $taxonomy_output; ?></span>
   </div>
 </div>
@@ -220,14 +199,14 @@
   </div>
   <div class="event-innerpage-description">
     <?php if (!empty($eventimage)) { ?>
-    <div class="event-inner-image"><?php print theme_image_style($eventimagestyle); ?></div>
+    <div class="event-inner-image"><?php print theme('image_style', $eventimagestyle); ?></div>
     <?php } ?>
     <?php if (!empty($eventtargetaudience)) { ?>
     <div class="event-target-audience"><span>Event is open to: </span>
       <?php print $eventtargetaudience; ?>
     </div>
     <?php } ?>
-    <?php if (!empty($eventeditorialblurb)) { ?>
+    <?php if (!empty($editorialsummary)) { ?>
     <div class="event-editorial-blurb">
       <?php print $eventeditorialblurb; ?>
     </div>

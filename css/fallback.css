@@ -17,3 +17,6 @@
 .view-gsb-business-insight .entity-field-collection-item:first-child > div {
 	margin-left: -3px;
 }
+
+#main-menu .menu li:nth-child(2) a { padding-right:15px;}
+ 

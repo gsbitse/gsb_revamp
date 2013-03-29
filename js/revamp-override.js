@@ -146,6 +146,54 @@
     	}
     }
   }
+
+  /**
+  * Replace Location taxonomy vocabulary for Business insights
+  * with a custom map.
+  */
+  Drupal.behaviors.map_hover = {
+    attach: function (context, settings) {
+      if ($('.bi-map').length) {
+        var sidebar = $('.gsb-bizin-sidebar'),  
+          biMenu = sidebar.find('.view-business-insights-sidebar'),
+          biMenuHeaders = biMenu.find('.view-content > h3'),
+          biMap = sidebar.find('.bi-map'),
+          biMaptext = biMap.find('.bi-map__text'),
+          biMapOverlay = sidebar.find('.bi-map__overlay');
+
+        /* if js is applied show map. */
+        biMap.show();
+        /* hide text block until user hovers or link is active. */
+        biMaptext.hide();
+
+        if ( biMenuHeaders.length > 1 ) {
+          /* if location taxonomy exists hide terms. */
+          biMenuHeaders.eq(1).nextAll().wrapAll('<div class="bi-location-tax"/>').hide();
+          var locationTerms = biMenu.find('.bi-location-tax').find('a.active');
+          /* if location term page is opened, highlight the map. */
+          if  (locationTerms.length) {
+            change_map(locationTerms.text());
+          }
+        }
+
+        /* change map image on region hover */
+        $('.bi-map-area').find('area').mouseover(function() {change_map($(this).attr('alt'));})
+          .mouseout(function() {revert_map();});
+      }
+
+      /* change map background on hover */
+      function change_map(t) {
+        biMapOverlay.removeClass().addClass('bi-map__overlay '  t.replace(/ /g, '').toLowerCase());
+        biMaptext.show().text(t);
+      }
+
+      /* return default map background */
+      function revert_map(t) {
+        biMapOverlay.removeClass();
+        biMaptext.text();
+      }
+    }
+  }
   
 }(jQuery));
 

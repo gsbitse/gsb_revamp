@@ -62,6 +62,6 @@
       'height' => '100',
     ));    
 
-    printf( '<div class="mm-featured"><div class="mm-featured-image">%s</div><div class="mm-featured-content"><span class="mm-featured-date">%s</span><a class="mm-featured-title" href="%s">%s</a></div></div>', 
-      $imagestyle, $date, $node_url, $title );
+    printf( '<div class="mm-featured %s"><div class="mm-featured-image">%s</div><div class="mm-featured-content"><span class="mm-featured-date">%s</span><a class="mm-featured-title" href="%s"><i></i>%s</a></div></div>', 
+      $node->type, $imagestyle, $date, $node_url, $title );
   }

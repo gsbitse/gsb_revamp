@@ -168,3 +168,26 @@ function _gsb_revamp_get_tags($vars, $bizin) {
   return $taxonomy_urls;
 }
 
+function gsb_revamp_preprocess_node__gsb_event(&$variables, $hook) {
+ $node = $variables['node'];
+ $variables['eventtitle'] = $node->title;
+ $variables['eventdate1'] = !empty($node->field_event_date) ? check_plain($variables['field_event_date'][0]['value']) : '';
+ $variables['eventdate2'] = !empty($node->field_event_date) ?  check_plain($variables['field_event_date'][0]['value2']) : '';
+ $variables['eventadress1'] = !empty($variables['field_address'][0]['thoroughfare']) ? check_plain($variables['field_address'][0]['thoroughfare']) : '';
+ $variables['eventadress2'] = !empty($variables['field_address'][0]['premise']) ? check_plain($variables['field_address'][0]['premise']) : '';
+ $variables['eventadress3'] = !empty($variables['field_address'][0]['value']) ? check_plain($variables['field_address'][0]['value']) : '';
+ $variables['eventcity'] = !empty($variables['field_address'][0]['locality']) ? check_plain($variables['field_address'][0]['locality']) : '';
+ $variables['eventstate'] = !empty($variables['field_address'][0]['administrative_area']) ? check_plain($variables['field_address'][0]['administrative_area']) : '';
+ $variables['eventcountry'] = !empty($variables['field_address'][0]['country']) ? check_plain($variables['field_address'][0]['country']) : '';
+ $variables['eventimage'] = !empty($variables['field_event_image']) ? $variables['field_event_image'][0] : '';
+ $variables['editorialsummary'] = !empty($variables['field_editorial_summary']) ? $variables['field_editorial_summary'][0]['safe_value'] : '';
+ $variables['dateoutput'] = _gsb_revamp_format_event_date($variables['eventdate1'], $variables['eventdate2'], $variables['field_all_day_event']['0']['value'], 'eventdetail');
+}
+
+function gsb_revamp_preprocess_node(&$variables, $hook) {
+ $function = __FUNCTION__ . '__' . $variables['node']->type;
+ if (function_exists($function)) {
+   $function($variables, $hook);
+ }
+}
+
