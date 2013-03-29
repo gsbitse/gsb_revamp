@@ -183,7 +183,7 @@
 
       /* change map background on hover */
       function change_map(t) {
-        biMapOverlay.removeClass().addClass('bi-map__overlay '  t.replace(/ /g, '').toLowerCase());
+        biMapOverlay.removeClass().addClass('bi-map__overlay ' + t.replace(/ /g, '').toLowerCase());
         biMaptext.show().text(t);
       }
 
