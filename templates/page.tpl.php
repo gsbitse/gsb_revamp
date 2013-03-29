@@ -138,8 +138,6 @@
 </div>
 <!-- /#main, /#main-wrapper -->
 </div>
-
-<?php if ($page['footer']): ?>
 <div class="footer" class="clearfix">
   <div class="footer-container">
     <div id="upper-footer-content" class="row span12 clear-row upper-footer">
@@ -156,4 +154,3 @@
   </div>
 </div>
 <!-- /#footer -->
-<?php endif; ?>

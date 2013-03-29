@@ -11,19 +11,18 @@
 </div>
 <!-- /#skipnav -->
 <?php if ($logo || $site_name || $main_menu || $site_slogan || ($page['header']) || ($page['navigation']) || ($search)): ?>
-<div id="header" class="clearfix header-region">
-  
-      <div class="container">
+<div id="header" class="clearfix row header-region">
+  <div class="container">
+      <div class="row span12 clear-row">
         <?php if ($logo): ?>
         <div id="logo" class="span3"> <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home"> <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" role="presentation" /> </a></div>
         <!-- /#logo -->
         <?php endif; ?>
         <?php if ($site_name || $site_slogan): ?>
-        <div id="name-and-slogan" class="span8 row no-space float-right">
+        <div class="name-and-slogan" class="span8 row no-space float-right">
           <?php if ($site_name): ?>
           <div id="site-name" class=""><a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home"><?php print $site_name; ?></a></div>
           <?php endif; ?>
-
 
          <?php if ($main_menu): ?>
           <div id="main-menu" class="clearfix main-menu">
@@ -41,17 +40,17 @@
         <?php endif; ?>
         <!-- /#main-menu -->
 
-         <div id="event-and-search" class="span2">
-           <div id="event-calendar-cta" class="clearfix span2" style="">
+         <div class="event-and-search" class="span2">
+           <div class="event-calendar-cta" class="clearfix span2" style="">
             <a href="#">Event Calendar</a>
           </div>  
-         
-        <?php if ($page['header']): ?>
-           <div id="header-content" class="row-fluid"><?php print render($page['header']); ?></div>
-        <!-- /#header-content -->
-        <?php endif; ?>
 
-      </div>
+          <?php if ($page['header']): ?>
+             <div id="header-content" class="row-fluid"><?php print render($page['header']); ?></div>
+          <!-- /#header-content -->
+          <?php endif; ?>
+
+         </div>
 
         <?php if ($site_slogan): ?>
           <div id="site-slogan" class="span6 offset2 float-right"><p style="float: right;"><?php print $site_slogan; ?></p></div>
@@ -59,7 +58,7 @@
 
         </div>
 
-       <!-- /#name-and-slogan -->
+        <!-- /#name-and-slogan -->
         <?php endif; ?>
         
       <?php endif; ?>
@@ -67,12 +66,12 @@
       <?php if ($page['navigation']): ?>
       <div id="navigation" class="span4"> <?php print render($page['navigation']); ?> </div>
       <?php endif; ?>
- 
+ </div>
 </div>
 <!-- /#header -->
 
 
-<div id="main" class="clearfix row " style="background-color:#e2e2e2;">
+<div id="main" class="clearfix">
   <div class="container">
    
     <?php if ($page['main_top']): ?>
@@ -81,9 +80,14 @@
     <?php if ($page['main_upper']): ?>
     <div id="main-upper" class="row-fluid"> <?php print render($page['main_upper']); ?> </div>
     <?php endif; ?>
-    <div id="main-content" class="span12 row clear-row">
-      
-      <div id="content" class="span12 clear-row">
+    <div id="main-content" class="span12 row clear-row main-content">
+      <?php if ($page['sidebar_primary']): ?>
+      <div id="sidebar-first" class="sidebar span3 clear-row">
+        <div class="row-fluid"><?php print render($page['sidebar_primary']); ?></div>
+      </div>
+      <!-- /#sidebar-first -->
+      <?php endif; ?>
+      <div id="content">
         <div id="content-wrapper">
           <div id="content-head" class="row-fluid">
             <div id="highlighted" class="clearfix"><?php print render($page['highlighted']); ?></div>
@@ -108,17 +112,8 @@
             <?php endif; ?>
           </div>
          
-          <div id="content-body" class="row-fluid">
-            <?php if ($breadcrumb): ?>
-                  <div id="breadcrumb"><?php print $breadcrumb; ?></div>
-                <?php endif; ?>
+          <div id="content-body" class="row-fluid"> <?php print render($page['content']); ?> <?php print $feed_icons; ?> </div>
 
-           <?php print render($page['content']); ?>
-            <div id="row clear-row">
-            
-          </div>
-           <?php print $feed_icons; ?> </div>
-                 
         </div>
         <!-- /#content-wrap --> 
       </div>
@@ -129,12 +124,21 @@
   </div>
 </div>
 <!-- /#main, /#main-wrapper -->
+</div>
 
-<?php if ($page['footer']): ?>
-<div id="footer" class="clearfix">
-  <div class="container">
-    <div id="footer-content" class="row-fluid"> <?php print render($page['footer']); ?> </div>
+<div class="footer" class="clearfix">
+  <div class="footer-container">
+    <div id="upper-footer-content" class="row span12 clear-row upper-footer">
+      <div class="footer-social span3 clear-row"><?php print render($page['upper_footer_firstcolumn']); ?></div>
+      <div class="footer-links span6"><?php print render($page['upper_footer_secondcolumn']); ?></div>
+      <div class="footer-newsletter span3"><?php print render($page['upper_footer_thirdcolumn']); ?></div>
+    </div>
+    <div id="footer-content" class="row span12 clear-row main-footer">
+      <div class="footer-social span3 clear-row"><?php print render($page['footer_firstcolumn']); ?></div>
+      <div class="footer-links span6"><?php print render($page['footer_secondcolumn']); ?></div>
+      <div class="footer-newsletter span3"><?php print render($page['footer_thirdcolumn']); ?></div>
+      <div class="footer-copyrights span12 clear-row"><?php print render($page['footer_copyrights']); ?></div> 
+    </div>
   </div>
 </div>
 <!-- /#footer -->
-<?php endif; ?>
